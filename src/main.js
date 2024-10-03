@@ -1,5 +1,7 @@
 const basePath = process.cwd();
 const { NETWORK } = require(`${basePath}/constants/network.js`);
+const rules = require(`${basePath}/src/rules.js`); // Import the rules
+
 const fs = require("fs");
 const sha1 = require(`${basePath}/node_modules/sha1`);
 const { createCanvas, loadImage } = require(`${basePath}/node_modules/canvas`);
@@ -33,9 +35,37 @@ const HashlipsGiffer = require(`${basePath}/modules/HashlipsGiffer.js`);
 
 let hashlipsGiffer = null;
 
+// Apply Exclusion Rules Function
+const applyExclusionRules = (selectedTraits, rules, results) => {
+  for (const [layerName, traitRules] of Object.entries(rules.excludeRules)) {
+    const selectedTrait = selectedTraits[layerName];
+    if (selectedTrait && traitRules[selectedTrait]) {
+      const exclusions = traitRules[selectedTrait].exclude;
+      for (const [excludeLayer, excludeTraits] of Object.entries(exclusions)) {
+        if (excludeTraits.includes('All')) {
+          // Exclude all traits in the target layer by setting them to null
+          const layer = results.find(r => r.name.toLowerCase() === excludeLayer.toLowerCase());
+          if (layer) {
+            layer.selectedElement = null; // Assuming 'None' is handled in metadata
+            console.log(`Excluded all traits from ${excludeLayer} due to selecting "${selectedTrait}" in ${layerName}`);
+          }
+        } else {
+          // Exclude specific traits
+          const layer = results.find(r => r.name.toLowerCase() === excludeLayer.toLowerCase());
+          if (layer && layer.selectedElement && excludeTraits.includes(layer.selectedElement.name)) {
+            layer.selectedElement = null; // Assuming 'None' is handled in metadata
+            console.log(`Excluded trait "${layer.selectedElement.name}" from ${excludeLayer} due to selecting "${selectedTrait}" in ${layerName}`);
+          }
+        }
+      }
+    }
+  }
+};
+
+// Setup build directories
 const buildSetup = () => {
   if (fs.existsSync(buildDir)) {
-    fs.rmdirSync(buildDir, { recursive: true });
+    fs.rmSync(buildDir, { recursive: true, force: true }); // Updated to fs.rm
   }
   fs.mkdirSync(buildDir);
   fs.mkdirSync(`${buildDir}/json`);
@@ -45,6 +75,7 @@ const buildSetup = () => {
   }
 };
 
+// Get rarity weight from filename
 const getRarityWeight = (_str) => {
   let nameWithoutExtension = _str.slice(0, -4);
   var nameWithoutWeight = Number(
@@ -56,40 +87,117 @@ const getRarityWeight = (_str) => {
   return nameWithoutWeight;
 };
 
+// Clean DNA string
 const cleanDna = (_str) => {
   const withoutOptions = removeQueryStrings(_str);
   var dna = Number(withoutOptions.split(":").shift());
   return dna;
 };
 
+// Clean name by removing rarity weight
 const cleanName = (_str) => {
   let nameWithoutExtension = _str.slice(0, -4);
   var nameWithoutWeight = nameWithoutExtension.split(rarityDelimiter).shift();
   return nameWithoutWeight;
 };
 
-const getElements = (path) => {
+// Function to extract Shirt traits
+const getShirtTraits = () => {
+  const shirtLayerPath = `${layersDir}/Shirt/`;
+  if (!fs.existsSync(shirtLayerPath)) {
+    throw new Error(`Shirt layer folder not found at path: ${shirtLayerPath}`);
+  }
+  return fs
+    .readdirSync(shirtLayerPath)
+    .filter((item) => !/(^|\/)\.[^\/\.]/g.test(item))
+    .map((i) => cleanName(i).toLowerCase());
+};
+
+// Updated getElements function to handle multiple layers with different trait dependencies
+const getElements = (path, layerName, shirtTraits = []) => {
   return fs
     .readdirSync(path)
     .filter((item) => !/(^|\/)\.[^\/\.]/g.test(item))
     .map((i, index) => {
       if (i.includes("-")) {
-        throw new Error(`layer name can not contain dashes, please fix: ${i}`);
+        // Replace dashes with underscores or throw an error
+        throw new Error(`Layer name cannot contain dashes. Please fix: ${i}`);
       }
+// clean name
+
+      let nameWithoutExtension = i.slice(0, -4); // Remove .png
+      // remove delimeter 
+      let nameWithoutDelimiter = nameWithoutExtension.split(rarityDelimiter).shift();
+      let parts = nameWithoutDelimiter.split('_');
+
+      let accessoryName = parts[0].toLowerCase();
+      let shirt = null;
+      let skin = null;
+      let size = null;
+      let color = null; // For Hair and Beard
+
+      if (layerName.toLowerCase() === 'accessories') {
+        // Accessories can have 1 to 3 parts: AccessoryName, Shirt (optional), Skin (optional)
+        if (parts.length === 3) {
+          shirt = parts[1].toLowerCase();
+          skin = parts[2].toLowerCase();
+        } else if (parts.length === 2) {
+          // Determine if the second part is Shirt or Skin based on available Shirt traits
+          if (shirtTraits.includes(parts[1].toLowerCase())) {
+            shirt = parts[1].toLowerCase();
+          } else {
+            skin = parts[1].toLowerCase();
+          }
+        }
+        // If parts.length === 1, no Shirt or Skin
+      } else if (layerName.toLowerCase() === 'nose') {
+        // Nose can have 2 or 3 parts: Nose, Skin, Size (optional)
+        if (parts.length === 3) {
+          skin = parts[0].toLowerCase();
+          size = parts[1].toLowerCase();
+        } else if (parts.length === 2) {
+          skin = parts[0].toLowerCase();
+          // Size remains null
+        }
+      } else if (layerName.toLowerCase() === 'hair' || layerName.toLowerCase() === 'beard') {
+        // Hair and Beard have 1 or 2 parts: Hair_Color or Beard_Color
+        if (parts.length === 2) {
+          color = parts[1].toLowerCase();
+        }
+        // If parts.length === 1, it might be 'None' or a default trait
+        
+      }
+
+      // Add console logs for debugging
+      if (['accessories', 'nose', 'hair', 'beard'].includes(layerName.toLowerCase())) {
+        console.log(`Parsed ${layerName}:`, {
+          accessoryName,
+          shirt,
+          skin,
+          size,
+          color
+        });
+      }
+
       return {
         id: index,
         name: cleanName(i),
         filename: i,
         path: `${path}${i}`,
         weight: getRarityWeight(i),
+        shirt: shirt || null,   // For Accessories
+        skin: skin || null,     // For Accessories and Nose
+        size: size || null,     // For Nose
+        color: color || null,   // For Hair and Beard
       };
     });
 };
 
-const layersSetup = (layersOrder) => {
+// Setup layers
+const layersSetup = (layersOrder, shirtTraits) => {
   const layers = layersOrder.map((layerObj, index) => ({
     id: index,
-    elements: getElements(`${layersDir}/${layerObj.name}/`),
+    elements: getElements(`${layersDir}/${layerObj.name}/`, layerObj.name, shirtTraits),
     name:
       layerObj.options?.["displayName"] != undefined
         ? layerObj.options?.["displayName"]
@@ -110,6 +218,7 @@ const layersSetup = (layersOrder) => {
   return layers;
 };
 
+// Save generated image
 const saveImage = (_editionCount) => {
   fs.writeFileSync(
     `${buildDir}/images/${_editionCount}.png`,
@@ -117,17 +226,20 @@ const saveImage = (_editionCount) => {
   );
 };
 
+// Generate random background color
 const genColor = () => {
   let hue = Math.floor(Math.random() * 360);
   let pastel = `hsl(${hue}, 100%, ${background.brightness})`;
   return pastel;
 };
 
+// Draw background
 const drawBackground = () => {
   ctx.fillStyle = background.static ? background.default : genColor();
   ctx.fillRect(0, 0, format.width, format.height);
 };
 
+// Add metadata to the list
 const addMetadata = (_dna, _edition) => {
   let dateTime = Date.now();
   let tempMetadata = {
@@ -141,16 +253,15 @@ const addMetadata = (_dna, _edition) => {
     attributes: attributesList,
     compiler: "HashLips Art Engine",
   };
+
   if (network == NETWORK.sol) {
     tempMetadata = {
-      //Added metadata for solana
+      // Added metadata for Solana
       name: tempMetadata.name,
       symbol: solanaMetadata.symbol,
       description: tempMetadata.description,
-      //Added metadata for solana
       seller_fee_basis_points: solanaMetadata.seller_fee_basis_points,
       image: `${_edition}.png`,
-      //Added metadata for solana
       external_url: solanaMetadata.external_url,
       edition: _edition,
       ...extraMetadata,
@@ -167,11 +278,51 @@ const addMetadata = (_dna, _edition) => {
       },
     };
   }
+
   metadataList.push(tempMetadata);
   attributesList = [];
 };
 
+// Add attributes to the list
 const addAttributes = (_element) => {
+  if (_element.layer.name.toLowerCase() === 'accessories' && !_element.layer.selectedElement) {
+    // Add an attribute for "No Accessories"
+    attributesList.push({
+      trait_type: _element.layer.name,
+      value: "None",
+    });
+    return;
+  }
+
+  if (_element.layer.name.toLowerCase() === 'beard' && !_element.layer.selectedElement) {
+    // Add an attribute for "No Beard"
+    attributesList.push({
+      trait_type: _element.layer.name,
+      value: "None",
+    });
+    return;
+  }
+
+  if (_element.layer.name.toLowerCase() === 'hair' && !_element.layer.selectedElement) {
+    // Add an attribute for "No Hair"
+    attributesList.push({
+      trait_type: _element.layer.name,
+      value: "None",
+    });
+    return;
+  }
+
+  // Handle other layers if needed
+  // Example for Glasses:
+  if (_element.layer.name.toLowerCase() === 'glasses' && !_element.layer.selectedElement) {
+    // Add an attribute for "No Glasses"
+    attributesList.push({
+      trait_type: _element.layer.name,
+      value: "None",
+    });
+    return;
+  }
+
   let selectedElement = _element.layer.selectedElement;
   attributesList.push({
     trait_type: _element.layer.name,
@@ -179,17 +330,24 @@ const addAttributes = (_element) => {
   });
 };
 
+// Load layer image
 const loadLayerImg = async (_layer) => {
   try {
-    return new Promise(async (resolve) => {
+    if (_layer.selectedElement) {
+      console.log(`Loading image for ${_layer.name}: ${_layer.selectedElement.filename}`);
       const image = await loadImage(`${_layer.selectedElement.path}`);
-      resolve({ layer: _layer, loadedImage: image });
-    });
+      return { layer: _layer, loadedImage: image };
+    } else {
+      console.log(`No image to load for ${_layer.name}`);
+      return null; // No image to load
+    }
   } catch (error) {
     console.error("Error loading image:", error);
+    return null;
   }
 };
 
+// Add text to image (optional)
 const addText = (_sig, x, y, size) => {
   ctx.fillStyle = text.color;
   ctx.font = `${text.weight} ${size}pt ${text.family}`;
@@ -198,9 +356,13 @@ const addText = (_sig, x, y, size) => {
   ctx.fillText(_sig, x, y);
 };
 
+// Draw each element onto the canvas
 const drawElement = (_renderObject, _index, _layersLen) => {
+  if (_renderObject === null) return; // Skip if no image to draw
+
   ctx.globalAlpha = _renderObject.layer.opacity;
   ctx.globalCompositeOperation = _renderObject.layer.blend;
+
   text.only
     ? addText(
         `${_renderObject.layer.name}${text.spacer}${_renderObject.layer.selectedElement.name}`,
@@ -219,6 +381,7 @@ const drawElement = (_renderObject, _index, _layersLen) => {
   addAttributes(_renderObject);
 };
 
+// Map DNA to layers
 const constructLayerToDna = (_dna = "", _layers = []) => {
   let mappedDnaToLayers = _layers.map((layer, index) => {
     let selectedElement = layer.elements.find(
@@ -274,11 +437,13 @@ const removeQueryStrings = (_dna) => {
   return _dna.replace(query, "");
 };
 
+// Check if DNA is unique
 const isDnaUnique = (_DnaList = new Set(), _dna = "") => {
   const _filteredDNA = filterDNAOptions(_dna);
   return !_DnaList.has(_filteredDNA);
 };
 
+// Create DNA string
 const createDna = (_layers) => {
   let randNum = [];
   _layers.forEach((layer) => {
@@ -286,10 +451,10 @@ const createDna = (_layers) => {
     layer.elements.forEach((element) => {
       totalWeight += element.weight;
     });
-    // number between 0 - totalWeight
+    // Number between 0 - totalWeight
     let random = Math.floor(Math.random() * totalWeight);
     for (var i = 0; i < layer.elements.length; i++) {
-      // subtract the current weight from the random weight until we reach a sub zero value.
+      // Subtract the current weight from the random weight until we reach a sub zero value.
       random -= layer.elements[i].weight;
       if (random < 0) {
         return randNum.push(
@@ -303,10 +468,12 @@ const createDna = (_layers) => {
   return randNum.join(DNA_DELIMITER);
 };
 
+// Write all metadata to a single file
 const writeMetaData = (_data) => {
   fs.writeFileSync(`${buildDir}/json/_metadata.json`, _data);
 };
 
+// Save individual metadata files
 const saveMetaDataSingleFile = (_editionCount) => {
   let metadata = metadataList.find((meta) => meta.edition == _editionCount);
   debugLogs
@@ -320,6 +487,7 @@ const saveMetaDataSingleFile = (_editionCount) => {
   );
 };
 
+// Shuffle array (optional)
 function shuffle(array) {
   let currentIndex = array.length,
     randomIndex;
@@ -334,11 +502,13 @@ function shuffle(array) {
   return array;
 }
 
+// Main function to start creating NFTs
 const startCreating = async () => {
   let layerConfigIndex = 0;
   let editionCount = 1;
   let failedCount = 0;
   let abstractedIndexes = [];
+
   for (
     let i = network == NETWORK.sol ? 0 : 1;
     i <= layerConfigurations[layerConfigurations.length - 1].growEditionSizeTo;
@@ -346,26 +516,192 @@ const startCreating = async () => {
   ) {
     abstractedIndexes.push(i);
   }
+
   if (shuffleLayerConfigurations) {
     abstractedIndexes = shuffle(abstractedIndexes);
   }
+
   debugLogs
     ? console.log("Editions left to create: ", abstractedIndexes)
     : null;
+
   while (layerConfigIndex < layerConfigurations.length) {
+    // Extract Shirt traits once before setting up layers
+    const shirtTraits = getShirtTraits();
+
     const layers = layersSetup(
-      layerConfigurations[layerConfigIndex].layersOrder
+      layerConfigurations[layerConfigIndex].layersOrder,
+      shirtTraits
     );
+
     while (
       editionCount <= layerConfigurations[layerConfigIndex].growEditionSizeTo
     ) {
       let newDna = createDna(layers);
+
       if (isDnaUnique(dnaList, newDna)) {
         let results = constructLayerToDna(newDna, layers);
         let loadedElements = [];
 
+        // Extract Skin, Shirt, Hair traits
+        const selectedSkin = results.find(r => r.name.toLowerCase() === 'skin')?.selectedElement?.name.toLowerCase();
+        const selectedShirt = results.find(r => r.name.toLowerCase() === 'shirt')?.selectedElement?.name.toLowerCase();
+        const selectedHair = results.find(r => r.name.toLowerCase() === 'hair')?.selectedElement?.name.toLowerCase();
+        const selectedNose = results.find(r => r.name.toLowerCase() === 'nose')?.selectedElement?.name.toLowerCase();
+        const selectedMouth = results.find(r => r.name.toLowerCase() === 'mouth')?.selectedElement?.name.toLowerCase();
+        const selectedGlasses = results.find(r => r.name.toLowerCase() === 'glasses')?.selectedElement?.name.toLowerCase();
+        const selectedHat = results.find(r => r.name.toLowerCase() === 'hat')?.selectedElement?.name.toLowerCase();
+        const selectedAccessory = results.find(r => r.name.toLowerCase() === 'accessories')?.selectedElement?.name.toLowerCase();
+        const selectedBeard = results.find(r => r.name.toLowerCase() === 'beard')?.selectedElement?.name.toLowerCase();
+        const selectedPowerUp = results.find(r => r.name.toLowerCase() === 'power up')?.selectedElement?.name.toLowerCase();
+        console.log(`Edition ${abstractedIndexes[0]}: Skin = ${selectedSkin}, Shirt = ${selectedShirt}, Hair = ${selectedHair}`);
+
+        if (!selectedSkin || !selectedShirt) {
+          console.error(`Missing Skin or Shirt trait for edition ${abstractedIndexes[0]}`);
+          failedCount++;
+          if (failedCount >= uniqueDnaTorrance) {
+            console.log(
+              `You need more layers or elements to grow your edition to ${layerConfigurations[layerConfigIndex].growEditionSizeTo} artworks!`
+            );
+            process.exit();
+          }
+          continue;
+        }
+
+        // Extract Eyes trait
+// Extract Eyes trait without converting to lowercase
+const selectedEyes = results.find(r => r.name.toLowerCase() === 'eyes')?.selectedElement?.name;
+
+// Gather currently selected traits relevant to exclusion rules
+const selectedTraits = {
+  Eyes: selectedEyes,
+  Skin: selectedSkin,
+  Shirt: selectedShirt,
+  Hair: selectedHair,
+  Nose: selectedNose,
+  Mouth: selectedMouth,
+  Glasses: selectedGlasses,
+  Hat: selectedHat,
+  Accessory: selectedAccessory,
+  Beard: selectedBeard,
+
+};
+
+// Apply Exclusion Rules
+
+        // Apply Exclusion Rules
+        applyExclusionRules(selectedTraits, rules, results);
+
+        // After applying exclusion rules, re-extract any affected traits if necessary
+        // For example, Glasses may have been set to null
+        // If needed, handle additional logic here
+
+        // Filter Accessories based on Skin and Shirt
+        const accessoriesLayer = results.find(r => r.name.toLowerCase() === 'accessories');
+        if (accessoriesLayer) {
+          const accessoriesElements = layers.find(l => l.name.toLowerCase() === 'accessories').elements;
+
+          // Filter accessories that match the selected Skin and Shirt or are universally compatible
+          const matchingAccessories = accessoriesElements.filter(
+            accessory =>
+              (accessory.skin === selectedSkin && accessory.shirt === selectedShirt) || // Match both
+              (accessory.skin === selectedSkin && accessory.shirt === "base")  || 
+              (accessory.skin === null && accessory.shirt === selectedShirt) ||
+              (accessory.skin === null && accessory.shirt === null)
+
+          );
+
+          console.log("Matching Accessories:", matchingAccessories.map(a => a.name));
+
+          if (matchingAccessories.length > 0) {
+            // Select a random accessory from the filtered list
+            const randomAccessory = matchingAccessories[Math.floor(Math.random() * matchingAccessories.length)];
+            accessoriesLayer.selectedElement = randomAccessory;
+            console.log(`Selected Accessory: ${randomAccessory.name}`);
+          } else {
+            // Optionally, handle cases where no accessory matches the traits
+            accessoriesLayer.selectedElement = null; // No accessory
+            console.log(`No matching accessory found for Edition ${abstractedIndexes[0]}`);
+          }
+        }
+
+        // Filter Beard based on Hair
+        const beardLayer = results.find(r => r.name.toLowerCase() === 'beard');
+        if (beardLayer) {
+          const beardElements = layers.find(l => l.name.toLowerCase() === 'beard').elements;
+        //  console.log(beardElements);
+         // console.log("selectedHair", selectedHair);
+          if (selectedHair && selectedHair !== 'none') {
+            // Get color of hair
+            const hairColor = selectedHair.split('_')[1];
+            // Beard color must match Hair color or be 'None'
+            const matchingBeards = beardElements.filter(
+              beard => beard.color === hairColor || beard.color === 'none'
+            );
+          //  console.log("matchingBeards for color ", hairColor, matchingBeards);
+
+            //console.log("Matching Beards:", matchingBeards.map(b => b.name));
+
+            if (matchingBeards.length > 0) {
+              // Select a random beard from the filtered list
+              const randomBeard = matchingBeards[Math.floor(Math.random() * matchingBeards.length)];
+              beardLayer.selectedElement = randomBeard;
+              console.log(`Selected Beard: ${randomBeard.name}`);
+            } else {
+              // No matching beard found; set to 'None'
+              beardLayer.selectedElement = beardElements.find(b => b.color === 'none') || null;
+              console.log(`No matching beard found for Edition ${abstractedIndexes[0]}. Set to 'None'`);
+            }
+          } else {
+            // If no Hair, Beard should be 'None'
+            const noBeard = beardElements.find(b => b.color === 'none');
+            beardLayer.selectedElement = noBeard || null;
+            console.log(`No Hair selected. Set Beard to 'None' for Edition ${abstractedIndexes[0]}`);
+          }
+        }
+
+        // Filter Nose based on Skin
+        const noseLayer = results.find(r => r.name.toLowerCase() === 'nose');
+        if (noseLayer) {
+          const noseElements = layers.find(l => l.name.toLowerCase() === 'nose').elements;
+
+          // Filter noses that match the selected Skin or have no Skin dependency
+          const matchingNoses = noseElements.filter(
+            nose => nose.skin === selectedSkin || nose.skin === null
+          );
+
+         // console.log("Matching Noses:", matchingNoses.map(n => n.name));
+
+          if (matchingNoses.length > 0) {
+            // Select a random nose from the filtered list
+            const randomNose = matchingNoses[Math.floor(Math.random() * matchingNoses.length)];
+            noseLayer.selectedElement = randomNose;
+            console.log(`Selected Nose: ${randomNose.name}`);
+          } else {
+            // Optionally, handle cases where no nose matches the traits
+            noseLayer.selectedElement = null; // No nose
+            console.log(`No matching nose found for Edition ${abstractedIndexes[0]}`);
+          }
+        }
+
+        // Load all elements including the filtered accessory, beard, and potentially excluded traits
         results.forEach((layer) => {
-          loadedElements.push(loadLayerImg(layer));
+          if (
+            (layer.name.toLowerCase() === 'accessories' ||
+              layer.name.toLowerCase() === 'beard' ||
+              layer.name.toLowerCase() === 'nose' ||
+              layer.name.toLowerCase() === 'glasses') && // Include Glasses for exclusion handling
+            layer.selectedElement
+          ) {
+            loadedElements.push(loadLayerImg(layer));
+          } else if (
+            layer.name.toLowerCase() !== 'accessories' &&
+            layer.name.toLowerCase() !== 'beard' &&
+            layer.name.toLowerCase() !== 'nose' &&
+            layer.name.toLowerCase() !== 'glasses' // Exclude Glasses unless selected
+          ) {
+            loadedElements.push(loadLayerImg(layer));
+          }
         });
 
         await Promise.all(loadedElements).then((renderObjectArray) => {
@@ -386,13 +722,15 @@ const startCreating = async () => {
             drawBackground();
           }
           renderObjectArray.forEach((renderObject, index) => {
-            drawElement(
-              renderObject,
-              index,
-              layerConfigurations[layerConfigIndex].layersOrder.length
-            );
-            if (gif.export) {
-              hashlipsGiffer.add();
+            if (renderObject) { // Ensure the renderObject is not null
+              drawElement(
+                renderObject,
+                index,
+                layerConfigurations[layerConfigIndex].layersOrder.length
+              );
+              if (gif.export) {
+                hashlipsGiffer.add();
+              }
             }
           });
           if (gif.export) {
@@ -428,5 +766,4 @@ const startCreating = async () => {
   }
   writeMetaData(JSON.stringify(metadataList, null, 2));
 };
-
 module.exports = { startCreating, buildSetup, getElements };

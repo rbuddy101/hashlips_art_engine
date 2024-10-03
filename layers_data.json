@@ -1,0 +1,5468 @@
+{
+  "Accessories": [
+    {
+      "name": "Baseball Bat_Base_Black",
+      "fileName": "Baseball Bat_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Base_Blue",
+      "fileName": "Baseball Bat_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Base_Sun Kissed",
+      "fileName": "Baseball Bat_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Base_Tan",
+      "fileName": "Baseball Bat_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Base_White",
+      "fileName": "Baseball Bat_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Black Hoodie_Black",
+      "fileName": "Baseball Bat_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Black Hoodie_Blue",
+      "fileName": "Baseball Bat_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Black Hoodie_Sun Kissed",
+      "fileName": "Baseball Bat_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Black Hoodie_Tan",
+      "fileName": "Baseball Bat_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Black Hoodie_White",
+      "fileName": "Baseball Bat_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Business Suit_Black",
+      "fileName": "Baseball Bat_Business Suit_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Business Suit_Blue",
+      "fileName": "Baseball Bat_Business Suit_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Business Suit_Sun Kissed",
+      "fileName": "Baseball Bat_Business Suit_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Business Suit_Tan",
+      "fileName": "Baseball Bat_Business Suit_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Business Suit_White",
+      "fileName": "Baseball Bat_Business Suit_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Doctor Coat_Black",
+      "fileName": "Baseball Bat_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Doctor Coat_Blue",
+      "fileName": "Baseball Bat_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Doctor Coat_Sun Kissed",
+      "fileName": "Baseball Bat_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Doctor Coat_Tan",
+      "fileName": "Baseball Bat_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Doctor Coat_White",
+      "fileName": "Baseball Bat_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Superhero Suit",
+      "fileName": "Baseball Bat_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Top Gun Military Uniform_Black",
+      "fileName": "Baseball Bat_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Top Gun Military Uniform_Blue",
+      "fileName": "Baseball Bat_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Baseball Bat_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Top Gun Military Uniform_Tan",
+      "fileName": "Baseball Bat_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Bat_Top Gun Military Uniform_White",
+      "fileName": "Baseball Bat_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Base_Black",
+      "fileName": "Beer_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Base_Blue",
+      "fileName": "Beer_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Base_Diamond",
+      "fileName": "Beer_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Base_Ghost",
+      "fileName": "Beer_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Base_Gold",
+      "fileName": "Beer_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Base_Sun Kissed",
+      "fileName": "Beer_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Base_Tan",
+      "fileName": "Beer_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Base_Translucent",
+      "fileName": "Beer_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Base_White",
+      "fileName": "Beer_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Black Hoodie_Black",
+      "fileName": "Beer_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Black Hoodie_Blue",
+      "fileName": "Beer_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Black Hoodie_Diamond",
+      "fileName": "Beer_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Black Hoodie_Gold",
+      "fileName": "Beer_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Black Hoodie_Sun Kissed",
+      "fileName": "Beer_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Black Hoodie_Tan",
+      "fileName": "Beer_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Black Hoodie_Translucent",
+      "fileName": "Beer_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Black Hoodie_White",
+      "fileName": "Beer_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Business_Black",
+      "fileName": "Beer_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Business_Blue",
+      "fileName": "Beer_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Business_Diamond",
+      "fileName": "Beer_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Business_Gold",
+      "fileName": "Beer_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Business_Sun Kissed",
+      "fileName": "Beer_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Business_Tan",
+      "fileName": "Beer_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Business_Translucent",
+      "fileName": "Beer_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Business_White",
+      "fileName": "Beer_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Doctor Coat_Black",
+      "fileName": "Beer_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Doctor Coat_Blue",
+      "fileName": "Beer_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Doctor Coat_Diamond",
+      "fileName": "Beer_Doctor Coat_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Doctor Coat_Gold",
+      "fileName": "Beer_Doctor Coat_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Doctor Coat_Sun Kissed",
+      "fileName": "Beer_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Doctor Coat_Tan",
+      "fileName": "Beer_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Doctor Coat_Translucent",
+      "fileName": "Beer_Doctor Coat_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Doctor Coat_White",
+      "fileName": "Beer_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Space Suit",
+      "fileName": "Beer_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Superhero Suit",
+      "fileName": "Beer_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Top Gun Military Uniform_Black",
+      "fileName": "Beer_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Top Gun Military Uniform_Blue",
+      "fileName": "Beer_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Top Gun Military Uniform_Diamond",
+      "fileName": "Beer_Top Gun Military Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Top Gun Military Uniform_Gold",
+      "fileName": "Beer_Top Gun Military Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Beer_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Top Gun Military Uniform_Tan",
+      "fileName": "Beer_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Top Gun Military Uniform_Translucent",
+      "fileName": "Beer_Top Gun Military Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer_Top Gun Military Uniform_White",
+      "fileName": "Beer_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Base_Black",
+      "fileName": "Blurred Middle Finger_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Base_Blue",
+      "fileName": "Blurred Middle Finger_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Base_Sun Kissed",
+      "fileName": "Blurred Middle Finger_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Base_Tan",
+      "fileName": "Blurred Middle Finger_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Base_White",
+      "fileName": "Blurred Middle Finger_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Black Hoodie_Black",
+      "fileName": "Blurred Middle Finger_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Black Hoodie_Blue",
+      "fileName": "Blurred Middle Finger_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Black Hoodie_Sun Kissed",
+      "fileName": "Blurred Middle Finger_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Black Hoodie_Tan",
+      "fileName": "Blurred Middle Finger_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Black Hoodie_White",
+      "fileName": "Blurred Middle Finger_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Business Suit_Black",
+      "fileName": "Blurred Middle Finger_Business Suit_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Business Suit_Blue",
+      "fileName": "Blurred Middle Finger_Business Suit_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Business Suit_Sun Kissed",
+      "fileName": "Blurred Middle Finger_Business Suit_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Business Suit_Tan",
+      "fileName": "Blurred Middle Finger_Business Suit_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Business Suit_White",
+      "fileName": "Blurred Middle Finger_Business Suit_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Doctor Coat_Black",
+      "fileName": "Blurred Middle Finger_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Doctor Coat_Blue",
+      "fileName": "Blurred Middle Finger_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Doctor Coat_Sun Kissed",
+      "fileName": "Blurred Middle Finger_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Doctor Coat_Tan",
+      "fileName": "Blurred Middle Finger_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Doctor Coat_White",
+      "fileName": "Blurred Middle Finger_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blurred Middle Finger_Superhero Suit",
+      "fileName": "Blurred Middle Finger_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Base_Black",
+      "fileName": "Boomer Coin_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Base_Blue",
+      "fileName": "Boomer Coin_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Base_Diamond",
+      "fileName": "Boomer Coin_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Base_Ghost",
+      "fileName": "Boomer Coin_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Base_Gold",
+      "fileName": "Boomer Coin_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Base_Sun Kissed",
+      "fileName": "Boomer Coin_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Base_Tan",
+      "fileName": "Boomer Coin_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Base_Translucent",
+      "fileName": "Boomer Coin_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Base_White",
+      "fileName": "Boomer Coin_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Black Hoodie_Black",
+      "fileName": "Boomer Coin_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Black Hoodie_Blue",
+      "fileName": "Boomer Coin_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Black Hoodie_Diamond",
+      "fileName": "Boomer Coin_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Black Hoodie_Gold",
+      "fileName": "Boomer Coin_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Black Hoodie_Sun Kissed",
+      "fileName": "Boomer Coin_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Black Hoodie_Tan",
+      "fileName": "Boomer Coin_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Black Hoodie_Translucent",
+      "fileName": "Boomer Coin_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Black Hoodie_White",
+      "fileName": "Boomer Coin_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Business_Black",
+      "fileName": "Boomer Coin_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Business_Blue",
+      "fileName": "Boomer Coin_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Business_Diamond",
+      "fileName": "Boomer Coin_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Business_Gold",
+      "fileName": "Boomer Coin_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Business_Sun Kissed",
+      "fileName": "Boomer Coin_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Business_Tan",
+      "fileName": "Boomer Coin_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Business_Translucent",
+      "fileName": "Boomer Coin_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Business_White",
+      "fileName": "Boomer Coin_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Doctor Coat_Black",
+      "fileName": "Boomer Coin_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Doctor Coat_Blue",
+      "fileName": "Boomer Coin_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Doctor Coat_Diamond",
+      "fileName": "Boomer Coin_Doctor Coat_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Doctor Coat_Gold",
+      "fileName": "Boomer Coin_Doctor Coat_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Doctor Coat_Sun Kissed",
+      "fileName": "Boomer Coin_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Doctor Coat_Tan",
+      "fileName": "Boomer Coin_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Doctor Coat_Translucent",
+      "fileName": "Boomer Coin_Doctor Coat_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Doctor Coat_White",
+      "fileName": "Boomer Coin_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Space Suit",
+      "fileName": "Boomer Coin_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Superhero Suit",
+      "fileName": "Boomer Coin_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Top Gun Military Uniform_Black",
+      "fileName": "Boomer Coin_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Top Gun Military Uniform_Blue",
+      "fileName": "Boomer Coin_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Top Gun Military Uniform_Diamond",
+      "fileName": "Boomer Coin_Top Gun Military Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Top Gun Military Uniform_Gold",
+      "fileName": "Boomer Coin_Top Gun Military Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Boomer Coin_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Top Gun Military Uniform_Tan",
+      "fileName": "Boomer Coin_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Top Gun Military Uniform_Translucent",
+      "fileName": "Boomer Coin_Top Gun Military Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Coin_Top Gun Military Uniform_White",
+      "fileName": "Boomer Coin_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Base_Black",
+      "fileName": "Cane_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Base_Blue",
+      "fileName": "Cane_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Base_Diamond",
+      "fileName": "Cane_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Base_Ghost",
+      "fileName": "Cane_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Base_Gold",
+      "fileName": "Cane_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Base_Sun Kissed",
+      "fileName": "Cane_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Base_Tan",
+      "fileName": "Cane_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Base_Translucent",
+      "fileName": "Cane_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Base_White",
+      "fileName": "Cane_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Black Hoodie_Black",
+      "fileName": "Cane_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Black Hoodie_Blue",
+      "fileName": "Cane_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Black Hoodie_Diamond",
+      "fileName": "Cane_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Black Hoodie_Gold",
+      "fileName": "Cane_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Black Hoodie_Sun Kissed",
+      "fileName": "Cane_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Black Hoodie_Tan",
+      "fileName": "Cane_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Black Hoodie_Translucent",
+      "fileName": "Cane_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Black Hoodie_White",
+      "fileName": "Cane_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Business_Black",
+      "fileName": "Cane_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Business_Blue",
+      "fileName": "Cane_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Business_Diamond",
+      "fileName": "Cane_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Business_Gold",
+      "fileName": "Cane_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Business_Sun Kissed",
+      "fileName": "Cane_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Business_Tan",
+      "fileName": "Cane_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Business_Translucent",
+      "fileName": "Cane_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Business_White",
+      "fileName": "Cane_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Doctor Coat_Black",
+      "fileName": "Cane_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Doctor Coat_Blue",
+      "fileName": "Cane_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Doctor Coat_Diamond",
+      "fileName": "Cane_Doctor Coat_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Doctor Coat_Gold",
+      "fileName": "Cane_Doctor Coat_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Doctor Coat_Sun Kissed",
+      "fileName": "Cane_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Doctor Coat_Tan",
+      "fileName": "Cane_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Doctor Coat_Translucent",
+      "fileName": "Cane_Doctor Coat_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Doctor Coat_White",
+      "fileName": "Cane_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Space Suit",
+      "fileName": "Cane_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Superhero Suit",
+      "fileName": "Cane_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Top Gun Miltary Uniform_Black",
+      "fileName": "Cane_Top Gun Miltary Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Top Gun Miltary Uniform_Blue",
+      "fileName": "Cane_Top Gun Miltary Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Top Gun Miltary Uniform_Diamond",
+      "fileName": "Cane_Top Gun Miltary Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Top Gun Miltary Uniform_Gold",
+      "fileName": "Cane_Top Gun Miltary Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Top Gun Miltary Uniform_Sun Kissed",
+      "fileName": "Cane_Top Gun Miltary Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Top Gun Miltary Uniform_Tan",
+      "fileName": "Cane_Top Gun Miltary Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Top Gun Miltary Uniform_Translucent",
+      "fileName": "Cane_Top Gun Miltary Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cane_Top Gun Miltary Uniform_White",
+      "fileName": "Cane_Top Gun Miltary Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Base_Black",
+      "fileName": "Crystal Ball_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Base_Blue",
+      "fileName": "Crystal Ball_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Base_Sun Kissed",
+      "fileName": "Crystal Ball_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Base_Tan",
+      "fileName": "Crystal Ball_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Base_White",
+      "fileName": "Crystal Ball_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Black Hoodie_Black",
+      "fileName": "Crystal Ball_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Black Hoodie_Blue",
+      "fileName": "Crystal Ball_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Black Hoodie_Sun Kissed",
+      "fileName": "Crystal Ball_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Black Hoodie_Tan",
+      "fileName": "Crystal Ball_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Black Hoodie_White",
+      "fileName": "Crystal Ball_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Business Suit_Black",
+      "fileName": "Crystal Ball_Business Suit_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Business Suit_Blue",
+      "fileName": "Crystal Ball_Business Suit_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Business Suit_Sun Kissed",
+      "fileName": "Crystal Ball_Business Suit_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Business Suit_Tan",
+      "fileName": "Crystal Ball_Business Suit_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Business Suit_White",
+      "fileName": "Crystal Ball_Business Suit_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Doctor Coat_Black",
+      "fileName": "Crystal Ball_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Doctor Coat_Blue",
+      "fileName": "Crystal Ball_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Doctor Coat_Sun Kissed",
+      "fileName": "Crystal Ball_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Doctor Coat_Tan",
+      "fileName": "Crystal Ball_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Doctor Coat_White",
+      "fileName": "Crystal Ball_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Superhero Suit",
+      "fileName": "Crystal Ball_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Top Gun Military Uniform_Black",
+      "fileName": "Crystal Ball_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Top Gun Military Uniform_Blue",
+      "fileName": "Crystal Ball_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Crystal Ball_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Top Gun Military Uniform_Tan",
+      "fileName": "Crystal Ball_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crystal Ball_Top Gun Military Uniform_White",
+      "fileName": "Crystal Ball_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cuban Link",
+      "fileName": "Cuban Link#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Base_Black",
+      "fileName": "Cup of Coffee_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Base_Blue",
+      "fileName": "Cup of Coffee_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Base_Sun Kissed",
+      "fileName": "Cup of Coffee_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Base_Tan",
+      "fileName": "Cup of Coffee_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Base_White",
+      "fileName": "Cup of Coffee_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Black Hoodie_Black",
+      "fileName": "Cup of Coffee_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Black Hoodie_Blue",
+      "fileName": "Cup of Coffee_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Black Hoodie_Sun Kissed",
+      "fileName": "Cup of Coffee_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Black Hoodie_Tan",
+      "fileName": "Cup of Coffee_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Black Hoodie_White",
+      "fileName": "Cup of Coffee_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Business Suit_Black",
+      "fileName": "Cup of Coffee_Business Suit_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Business Suit_Blue",
+      "fileName": "Cup of Coffee_Business Suit_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Business Suit_Sun Kissed",
+      "fileName": "Cup of Coffee_Business Suit_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Business Suit_Tan",
+      "fileName": "Cup of Coffee_Business Suit_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Business Suit_White",
+      "fileName": "Cup of Coffee_Business Suit_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Doctor Coat_Black",
+      "fileName": "Cup of Coffee_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Doctor Coat_Blue",
+      "fileName": "Cup of Coffee_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Doctor Coat_Sun Kissed",
+      "fileName": "Cup of Coffee_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Doctor Coat_Tan",
+      "fileName": "Cup of Coffee_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Doctor Coat_White",
+      "fileName": "Cup of Coffee_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Superhero Suit",
+      "fileName": "Cup of Coffee_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Top Gun Military Uniform_Black",
+      "fileName": "Cup of Coffee_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Top Gun Military Uniform_Blue",
+      "fileName": "Cup of Coffee_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Cup of Coffee_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Top Gun Military Uniform_Tan",
+      "fileName": "Cup of Coffee_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cup of Coffee_Top Gun Military Uniform_White",
+      "fileName": "Cup of Coffee_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Base_Black",
+      "fileName": "Diamond Hand_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Base_Blue",
+      "fileName": "Diamond Hand_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Base_Diamond",
+      "fileName": "Diamond Hand_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Base_Ghost",
+      "fileName": "Diamond Hand_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Base_Gold",
+      "fileName": "Diamond Hand_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Base_Sun Kissed",
+      "fileName": "Diamond Hand_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Base_Tan",
+      "fileName": "Diamond Hand_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Base_Translucent",
+      "fileName": "Diamond Hand_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Base_White",
+      "fileName": "Diamond Hand_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Black Hoodie_Black",
+      "fileName": "Diamond Hand_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Black Hoodie_Blue",
+      "fileName": "Diamond Hand_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Black Hoodie_Diamond",
+      "fileName": "Diamond Hand_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Black Hoodie_Gold",
+      "fileName": "Diamond Hand_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Black Hoodie_Sun Kissed",
+      "fileName": "Diamond Hand_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Black Hoodie_Tan",
+      "fileName": "Diamond Hand_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Black Hoodie_Translucent",
+      "fileName": "Diamond Hand_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Black Hoodie_White",
+      "fileName": "Diamond Hand_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Business_Black",
+      "fileName": "Diamond Hand_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Business_Blue",
+      "fileName": "Diamond Hand_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Business_Diamond",
+      "fileName": "Diamond Hand_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Business_Gold",
+      "fileName": "Diamond Hand_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Business_Sun Kissed",
+      "fileName": "Diamond Hand_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Business_Tan",
+      "fileName": "Diamond Hand_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Business_Translucent",
+      "fileName": "Diamond Hand_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Business_White",
+      "fileName": "Diamond Hand_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Doctor Coat_Black",
+      "fileName": "Diamond Hand_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Doctor Coat_Blue",
+      "fileName": "Diamond Hand_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Doctor Coat_Diamond",
+      "fileName": "Diamond Hand_Doctor Coat_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Doctor Coat_Gold",
+      "fileName": "Diamond Hand_Doctor Coat_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Doctor Coat_Sun Kissed",
+      "fileName": "Diamond Hand_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Doctor Coat_Tan",
+      "fileName": "Diamond Hand_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Doctor Coat_Translucent",
+      "fileName": "Diamond Hand_Doctor Coat_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Doctor Coat_White",
+      "fileName": "Diamond Hand_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Space Suit",
+      "fileName": "Diamond Hand_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Superhero Suit",
+      "fileName": "Diamond Hand_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Top Gun Military Uniform_Black",
+      "fileName": "Diamond Hand_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Top Gun Military Uniform_Blue",
+      "fileName": "Diamond Hand_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Top Gun Military Uniform_Diamond",
+      "fileName": "Diamond Hand_Top Gun Military Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Top Gun Military Uniform_Gold",
+      "fileName": "Diamond Hand_Top Gun Military Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Diamond Hand_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Top Gun Military Uniform_Tan",
+      "fileName": "Diamond Hand_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Top Gun Military Uniform_Translucent",
+      "fileName": "Diamond Hand_Top Gun Military Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Hand_Top Gun Military Uniform_White",
+      "fileName": "Diamond Hand_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Base_Black",
+      "fileName": "Dynamite_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Base_Blue",
+      "fileName": "Dynamite_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Base_Sun Kissed",
+      "fileName": "Dynamite_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Base_Tan",
+      "fileName": "Dynamite_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Base_White",
+      "fileName": "Dynamite_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Black Hoodie_Black",
+      "fileName": "Dynamite_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Black Hoodie_Blue",
+      "fileName": "Dynamite_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Black Hoodie_Sun Kissed",
+      "fileName": "Dynamite_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Black Hoodie_Tan",
+      "fileName": "Dynamite_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Black Hoodie_White",
+      "fileName": "Dynamite_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Business Suit_Black",
+      "fileName": "Dynamite_Business Suit_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Business Suit_Blue",
+      "fileName": "Dynamite_Business Suit_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Business Suit_Sun Kissed",
+      "fileName": "Dynamite_Business Suit_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Business Suit_Tan",
+      "fileName": "Dynamite_Business Suit_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Business Suit_White",
+      "fileName": "Dynamite_Business Suit_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Doctor Coat_Black",
+      "fileName": "Dynamite_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Doctor Coat_Blue",
+      "fileName": "Dynamite_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Doctor Coat_Sun Kissed",
+      "fileName": "Dynamite_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Doctor Coat_Tan",
+      "fileName": "Dynamite_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Doctor Coat_White",
+      "fileName": "Dynamite_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Superhero Suit",
+      "fileName": "Dynamite_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Top Gun Military Uniform_Black",
+      "fileName": "Dynamite_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Top Gun Military Uniform_Blue",
+      "fileName": "Dynamite_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Dynamite_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Top Gun Military Uniform_Tan",
+      "fileName": "Dynamite_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Dynamite_Top Gun Military Uniform_White",
+      "fileName": "Dynamite_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Base_Black",
+      "fileName": "Fishing Rod_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Base_Blue",
+      "fileName": "Fishing Rod_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Base_Diamond",
+      "fileName": "Fishing Rod_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Base_Ghost",
+      "fileName": "Fishing Rod_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Base_Gold",
+      "fileName": "Fishing Rod_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Base_Sun Kissed",
+      "fileName": "Fishing Rod_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Base_Tan",
+      "fileName": "Fishing Rod_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Base_Translucent",
+      "fileName": "Fishing Rod_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Base_White",
+      "fileName": "Fishing Rod_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Black Hoodie_Black",
+      "fileName": "Fishing Rod_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Black Hoodie_Blue",
+      "fileName": "Fishing Rod_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Black Hoodie_Diamond",
+      "fileName": "Fishing Rod_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Black Hoodie_Gold",
+      "fileName": "Fishing Rod_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Black Hoodie_Sun Kissed",
+      "fileName": "Fishing Rod_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Black Hoodie_Tan",
+      "fileName": "Fishing Rod_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Black Hoodie_Translucent",
+      "fileName": "Fishing Rod_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Black Hoodie_White",
+      "fileName": "Fishing Rod_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Business_Black",
+      "fileName": "Fishing Rod_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Business_Blue",
+      "fileName": "Fishing Rod_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Business_Diamond",
+      "fileName": "Fishing Rod_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Business_Gold",
+      "fileName": "Fishing Rod_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Business_Sun Kissed",
+      "fileName": "Fishing Rod_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Business_Tan",
+      "fileName": "Fishing Rod_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Business_Translucent",
+      "fileName": "Fishing Rod_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Business_White",
+      "fileName": "Fishing Rod_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Doctor Coat_Black",
+      "fileName": "Fishing Rod_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Doctor Coat_Blue",
+      "fileName": "Fishing Rod_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Doctor Coat_Diamond",
+      "fileName": "Fishing Rod_Doctor Coat_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Doctor Coat_Gold",
+      "fileName": "Fishing Rod_Doctor Coat_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Doctor Coat_Sun Kissed",
+      "fileName": "Fishing Rod_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Doctor Coat_Tan",
+      "fileName": "Fishing Rod_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Doctor Coat_Translucent",
+      "fileName": "Fishing Rod_Doctor Coat_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Doctor Coat_White",
+      "fileName": "Fishing Rod_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Space Suit",
+      "fileName": "Fishing Rod_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Superhero Suit",
+      "fileName": "Fishing Rod_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Top Gun Military Uniform_Black",
+      "fileName": "Fishing Rod_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Top Gun Military Uniform_Blue",
+      "fileName": "Fishing Rod_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Top Gun Military Uniform_Diamond",
+      "fileName": "Fishing Rod_Top Gun Military Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Top Gun Military Uniform_Gold",
+      "fileName": "Fishing Rod_Top Gun Military Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Fishing Rod_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Top Gun Military Uniform_Tan",
+      "fileName": "Fishing Rod_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Top Gun Military Uniform_Translucent",
+      "fileName": "Fishing Rod_Top Gun Military Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing Rod_Top Gun Military Uniform_White",
+      "fileName": "Fishing Rod_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Base_Black",
+      "fileName": "Flip Phone_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Base_Blue",
+      "fileName": "Flip Phone_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Base_Diamond",
+      "fileName": "Flip Phone_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Base_Ghost",
+      "fileName": "Flip Phone_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Base_Gold",
+      "fileName": "Flip Phone_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Base_Sun Kissed",
+      "fileName": "Flip Phone_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Base_Tan",
+      "fileName": "Flip Phone_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Base_Translucent",
+      "fileName": "Flip Phone_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Base_White",
+      "fileName": "Flip Phone_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Black Hoodie_Black",
+      "fileName": "Flip Phone_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Black Hoodie_Blue",
+      "fileName": "Flip Phone_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Black Hoodie_Diamond",
+      "fileName": "Flip Phone_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Black Hoodie_Gold",
+      "fileName": "Flip Phone_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Black Hoodie_Sun Kissed",
+      "fileName": "Flip Phone_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Black Hoodie_Tan",
+      "fileName": "Flip Phone_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Black Hoodie_Translucent",
+      "fileName": "Flip Phone_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Black Hoodie_White",
+      "fileName": "Flip Phone_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Business_Black",
+      "fileName": "Flip Phone_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Business_Blue",
+      "fileName": "Flip Phone_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Business_Diamond",
+      "fileName": "Flip Phone_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Business_Gold",
+      "fileName": "Flip Phone_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Business_Sun Kissed",
+      "fileName": "Flip Phone_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Business_Tan",
+      "fileName": "Flip Phone_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Business_Translucent",
+      "fileName": "Flip Phone_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Business_White",
+      "fileName": "Flip Phone_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Doctor Coat_Black",
+      "fileName": "Flip Phone_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Doctor Coat_Blue",
+      "fileName": "Flip Phone_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Doctor Coat_Diamond",
+      "fileName": "Flip Phone_Doctor Coat_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Doctor Coat_Gold",
+      "fileName": "Flip Phone_Doctor Coat_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Doctor Coat_Sun Kissed",
+      "fileName": "Flip Phone_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Doctor Coat_Tan",
+      "fileName": "Flip Phone_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Doctor Coat_Translucent",
+      "fileName": "Flip Phone_Doctor Coat_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Doctor Coat_White",
+      "fileName": "Flip Phone_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Space Suit",
+      "fileName": "Flip Phone_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Superhero Suit",
+      "fileName": "Flip Phone_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Top Gun Military Uniform_Black",
+      "fileName": "Flip Phone_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Top Gun Military Uniform_Blue",
+      "fileName": "Flip Phone_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Top Gun Military Uniform_Diamond",
+      "fileName": "Flip Phone_Top Gun Military Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Top Gun Military Uniform_Gold",
+      "fileName": "Flip Phone_Top Gun Military Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Flip Phone_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Top Gun Military Uniform_Tan",
+      "fileName": "Flip Phone_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Top Gun Military Uniform_Translucent",
+      "fileName": "Flip Phone_Top Gun Military Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Flip Phone_Top Gun Military Uniform_White",
+      "fileName": "Flip Phone_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Base_Black",
+      "fileName": "Golf Club_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Base_Blue",
+      "fileName": "Golf Club_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Base_Diamond",
+      "fileName": "Golf Club_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Base_Ghost",
+      "fileName": "Golf Club_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Base_Gold",
+      "fileName": "Golf Club_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Base_Sun Kissed",
+      "fileName": "Golf Club_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Base_Tan",
+      "fileName": "Golf Club_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Base_Translucent",
+      "fileName": "Golf Club_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Base_White",
+      "fileName": "Golf Club_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Black Hoodie_Black",
+      "fileName": "Golf Club_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Black Hoodie_Blue",
+      "fileName": "Golf Club_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Black Hoodie_Diamond",
+      "fileName": "Golf Club_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Black Hoodie_Gold",
+      "fileName": "Golf Club_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Black Hoodie_Sun Kissed",
+      "fileName": "Golf Club_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Black Hoodie_Tan",
+      "fileName": "Golf Club_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Black Hoodie_Translucent",
+      "fileName": "Golf Club_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Black Hoodie_White",
+      "fileName": "Golf Club_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Business_Black",
+      "fileName": "Golf Club_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Business_Blue",
+      "fileName": "Golf Club_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Business_Diamond",
+      "fileName": "Golf Club_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Business_Gold",
+      "fileName": "Golf Club_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Business_Sun Kissed",
+      "fileName": "Golf Club_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Business_Tan",
+      "fileName": "Golf Club_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Business_Translucent",
+      "fileName": "Golf Club_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Business_White",
+      "fileName": "Golf Club_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Doctor Suit_Black",
+      "fileName": "Golf Club_Doctor Suit_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Doctor Suit_Blue",
+      "fileName": "Golf Club_Doctor Suit_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Doctor Suit_Diamond",
+      "fileName": "Golf Club_Doctor Suit_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Doctor Suit_Gold",
+      "fileName": "Golf Club_Doctor Suit_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Doctor Suit_Sun Kissed",
+      "fileName": "Golf Club_Doctor Suit_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Doctor Suit_Tan",
+      "fileName": "Golf Club_Doctor Suit_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Doctor Suit_Translucent",
+      "fileName": "Golf Club_Doctor Suit_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Doctor Suit_White",
+      "fileName": "Golf Club_Doctor Suit_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Space Suit",
+      "fileName": "Golf Club_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Superhero Suit",
+      "fileName": "Golf Club_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Top Gun Miltary Uniform_Black",
+      "fileName": "Golf Club_Top Gun Miltary Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Top Gun Miltary Uniform_Blue",
+      "fileName": "Golf Club_Top Gun Miltary Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Top Gun Miltary Uniform_Diamond",
+      "fileName": "Golf Club_Top Gun Miltary Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Top Gun Miltary Uniform_Gold",
+      "fileName": "Golf Club_Top Gun Miltary Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Top Gun Miltary Uniform_Sun Kissed",
+      "fileName": "Golf Club_Top Gun Miltary Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Top Gun Miltary Uniform_Tan",
+      "fileName": "Golf Club_Top Gun Miltary Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Top Gun Miltary Uniform_Translucent",
+      "fileName": "Golf Club_Top Gun Miltary Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Club_Top Gun Miltary Uniform_White",
+      "fileName": "Golf Club_Top Gun Miltary Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Base_Black",
+      "fileName": "Grill Spatula_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Base_Blue",
+      "fileName": "Grill Spatula_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Base_Diamond",
+      "fileName": "Grill Spatula_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Base_Ghost",
+      "fileName": "Grill Spatula_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Base_Gold",
+      "fileName": "Grill Spatula_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Base_Sun Kissed",
+      "fileName": "Grill Spatula_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Base_Tan",
+      "fileName": "Grill Spatula_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Base_Translucent",
+      "fileName": "Grill Spatula_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Base_White",
+      "fileName": "Grill Spatula_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Black Hoodie_Black",
+      "fileName": "Grill Spatula_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Black Hoodie_Blue",
+      "fileName": "Grill Spatula_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Black Hoodie_Diamond",
+      "fileName": "Grill Spatula_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Black Hoodie_Gold",
+      "fileName": "Grill Spatula_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Black Hoodie_Sun Kissed",
+      "fileName": "Grill Spatula_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Black Hoodie_Tan",
+      "fileName": "Grill Spatula_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Black Hoodie_Translucent",
+      "fileName": "Grill Spatula_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Black Hoodie_White",
+      "fileName": "Grill Spatula_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Business_Black",
+      "fileName": "Grill Spatula_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Business_Blue",
+      "fileName": "Grill Spatula_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Business_Diamond",
+      "fileName": "Grill Spatula_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Business_Gold",
+      "fileName": "Grill Spatula_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Business_Sun Kissed",
+      "fileName": "Grill Spatula_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Business_Tan",
+      "fileName": "Grill Spatula_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Business_Translucent",
+      "fileName": "Grill Spatula_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Business_White",
+      "fileName": "Grill Spatula_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Doctor Coat_Black",
+      "fileName": "Grill Spatula_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Doctor Coat_Blue",
+      "fileName": "Grill Spatula_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Doctor Coat_Diamond",
+      "fileName": "Grill Spatula_Doctor Coat_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Doctor Coat_Gold",
+      "fileName": "Grill Spatula_Doctor Coat_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Doctor Coat_Sun Kissed",
+      "fileName": "Grill Spatula_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Doctor Coat_Tan",
+      "fileName": "Grill Spatula_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Doctor Coat_Translucent",
+      "fileName": "Grill Spatula_Doctor Coat_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Doctor Coat_White",
+      "fileName": "Grill Spatula_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Space Suit",
+      "fileName": "Grill Spatula_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Superhero Suit",
+      "fileName": "Grill Spatula_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Top Gun Miltary Uniform_Black",
+      "fileName": "Grill Spatula_Top Gun Miltary Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Top Gun Miltary Uniform_Blue",
+      "fileName": "Grill Spatula_Top Gun Miltary Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Top Gun Miltary Uniform_Diamond",
+      "fileName": "Grill Spatula_Top Gun Miltary Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Top Gun Miltary Uniform_Gold",
+      "fileName": "Grill Spatula_Top Gun Miltary Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Top Gun Miltary Uniform_Sun Kissed",
+      "fileName": "Grill Spatula_Top Gun Miltary Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Top Gun Miltary Uniform_Tan",
+      "fileName": "Grill Spatula_Top Gun Miltary Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Top Gun Miltary Uniform_Translucent",
+      "fileName": "Grill Spatula_Top Gun Miltary Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill Spatula_Top Gun Miltary Uniform_White",
+      "fileName": "Grill Spatula_Top Gun Miltary Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Base_Black",
+      "fileName": "Holding a Green Candle_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Base_Blue",
+      "fileName": "Holding a Green Candle_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Base_Sun Kissed",
+      "fileName": "Holding a Green Candle_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Base_Tan",
+      "fileName": "Holding a Green Candle_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Base_White",
+      "fileName": "Holding a Green Candle_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Black Hoodie_Black",
+      "fileName": "Holding a Green Candle_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Black Hoodie_Blue",
+      "fileName": "Holding a Green Candle_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Black Hoodie_Sun Kissed",
+      "fileName": "Holding a Green Candle_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Black Hoodie_Tan",
+      "fileName": "Holding a Green Candle_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Black Hoodie_White",
+      "fileName": "Holding a Green Candle_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Business Suit_Black",
+      "fileName": "Holding a Green Candle_Business Suit_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Business Suit_Blue",
+      "fileName": "Holding a Green Candle_Business Suit_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Business Suit_Sun Kissed",
+      "fileName": "Holding a Green Candle_Business Suit_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Business Suit_Tan",
+      "fileName": "Holding a Green Candle_Business Suit_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Business Suit_White",
+      "fileName": "Holding a Green Candle_Business Suit_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Doctor Coat_Black",
+      "fileName": "Holding a Green Candle_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Doctor Coat_Blue",
+      "fileName": "Holding a Green Candle_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Doctor Coat_Sun Kissed",
+      "fileName": "Holding a Green Candle_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Doctor Coat_Tan",
+      "fileName": "Holding a Green Candle_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Doctor Coat_White",
+      "fileName": "Holding a Green Candle_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Superhero Suit",
+      "fileName": "Holding a Green Candle_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Top Gun Military Uniform_Black",
+      "fileName": "Holding a Green Candle_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Top Gun Military Uniform_Blue",
+      "fileName": "Holding a Green Candle_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Holding a Green Candle_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Top Gun Military Uniform_Tan",
+      "fileName": "Holding a Green Candle_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Holding a Green Candle_Top Gun Military Uniform_White",
+      "fileName": "Holding a Green Candle_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Base_Black",
+      "fileName": "Keys to Lawnbow_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Base_Blue",
+      "fileName": "Keys to Lawnbow_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Base_Diamond",
+      "fileName": "Keys to Lawnbow_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Base_Ghost",
+      "fileName": "Keys to Lawnbow_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Base_Gold",
+      "fileName": "Keys to Lawnbow_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Base_Sun Kissed",
+      "fileName": "Keys to Lawnbow_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Base_Tan",
+      "fileName": "Keys to Lawnbow_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Base_Translucent",
+      "fileName": "Keys to Lawnbow_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Base_White",
+      "fileName": "Keys to Lawnbow_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Black Hoodie_Black",
+      "fileName": "Keys to Lawnbow_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Black Hoodie_Blue",
+      "fileName": "Keys to Lawnbow_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Black Hoodie_Diamond",
+      "fileName": "Keys to Lawnbow_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Black Hoodie_Gold",
+      "fileName": "Keys to Lawnbow_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Black Hoodie_Sun Kissed",
+      "fileName": "Keys to Lawnbow_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Black Hoodie_Tan",
+      "fileName": "Keys to Lawnbow_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Black Hoodie_Translucent",
+      "fileName": "Keys to Lawnbow_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Black Hoodie_White",
+      "fileName": "Keys to Lawnbow_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Business_Black",
+      "fileName": "Keys to Lawnbow_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Business_Blue",
+      "fileName": "Keys to Lawnbow_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Business_Diamond",
+      "fileName": "Keys to Lawnbow_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Business_Gold",
+      "fileName": "Keys to Lawnbow_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Business_Sun Kissed",
+      "fileName": "Keys to Lawnbow_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Business_Tan",
+      "fileName": "Keys to Lawnbow_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Business_Translucent",
+      "fileName": "Keys to Lawnbow_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Business_White",
+      "fileName": "Keys to Lawnbow_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Doctor Coat_Black",
+      "fileName": "Keys to Lawnbow_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Doctor Coat_Blue",
+      "fileName": "Keys to Lawnbow_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Doctor Coat_Diamond",
+      "fileName": "Keys to Lawnbow_Doctor Coat_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Doctor Coat_Gold",
+      "fileName": "Keys to Lawnbow_Doctor Coat_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Doctor Coat_Sun Kissed",
+      "fileName": "Keys to Lawnbow_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Doctor Coat_Tan",
+      "fileName": "Keys to Lawnbow_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Doctor Coat_Translucent",
+      "fileName": "Keys to Lawnbow_Doctor Coat_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Doctor Coat_White",
+      "fileName": "Keys to Lawnbow_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Space Suit",
+      "fileName": "Keys to Lawnbow_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Superhero Suit",
+      "fileName": "Keys to Lawnbow_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Top Gun Military Uniform_Black",
+      "fileName": "Keys to Lawnbow_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Top Gun Military Uniform_Blue",
+      "fileName": "Keys to Lawnbow_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Top Gun Military Uniform_Diamond",
+      "fileName": "Keys to Lawnbow_Top Gun Military Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Top Gun Military Uniform_Gold",
+      "fileName": "Keys to Lawnbow_Top Gun Military Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Keys to Lawnbow_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Top Gun Military Uniform_Tan",
+      "fileName": "Keys to Lawnbow_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Top Gun Military Uniform_Translucent",
+      "fileName": "Keys to Lawnbow_Top Gun Military Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Keys to Lawnbow_Top Gun Military Uniform_White",
+      "fileName": "Keys to Lawnbow_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Base_Black",
+      "fileName": "Large Pinky Ring_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Base_Blue",
+      "fileName": "Large Pinky Ring_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Base_Sun Kissed",
+      "fileName": "Large Pinky Ring_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Base_Tan",
+      "fileName": "Large Pinky Ring_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Base_White",
+      "fileName": "Large Pinky Ring_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Black Hoodie_Black",
+      "fileName": "Large Pinky Ring_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Black Hoodie_Blue",
+      "fileName": "Large Pinky Ring_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Black Hoodie_Sun Kissed",
+      "fileName": "Large Pinky Ring_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Black Hoodie_Tan",
+      "fileName": "Large Pinky Ring_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Black Hoodie_White",
+      "fileName": "Large Pinky Ring_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Business Suit_Black",
+      "fileName": "Large Pinky Ring_Business Suit_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Business Suit_Blue",
+      "fileName": "Large Pinky Ring_Business Suit_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Business Suit_Sun Kissed",
+      "fileName": "Large Pinky Ring_Business Suit_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Business Suit_Tan",
+      "fileName": "Large Pinky Ring_Business Suit_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Business Suit_White",
+      "fileName": "Large Pinky Ring_Business Suit_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Doctor Coat_Black",
+      "fileName": "Large Pinky Ring_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Doctor Coat_Blue",
+      "fileName": "Large Pinky Ring_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Doctor Coat_Sun Kissed",
+      "fileName": "Large Pinky Ring_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Doctor Coat_Tan",
+      "fileName": "Large Pinky Ring_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Doctor Coat_White",
+      "fileName": "Large Pinky Ring_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Space Suit",
+      "fileName": "Large Pinky Ring_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Superhero Suit",
+      "fileName": "Large Pinky Ring_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Top Gun Military Uniform_Black",
+      "fileName": "Large Pinky Ring_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Top Gun Military Uniform_Blue",
+      "fileName": "Large Pinky Ring_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Large Pinky Ring_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Top Gun Military Uniform_Tan",
+      "fileName": "Large Pinky Ring_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Large Pinky Ring_Top Gun Military Uniform_White",
+      "fileName": "Large Pinky Ring_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Base_Black",
+      "fileName": "Lotto Ticket_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Base_Blue",
+      "fileName": "Lotto Ticket_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Base_Diamond",
+      "fileName": "Lotto Ticket_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Base_Ghost",
+      "fileName": "Lotto Ticket_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Base_Gold",
+      "fileName": "Lotto Ticket_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Base_Sun Kissed",
+      "fileName": "Lotto Ticket_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Base_Tan",
+      "fileName": "Lotto Ticket_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Base_Translucent",
+      "fileName": "Lotto Ticket_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Base_White",
+      "fileName": "Lotto Ticket_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Black Hoodie_Black",
+      "fileName": "Lotto Ticket_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Black Hoodie_Blue",
+      "fileName": "Lotto Ticket_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Black Hoodie_Diamond",
+      "fileName": "Lotto Ticket_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Black Hoodie_Gold",
+      "fileName": "Lotto Ticket_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Black Hoodie_Sun Kissed",
+      "fileName": "Lotto Ticket_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Black Hoodie_Tan",
+      "fileName": "Lotto Ticket_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Black Hoodie_Translucent",
+      "fileName": "Lotto Ticket_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Black Hoodie_White",
+      "fileName": "Lotto Ticket_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Business_Black",
+      "fileName": "Lotto Ticket_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Business_Blue",
+      "fileName": "Lotto Ticket_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Business_Diamond",
+      "fileName": "Lotto Ticket_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Business_Gold",
+      "fileName": "Lotto Ticket_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Business_Sun Kissed",
+      "fileName": "Lotto Ticket_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Business_Tan",
+      "fileName": "Lotto Ticket_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Business_Translucent",
+      "fileName": "Lotto Ticket_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Business_White",
+      "fileName": "Lotto Ticket_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Doctor Coat_Black",
+      "fileName": "Lotto Ticket_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Doctor Coat_Blue",
+      "fileName": "Lotto Ticket_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Doctor Coat_Diamond",
+      "fileName": "Lotto Ticket_Doctor Coat_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Doctor Coat_Gold",
+      "fileName": "Lotto Ticket_Doctor Coat_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Doctor Coat_Sun Kissed",
+      "fileName": "Lotto Ticket_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Doctor Coat_Tan",
+      "fileName": "Lotto Ticket_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Doctor Coat_Translucent",
+      "fileName": "Lotto Ticket_Doctor Coat_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Doctor Coat_White",
+      "fileName": "Lotto Ticket_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Space Suit",
+      "fileName": "Lotto Ticket_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Superhero Suit",
+      "fileName": "Lotto Ticket_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Top Gun Military Uniform_Black",
+      "fileName": "Lotto Ticket_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Top Gun Military Uniform_Blue",
+      "fileName": "Lotto Ticket_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Top Gun Military Uniform_Diamond",
+      "fileName": "Lotto Ticket_Top Gun Military Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Top Gun Military Uniform_Gold",
+      "fileName": "Lotto Ticket_Top Gun Military Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Lotto Ticket_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Top Gun Military Uniform_Tan",
+      "fileName": "Lotto Ticket_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Top Gun Military Uniform_Translucent",
+      "fileName": "Lotto Ticket_Top Gun Military Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lotto Ticket_Top Gun Military Uniform_White",
+      "fileName": "Lotto Ticket_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Base_Black",
+      "fileName": "Newspaper_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Base_Blue",
+      "fileName": "Newspaper_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Base_Diamond",
+      "fileName": "Newspaper_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Base_Ghost",
+      "fileName": "Newspaper_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Base_Gold",
+      "fileName": "Newspaper_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Base_Sun Kissed",
+      "fileName": "Newspaper_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Base_Tan",
+      "fileName": "Newspaper_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Base_Translucent",
+      "fileName": "Newspaper_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Base_White",
+      "fileName": "Newspaper_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Black Hoodie_Black",
+      "fileName": "Newspaper_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Black Hoodie_Blue",
+      "fileName": "Newspaper_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Black Hoodie_Diamond",
+      "fileName": "Newspaper_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Black Hoodie_Gold",
+      "fileName": "Newspaper_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Black Hoodie_Sun Kissed",
+      "fileName": "Newspaper_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Black Hoodie_Tan",
+      "fileName": "Newspaper_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Black Hoodie_Translucent",
+      "fileName": "Newspaper_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Black Hoodie_White",
+      "fileName": "Newspaper_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Business_Black",
+      "fileName": "Newspaper_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Business_Blue",
+      "fileName": "Newspaper_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Business_Diamond",
+      "fileName": "Newspaper_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Business_Gold",
+      "fileName": "Newspaper_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Business_Sun Kissed",
+      "fileName": "Newspaper_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Business_Tan",
+      "fileName": "Newspaper_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Business_Translucent",
+      "fileName": "Newspaper_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Business_White",
+      "fileName": "Newspaper_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Doctor Coat_Black",
+      "fileName": "Newspaper_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Doctor Coat_Blue",
+      "fileName": "Newspaper_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Doctor Coat_Diamond",
+      "fileName": "Newspaper_Doctor Coat_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Doctor Coat_Gold",
+      "fileName": "Newspaper_Doctor Coat_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Doctor Coat_Sun Kissed",
+      "fileName": "Newspaper_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Doctor Coat_Tan",
+      "fileName": "Newspaper_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Doctor Coat_Translucent",
+      "fileName": "Newspaper_Doctor Coat_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Doctor Coat_White",
+      "fileName": "Newspaper_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Space Suit",
+      "fileName": "Newspaper_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Superhero Suit",
+      "fileName": "Newspaper_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Top Gun Military Uniform_Black",
+      "fileName": "Newspaper_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Top Gun Military Uniform_Blue",
+      "fileName": "Newspaper_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Top Gun Military Uniform_Diamond",
+      "fileName": "Newspaper_Top Gun Military Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Top Gun Military Uniform_Gold",
+      "fileName": "Newspaper_Top Gun Military Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Newspaper_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Top Gun Military Uniform_Tan",
+      "fileName": "Newspaper_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Top Gun Military Uniform_Translucent",
+      "fileName": "Newspaper_Top Gun Military Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Newspaper_Top Gun Military Uniform_White",
+      "fileName": "Newspaper_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Base_Black",
+      "fileName": "Ninja star_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Base_Blue",
+      "fileName": "Ninja star_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Base_Sun Kissed",
+      "fileName": "Ninja star_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Base_Tan",
+      "fileName": "Ninja star_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Base_White",
+      "fileName": "Ninja star_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Black Hoodie_Black",
+      "fileName": "Ninja star_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Black Hoodie_Blue",
+      "fileName": "Ninja star_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Black Hoodie_Sun Kissed",
+      "fileName": "Ninja star_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Black Hoodie_Tan",
+      "fileName": "Ninja star_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Black Hoodie_White",
+      "fileName": "Ninja star_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Business Suit_Black",
+      "fileName": "Ninja star_Business Suit_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Business Suit_Blue",
+      "fileName": "Ninja star_Business Suit_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Business Suit_Sun Kissed",
+      "fileName": "Ninja star_Business Suit_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Business Suit_Tan",
+      "fileName": "Ninja star_Business Suit_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Business Suit_White",
+      "fileName": "Ninja star_Business Suit_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Doctor Coat_Black",
+      "fileName": "Ninja star_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Doctor Coat_Blue",
+      "fileName": "Ninja star_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Doctor Coat_Sun Kissed",
+      "fileName": "Ninja star_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Doctor Coat_Tan",
+      "fileName": "Ninja star_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Doctor Coat_White",
+      "fileName": "Ninja star_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Superhero Suit",
+      "fileName": "Ninja star_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Top Gun Military Uniform_Black",
+      "fileName": "Ninja star_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Top Gun Military Uniform_Blue",
+      "fileName": "Ninja star_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Ninja star_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Top Gun Military Uniform_Tan",
+      "fileName": "Ninja star_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ninja star_Top Gun Military Uniform_White",
+      "fileName": "Ninja star_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Base_Black",
+      "fileName": "Poker Chips_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Base_Blue",
+      "fileName": "Poker Chips_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Base_Diamond",
+      "fileName": "Poker Chips_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Base_Ghost",
+      "fileName": "Poker Chips_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Base_Gold",
+      "fileName": "Poker Chips_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Base_Sun Kissed",
+      "fileName": "Poker Chips_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Base_Tan",
+      "fileName": "Poker Chips_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Base_Translucent",
+      "fileName": "Poker Chips_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Base_White",
+      "fileName": "Poker Chips_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Black Hoodie_Black",
+      "fileName": "Poker Chips_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Black Hoodie_Blue",
+      "fileName": "Poker Chips_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Black Hoodie_Diamond",
+      "fileName": "Poker Chips_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Black Hoodie_Gold",
+      "fileName": "Poker Chips_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Black Hoodie_Sun Kissed",
+      "fileName": "Poker Chips_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Black Hoodie_Tan",
+      "fileName": "Poker Chips_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Black Hoodie_Translucent",
+      "fileName": "Poker Chips_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Black Hoodie_White",
+      "fileName": "Poker Chips_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Business_Black",
+      "fileName": "Poker Chips_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Business_Blue",
+      "fileName": "Poker Chips_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Business_Diamond",
+      "fileName": "Poker Chips_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Business_Gold",
+      "fileName": "Poker Chips_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Business_Sun Kissed",
+      "fileName": "Poker Chips_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Business_Tan",
+      "fileName": "Poker Chips_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Business_Translucent",
+      "fileName": "Poker Chips_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Business_White",
+      "fileName": "Poker Chips_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Doctor Coat_Black",
+      "fileName": "Poker Chips_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Doctor Coat_Blue",
+      "fileName": "Poker Chips_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Doctor Coat_Diamond",
+      "fileName": "Poker Chips_Doctor Coat_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Doctor Coat_Gold",
+      "fileName": "Poker Chips_Doctor Coat_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Doctor Coat_Sun Kissed",
+      "fileName": "Poker Chips_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Doctor Coat_Tan",
+      "fileName": "Poker Chips_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Doctor Coat_Translucent",
+      "fileName": "Poker Chips_Doctor Coat_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Doctor Coat_White",
+      "fileName": "Poker Chips_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Space Suit",
+      "fileName": "Poker Chips_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Superhero Suit",
+      "fileName": "Poker Chips_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Top Gun Military Uniform_Black",
+      "fileName": "Poker Chips_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Top Gun Military Uniform_Blue",
+      "fileName": "Poker Chips_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Top Gun Military Uniform_Diamond",
+      "fileName": "Poker Chips_Top Gun Military Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Top Gun Military Uniform_Gold",
+      "fileName": "Poker Chips_Top Gun Military Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Poker Chips_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Top Gun Military Uniform_Tan",
+      "fileName": "Poker Chips_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Top Gun Military Uniform_Translucent",
+      "fileName": "Poker Chips_Top Gun Military Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Chips_Top Gun Military Uniform_White",
+      "fileName": "Poker Chips_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Base_Black",
+      "fileName": "Samurai Sword_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Base_Blue",
+      "fileName": "Samurai Sword_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Base_Sun Kissed",
+      "fileName": "Samurai Sword_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Base_Tan",
+      "fileName": "Samurai Sword_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Base_White",
+      "fileName": "Samurai Sword_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Black Hoodie_Black",
+      "fileName": "Samurai Sword_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Black Hoodie_Blue",
+      "fileName": "Samurai Sword_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Black Hoodie_Sun Kissed",
+      "fileName": "Samurai Sword_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Black Hoodie_Tan",
+      "fileName": "Samurai Sword_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Black Hoodie_White",
+      "fileName": "Samurai Sword_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Business Suit_Black",
+      "fileName": "Samurai Sword_Business Suit_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Business Suit_Blue",
+      "fileName": "Samurai Sword_Business Suit_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Business Suit_Sun Kissed",
+      "fileName": "Samurai Sword_Business Suit_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Business Suit_Tan",
+      "fileName": "Samurai Sword_Business Suit_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Business Suit_White",
+      "fileName": "Samurai Sword_Business Suit_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Doctor Coat_Black",
+      "fileName": "Samurai Sword_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Doctor Coat_Blue",
+      "fileName": "Samurai Sword_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Doctor Coat_Sun Kissed",
+      "fileName": "Samurai Sword_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Doctor Coat_Tan",
+      "fileName": "Samurai Sword_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Doctor Coat_White",
+      "fileName": "Samurai Sword_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Superhero Suit",
+      "fileName": "Samurai Sword_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Top Gun Military Uniform_Black",
+      "fileName": "Samurai Sword_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Top Gun Military Uniform_Blue",
+      "fileName": "Samurai Sword_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Samurai Sword_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Top Gun Military Uniform_Tan",
+      "fileName": "Samurai Sword_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Samurai Sword_Top Gun Military Uniform_White",
+      "fileName": "Samurai Sword_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Base_Black",
+      "fileName": "Shot of Tequlia_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Base_Blue",
+      "fileName": "Shot of Tequlia_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Base_Sun Kissed",
+      "fileName": "Shot of Tequlia_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Base_Tan",
+      "fileName": "Shot of Tequlia_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Base_White",
+      "fileName": "Shot of Tequlia_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Black Hoodie_Black",
+      "fileName": "Shot of Tequlia_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Black Hoodie_Blue",
+      "fileName": "Shot of Tequlia_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Black Hoodie_Sun Kissed",
+      "fileName": "Shot of Tequlia_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Black Hoodie_Tan",
+      "fileName": "Shot of Tequlia_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Black Hoodie_White",
+      "fileName": "Shot of Tequlia_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Business Suit_Black",
+      "fileName": "Shot of Tequlia_Business Suit_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Business Suit_Blue",
+      "fileName": "Shot of Tequlia_Business Suit_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Business Suit_Sun Kissed",
+      "fileName": "Shot of Tequlia_Business Suit_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Business Suit_Tan",
+      "fileName": "Shot of Tequlia_Business Suit_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Business Suit_White",
+      "fileName": "Shot of Tequlia_Business Suit_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Doctor Coat_Black",
+      "fileName": "Shot of Tequlia_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Doctor Coat_Blue",
+      "fileName": "Shot of Tequlia_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Doctor Coat_Sun Kissed",
+      "fileName": "Shot of Tequlia_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Doctor Coat_Tan",
+      "fileName": "Shot of Tequlia_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Doctor Coat_White",
+      "fileName": "Shot of Tequlia_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Superhero Suit",
+      "fileName": "Shot of Tequlia_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Top Gun Military Uniform_Black",
+      "fileName": "Shot of Tequlia_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Top Gun Military Uniform_Blue",
+      "fileName": "Shot of Tequlia_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Shot of Tequlia_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Top Gun Military Uniform_Tan",
+      "fileName": "Shot of Tequlia_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shot of Tequlia_Top Gun Military Uniform_White",
+      "fileName": "Shot of Tequlia_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Base_Black",
+      "fileName": "Tool Box_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Base_Blue",
+      "fileName": "Tool Box_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Base_Diamond",
+      "fileName": "Tool Box_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Base_Ghost",
+      "fileName": "Tool Box_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Base_Gold",
+      "fileName": "Tool Box_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Base_Sun Kissed",
+      "fileName": "Tool Box_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Base_Tan",
+      "fileName": "Tool Box_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Base_Translucent",
+      "fileName": "Tool Box_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Base_White",
+      "fileName": "Tool Box_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Black Hoodie_Black",
+      "fileName": "Tool Box_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Black Hoodie_Blue",
+      "fileName": "Tool Box_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Black Hoodie_Diamond",
+      "fileName": "Tool Box_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Black Hoodie_Gold",
+      "fileName": "Tool Box_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Black Hoodie_Sun Kissed",
+      "fileName": "Tool Box_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Black Hoodie_Tan",
+      "fileName": "Tool Box_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Black Hoodie_Translucent",
+      "fileName": "Tool Box_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Black Hoodie_White",
+      "fileName": "Tool Box_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Business_Black",
+      "fileName": "Tool Box_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Business_Blue",
+      "fileName": "Tool Box_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Business_Diamond",
+      "fileName": "Tool Box_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Business_Gold",
+      "fileName": "Tool Box_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Business_Sun Kissed",
+      "fileName": "Tool Box_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Business_Tan",
+      "fileName": "Tool Box_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Business_Translucent",
+      "fileName": "Tool Box_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Business_White",
+      "fileName": "Tool Box_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Doctor Coat_Black",
+      "fileName": "Tool Box_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Doctor Coat_Blue",
+      "fileName": "Tool Box_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Doctor Coat_Diamond",
+      "fileName": "Tool Box_Doctor Coat_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Doctor Coat_Gold",
+      "fileName": "Tool Box_Doctor Coat_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Doctor Coat_Sun Kissed",
+      "fileName": "Tool Box_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Doctor Coat_Tan",
+      "fileName": "Tool Box_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Doctor Coat_Translucent",
+      "fileName": "Tool Box_Doctor Coat_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Doctor Coat_White",
+      "fileName": "Tool Box_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Space Suit",
+      "fileName": "Tool Box_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Superhero Suit",
+      "fileName": "Tool Box_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Top Gun Military Uniform_Black",
+      "fileName": "Tool Box_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Top Gun Military Uniform_Blue",
+      "fileName": "Tool Box_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Top Gun Military Uniform_Diamond",
+      "fileName": "Tool Box_Top Gun Military Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Top Gun Military Uniform_Gold",
+      "fileName": "Tool Box_Top Gun Military Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "Tool Box_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Top Gun Military Uniform_Tan",
+      "fileName": "Tool Box_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Top Gun Military Uniform_Translucent",
+      "fileName": "Tool Box_Top Gun Military Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tool Box_Top Gun Military Uniform_White",
+      "fileName": "Tool Box_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Base_Black",
+      "fileName": "White Monster_Base_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Base_Blue",
+      "fileName": "White Monster_Base_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Base_Diamond",
+      "fileName": "White Monster_Base_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Base_Ghost",
+      "fileName": "White Monster_Base_Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Base_Gold",
+      "fileName": "White Monster_Base_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Base_Sun Kissed",
+      "fileName": "White Monster_Base_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Base_Tan",
+      "fileName": "White Monster_Base_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Base_Translucent",
+      "fileName": "White Monster_Base_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Base_White",
+      "fileName": "White Monster_Base_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Black Hoodie_Black",
+      "fileName": "White Monster_Black Hoodie_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Black Hoodie_Blue",
+      "fileName": "White Monster_Black Hoodie_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Black Hoodie_Diamond",
+      "fileName": "White Monster_Black Hoodie_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Black Hoodie_Gold",
+      "fileName": "White Monster_Black Hoodie_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Black Hoodie_Sun Kissed",
+      "fileName": "White Monster_Black Hoodie_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Black Hoodie_Tan",
+      "fileName": "White Monster_Black Hoodie_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Black Hoodie_Translucent",
+      "fileName": "White Monster_Black Hoodie_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Black Hoodie_White",
+      "fileName": "White Monster_Black Hoodie_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Business_Black",
+      "fileName": "White Monster_Business_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Business_Blue",
+      "fileName": "White Monster_Business_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Business_Diamond",
+      "fileName": "White Monster_Business_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Business_Gold",
+      "fileName": "White Monster_Business_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Business_Sun Kissed",
+      "fileName": "White Monster_Business_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Business_Tan",
+      "fileName": "White Monster_Business_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Business_Translucent",
+      "fileName": "White Monster_Business_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Business_White",
+      "fileName": "White Monster_Business_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Doctor Coat_Black",
+      "fileName": "White Monster_Doctor Coat_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Doctor Coat_Blue",
+      "fileName": "White Monster_Doctor Coat_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Doctor Coat_Diamond",
+      "fileName": "White Monster_Doctor Coat_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Doctor Coat_Gold",
+      "fileName": "White Monster_Doctor Coat_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Doctor Coat_Sun Kissed",
+      "fileName": "White Monster_Doctor Coat_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Doctor Coat_Tan",
+      "fileName": "White Monster_Doctor Coat_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Doctor Coat_Translucent",
+      "fileName": "White Monster_Doctor Coat_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Doctor Coat_White",
+      "fileName": "White Monster_Doctor Coat_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Space Suit",
+      "fileName": "White Monster_Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Superhero Suit",
+      "fileName": "White Monster_Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Top Gun Military Uniform_Black",
+      "fileName": "White Monster_Top Gun Military Uniform_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Top Gun Military Uniform_Blue",
+      "fileName": "White Monster_Top Gun Military Uniform_Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Top Gun Military Uniform_Diamond",
+      "fileName": "White Monster_Top Gun Military Uniform_Diamond#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Top Gun Military Uniform_Gold",
+      "fileName": "White Monster_Top Gun Military Uniform_Gold#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Top Gun Military Uniform_Sun Kissed",
+      "fileName": "White Monster_Top Gun Military Uniform_Sun Kissed#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Top Gun Military Uniform_Tan",
+      "fileName": "White Monster_Top Gun Military Uniform_Tan#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Top Gun Military Uniform_Translucent",
+      "fileName": "White Monster_Top Gun Military Uniform_Translucent#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Monster_Top Gun Military Uniform_White",
+      "fileName": "White Monster_Top Gun Military Uniform_White#100.png",
+      "rarity": 100
+    }
+  ],
+  "Background": [
+    {
+      "name": "BBQ Pit",
+      "fileName": "BBQ Pit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Base Blue",
+      "fileName": "Base Blue#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Bowling Alley",
+      "fileName": "Bowling Alley#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Casino Slots",
+      "fileName": "Casino Slots#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Classic Car Show",
+      "fileName": "Classic Car Show#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Disco Night",
+      "fileName": "Disco Night#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fire",
+      "fileName": "Fire#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Fishing",
+      "fileName": "Fishing#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Course",
+      "fileName": "Golf Course#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Green Hills",
+      "fileName": "Green Hills#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Green Stock Candles",
+      "fileName": "Green Stock Candles#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ice Storm",
+      "fileName": "Ice Storm#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lawn",
+      "fileName": "Lawn#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Moon",
+      "fileName": "Moon#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "RV Park",
+      "fileName": "RV Park#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Recliner",
+      "fileName": "Recliner#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Rock Concert",
+      "fileName": "Rock Concert#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Top of Mountain",
+      "fileName": "Top of Mountain#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Trippy",
+      "fileName": "Trippy#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Yacht",
+      "fileName": "Yacht#100.png",
+      "rarity": 100
+    }
+  ],
+  "Beard": [
+    {
+      "name": "5'oclock",
+      "fileName": "5'oclock#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Classic Boomer Beard",
+      "fileName": "Classic Boomer Beard#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "French Tickler",
+      "fileName": "French Tickler#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Full Beard",
+      "fileName": "Full Beard#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Gandolf Beard (XL)_Black",
+      "fileName": "Gandolf Beard (XL)_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Gandolf Beard (XL)_Blonde",
+      "fileName": "Gandolf Beard (XL)_Blonde#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Gandolf Beard (XL)_Brown",
+      "fileName": "Gandolf Beard (XL)_Brown#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Gandolf Beard (XL)_Grey",
+      "fileName": "Gandolf Beard (XL)_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Garibaldi_Black",
+      "fileName": "Garibaldi_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Garibaldi_Blonde",
+      "fileName": "Garibaldi_Blonde#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Garibaldi_Brown",
+      "fileName": "Garibaldi_Brown#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Garibaldi_Grey",
+      "fileName": "Garibaldi_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Goetee",
+      "fileName": "Goetee#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Mustache",
+      "fileName": "Mustache#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Mutton Chops",
+      "fileName": "Mutton Chops#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Sensei_Black",
+      "fileName": "Sensei_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Sensei_Blonde",
+      "fileName": "Sensei_Blonde#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Sensei_Brown",
+      "fileName": "Sensei_Brown#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Sensei_Grey",
+      "fileName": "Sensei_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Side Burns",
+      "fileName": "Side Burns#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Soul Patch",
+      "fileName": "Soul Patch#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Squared off full beard_Black",
+      "fileName": "Squared off full beard_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Squared off full beard_Blonde",
+      "fileName": "Squared off full beard_Blonde#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Squared off full beard_Brown",
+      "fileName": "Squared off full beard_Brown#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Squared off full beard_Grey",
+      "fileName": "Squared off full beard_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Van Dyke",
+      "fileName": "Van Dyke#100.png",
+      "rarity": 100
+    }
+  ],
+  "Eyes": [
+    {
+      "name": "Blue Lazer",
+      "fileName": "Blue Lazer#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Closed (Asleep)",
+      "fileName": "Closed (Asleep)#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crypto Maxi (red Glow)",
+      "fileName": "Crypto Maxi (red Glow)#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Glowing Green",
+      "fileName": "Glowing Green#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Gold Glow",
+      "fileName": "Gold Glow#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "None",
+      "fileName": "None#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Red Lazer",
+      "fileName": "Red Lazer#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Reptilian",
+      "fileName": "Reptilian#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Stoned",
+      "fileName": "Stoned#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White",
+      "fileName": "White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Wink",
+      "fileName": "Wink#100.png",
+      "rarity": 100
+    }
+  ],
+  "Glasses": [
+    {
+      "name": "Bionic Eyewear",
+      "fileName": "Bionic Eyewear#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Boomer Shades",
+      "fileName": "Boomer Shades#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Bright Color Pit Vipers",
+      "fileName": "Bright Color Pit Vipers#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Eye patch",
+      "fileName": "Eye patch#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Monical",
+      "fileName": "Monical#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ozzy Osbourne",
+      "fileName": "Ozzy Osbourne#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Snowboard Goggles",
+      "fileName": "Snowboard Goggles#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Sport Shades",
+      "fileName": "Sport Shades#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Thin Club Shades",
+      "fileName": "Thin Club Shades#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Thug Life Glasses",
+      "fileName": "Thug Life Glasses#100.png",
+      "rarity": 100
+    }
+  ],
+  "Hair": [
+    {
+      "name": "Afro_Black",
+      "fileName": "Afro_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Afro_Grey",
+      "fileName": "Afro_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Bald_Black",
+      "fileName": "Bald_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Bald_Grey",
+      "fileName": "Bald_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Bowl Cut_Black",
+      "fileName": "Bowl Cut_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Bowl Cut_Grey",
+      "fileName": "Bowl Cut_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cheetah",
+      "fileName": "Cheetah#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Classic Boomer Balding",
+      "fileName": "Classic Boomer Balding#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Curly_Black",
+      "fileName": "Curly_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Greaser_Black",
+      "fileName": "Greaser_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Greaser_Blonde",
+      "fileName": "Greaser_Blonde#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Greaser_Brown",
+      "fileName": "Greaser_Brown#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Greaser_Grey",
+      "fileName": "Greaser_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grey_Grey",
+      "fileName": "Grey_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Long_Black",
+      "fileName": "Long_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Long_Grey",
+      "fileName": "Long_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Mohawk_Black",
+      "fileName": "Mohawk_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Mohawk_Grey",
+      "fileName": "Mohawk_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Mullet_Black",
+      "fileName": "Mullet_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Mullet_Grey",
+      "fileName": "Mullet_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shaved sides + Pony tail_Black",
+      "fileName": "Shaved sides + Pony tail_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shaved sides + Pony tail_Blonde",
+      "fileName": "Shaved sides + Pony tail_Blonde#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shaved sides + Pony tail_Brown",
+      "fileName": "Shaved sides + Pony tail_Brown#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Shaved sides + Pony tail_Grey",
+      "fileName": "Shaved sides + Pony tail_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Short_Black",
+      "fileName": "Short_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Short_Grey",
+      "fileName": "Short_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Slicked Back_Black",
+      "fileName": "Slicked Back_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Slicked Back_Grey",
+      "fileName": "Slicked Back_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Thick Dreads_Black",
+      "fileName": "Thick Dreads_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Thick Dreads_Blonde",
+      "fileName": "Thick Dreads_Blonde#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Thick Dreads_Brown",
+      "fileName": "Thick Dreads_Brown#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Thick Dreads_Grey",
+      "fileName": "Thick Dreads_Grey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Zoomer Fade_Black",
+      "fileName": "Zoomer Fade_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Zoomer Fade_Blonde",
+      "fileName": "Zoomer Fade_Blonde#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Zoomer Fade_Brown",
+      "fileName": "Zoomer Fade_Brown#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Zoomer Fade_Grey",
+      "fileName": "Zoomer Fade_Grey#100.png",
+      "rarity": 100
+    }
+  ],
+  "Hat": [
+    {
+      "name": "BBQ Chef Hat",
+      "fileName": "BBQ Chef Hat#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Baseball Cap",
+      "fileName": "Baseball Cap#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beanie",
+      "fileName": "Beanie#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Beer Helmet",
+      "fileName": "Beer Helmet#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Captains Hat",
+      "fileName": "Captains Hat#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cartoon Style Bump on Head_White",
+      "fileName": "Cartoon Style Bump on Head_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cowboy Hat",
+      "fileName": "Cowboy Hat#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Crown",
+      "fileName": "Crown#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Visor",
+      "fileName": "Golf Visor#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Halo",
+      "fileName": "Halo#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Helmet",
+      "fileName": "Helmet#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Poker Visor",
+      "fileName": "Poker Visor#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Propeller Hat",
+      "fileName": "Propeller Hat#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Sedge Hat",
+      "fileName": "Sedge Hat#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Sombero",
+      "fileName": "Sombero#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tin Foil",
+      "fileName": "Tin Foil#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Top Hat",
+      "fileName": "Top Hat#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Viking helmet",
+      "fileName": "Viking helmet#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "WW2 helmet",
+      "fileName": "WW2 helmet#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Workout Headband",
+      "fileName": "Workout Headband#100.png",
+      "rarity": 100
+    }
+  ],
+  "Mouth": [
+    {
+      "name": "Big Grin_Black",
+      "fileName": "Big Grin_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Big Grin_White",
+      "fileName": "Big Grin_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Big Tobacco Lip in_Black",
+      "fileName": "Big Tobacco Lip in_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Big Tobacco Lip in_White",
+      "fileName": "Big Tobacco Lip in_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cig_Black",
+      "fileName": "Cig_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cig_White",
+      "fileName": "Cig_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cigar_Black",
+      "fileName": "Cigar_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Cigar_White",
+      "fileName": "Cigar_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Grill_Black",
+      "fileName": "Diamond Grill_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond Grill_White",
+      "fileName": "Diamond Grill_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Exhale Smoke_Black",
+      "fileName": "Exhale Smoke_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Exhale Smoke_Smoke",
+      "fileName": "Exhale Smoke_Smoke#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Exhale Smoke_White",
+      "fileName": "Exhale Smoke_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Gold Tooth Flash_Black",
+      "fileName": "Gold Tooth Flash_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Gold Tooth Flash_White",
+      "fileName": "Gold Tooth Flash_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Gritting Teeth_Black",
+      "fileName": "Gritting Teeth_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Gritting Teeth_White",
+      "fileName": "Gritting Teeth_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Mog_Black",
+      "fileName": "Mog_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Mog_White",
+      "fileName": "Mog_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Pipe_Black",
+      "fileName": "Pipe_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Pipe_White",
+      "fileName": "Pipe_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Smirk_Black",
+      "fileName": "Smirk_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Smirk_White",
+      "fileName": "Smirk_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Snarl_Black",
+      "fileName": "Snarl_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Snarl_White",
+      "fileName": "Snarl_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Toothpick_Black",
+      "fileName": "Toothpick_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Toothpick_White",
+      "fileName": "Toothpick_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Whistling_Black",
+      "fileName": "Whistling_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Whistling_White",
+      "fileName": "Whistling_White#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Wooden Teeth_Black",
+      "fileName": "Wooden Teeth_Black#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Wooden Teeth_White",
+      "fileName": "Wooden Teeth_White#100.png",
+      "rarity": 100
+    }
+  ],
+  "Nose": [
+    {
+      "name": "Black_Large",
+      "fileName": "Black_Large#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Black_Small",
+      "fileName": "Black_Small#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blue_Large",
+      "fileName": "Blue_Large#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blue_Small",
+      "fileName": "Blue_Small#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond_Large",
+      "fileName": "Diamond_Large#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Diamond_Small",
+      "fileName": "Diamond_Small#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Gold_Large",
+      "fileName": "Gold_Large#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Gold_Small",
+      "fileName": "Gold_Small#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Sun Kissed_Large",
+      "fileName": "Sun Kissed_Large#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Sun Kissed_Small",
+      "fileName": "Sun Kissed_Small#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tan_Large",
+      "fileName": "Tan_Large#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tan_Small",
+      "fileName": "Tan_Small#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Translucent_Large",
+      "fileName": "Translucent_Large#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Translucent_Small",
+      "fileName": "Translucent_Small#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White_Large",
+      "fileName": "White_Large#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White_Small",
+      "fileName": "White_Small#100.png",
+      "rarity": 100
+    }
+  ],
+  "Power up": [
+    {
+      "name": "Classic Car Restoration_Badge",
+      "fileName": "Classic Car Restoration_Badge#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Classic Car Restoration_Border_Background",
+      "fileName": "Classic Car Restoration_Border_Background#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Classic Car Restoration_Border_Front",
+      "fileName": "Classic Car Restoration_Border_Front#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "DIY Fix It All_Badge",
+      "fileName": "DIY Fix It All_Badge#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "DIY Fix It All_Border_Background",
+      "fileName": "DIY Fix It All_Border_Background#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "DIY Fix It All_Border_Front",
+      "fileName": "DIY Fix It All_Border_Front#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill God_Badge",
+      "fileName": "Grill God_Badge#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Grill God_Border_Front",
+      "fileName": "Grill God_Border_Front#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Instant Sleeper_Badge",
+      "fileName": "Instant Sleeper_Badge#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Instant Sleeper_Border_Background",
+      "fileName": "Instant Sleeper_Border_Background#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Instant Sleeper_Border_Front",
+      "fileName": "Instant Sleeper_Border_Front#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lawn Expert_Badge",
+      "fileName": "Lawn Expert_Badge#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lawn Expert_Border_Background",
+      "fileName": "Lawn Expert_Border_Background#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Lawn Expert_Border_Front",
+      "fileName": "Lawn Expert_Border_Front#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "News Rant_Badge",
+      "fileName": "News Rant_Badge#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "News Rant_Border_Background",
+      "fileName": "News Rant_Border_Background#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "News Rant_Border_Front",
+      "fileName": "News Rant_Border_Front#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "PGA Pro_Badge",
+      "fileName": "PGA Pro_Badge#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "PGA Pro_Border_Background",
+      "fileName": "PGA Pro_Border_Background#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "PGA Pro_Border_Front",
+      "fileName": "PGA Pro_Border_Front#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Real Estate Mogul_Badge",
+      "fileName": "Real Estate Mogul_Badge#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Real Estate Mogul_Border_Front",
+      "fileName": "Real Estate Mogul_Border_Front#100.png",
+      "rarity": 100
+    }
+  ],
+  "Shirt": [
+    {
+      "name": "BBQ Apron",
+      "fileName": "BBQ Apron#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Back in my day t shirt",
+      "fileName": "Back in my day t shirt#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Black Hoody",
+      "fileName": "Black Hoody#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Black Tee",
+      "fileName": "Black Tee#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Blue Basketball Jersey",
+      "fileName": "Blue Basketball Jersey#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Business Suit",
+      "fileName": "Business Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Doctor Coat (white)",
+      "fileName": "Doctor Coat (white)#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Golf Polo",
+      "fileName": "Golf Polo#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Handyman",
+      "fileName": "Handyman#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Hawaiian Shirt",
+      "fileName": "Hawaiian Shirt#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Knights Armor",
+      "fileName": "Knights Armor#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ladies Night Leopard",
+      "fileName": "Ladies Night Leopard#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Mexican Poncho (no shirt underneath)",
+      "fileName": "Mexican Poncho (no shirt underneath)#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Space Suit",
+      "fileName": "Space Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Straight Jacket",
+      "fileName": "Straight Jacket#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Superhero Suit",
+      "fileName": "Superhero Suit#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Top Gun Miltary Uniform",
+      "fileName": "Top Gun Miltary Uniform#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tracksuit (orange)",
+      "fileName": "Tracksuit (orange)#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tuxedo Print T Shirt",
+      "fileName": "Tuxedo Print T Shirt#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tuxedo T Shirt",
+      "fileName": "Tuxedo T Shirt#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Tuxedo",
+      "fileName": "Tuxedo#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White TankTop",
+      "fileName": "White TankTop#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "White Tee",
+      "fileName": "White Tee#100.png",
+      "rarity": 100
+    }
+  ],
+  "Skin": [
+    {
+      "name": "Alien",
+      "fileName": "Alien#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Black",
+      "fileName": "Black#20.png",
+      "rarity": 20
+    },
+    {
+      "name": "Blue",
+      "fileName": "Blue#10.png",
+      "rarity": 10
+    },
+    {
+      "name": "Diamond",
+      "fileName": "Diamond#5.png",
+      "rarity": 5
+    },
+    {
+      "name": "Ghost",
+      "fileName": "Ghost#6.png",
+      "rarity": 6
+    },
+    {
+      "name": "Gold",
+      "fileName": "Gold#8.png",
+      "rarity": 8
+    },
+    {
+      "name": "Sun Kissed",
+      "fileName": "Sun Kissed#20.png",
+      "rarity": 20
+    },
+    {
+      "name": "Tan",
+      "fileName": "Tan#20.png",
+      "rarity": 20
+    },
+    {
+      "name": "Translucent",
+      "fileName": "Translucent#5.png",
+      "rarity": 5
+    },
+    {
+      "name": "White",
+      "fileName": "White#30.png",
+      "rarity": 30
+    }
+  ],
+  "Type": [
+    {
+      "name": "Astronaut",
+      "fileName": "Astronaut#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Ghost",
+      "fileName": "Ghost#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Human",
+      "fileName": "Human#100.png",
+      "rarity": 100
+    },
+    {
+      "name": "Superhero",
+      "fileName": "Superhero#100.png",
+      "rarity": 100
+    }
+  ]
+}
