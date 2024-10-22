@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rarities</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset CSS */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Dark Theme Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            padding: 10px; /* Reduced from 20px */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px; /* Reduced from 30px */
+            color: #ffffff;
+            font-size: 1.8rem; /* Slightly smaller font */
+        }
+
+        /* Search and Filter Section */
+        .search-filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px; /* Reduced gap from 10px */
+            margin-bottom: 15px; /* Reduced margin from 20px */
+        }
+
+        .search-filter input,
+        .search-filter select,
+        .search-filter button {
+            padding: 10px 14px; /* Increased padding for better usability */
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-size: 1rem; /* Increased font size */
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        .search-filter input:focus,
+        .search-filter select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .search-filter button {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem; /* Increased font size */
+        }
+
+        .search-filter button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Select All Container */
+        #select-all-container {
+            margin: 8px 0; /* Reduced margin from 10px */
+            text-align: center;
+            display: none; /* Hidden by default */
+        }
+
+        #select-all-container label {
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        #select-all-checkbox {
+            margin-right: 8px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        /* Bulk Actions */
+        .bulk-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px; /* Reduced gap from 10px */
+            margin: 15px 0; /* Reduced margin from 20px */
+        }
+
+        .bulk-actions button,
+        .bulk-actions input {
+            padding: 10px 16px; /* Increased padding for better usability */
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem; /* Increased font size */
+            cursor: pointer;
+            transition: background-color 0.3s;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            width: auto; /* Allow buttons to adjust based on content */
+        }
+
+        .bulk-actions button:hover,
+        .bulk-actions input:hover {
+            background-color: #333333;
+        }
+
+        .bulk-actions button#bulk-copy-prev {
+            background-color: #e67e22;
+        }
+
+        .bulk-actions button#bulk-copy-prev:hover {
+            background-color: #cf711f;
+        }
+
+        #bulk-custom-value {
+            width: 120px; /* Increased width for better usability */
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            padding: 8px; /* Increased padding */
+            font-size: 1rem; /* Increased font size */
+        }
+
+        /* Category Section */
+        .category {
+            margin-bottom: 40px;
+        }
+
+        .category h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px; /* Reduced padding from 10px */
+            margin-bottom: 15px; /* Reduced margin from 20px */
+            color: #ffffff;
+            font-size: 1.5rem; /* Slightly smaller font */
+        }
+
+        /* Traits Grid */
+        .traits {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px; /* Reduced gap from 20px */
+        }
+       
+        .trait {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 15px; /* Increased padding for better spacing */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Subtle shadow */
+            transition: transform 0.2s, box-shadow 0.2s; /* Smoother transition */
+            position: relative;
+            /* Dynamic glow will be applied via JavaScript */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .trait:hover {
+            transform: translateY(-3px); /* Reduced translate */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5); /* Slightly reduced shadow */
+        }
+
+        .trait img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 8px; /* Reduced margin from 10px */
+        }
+
+        .rarity {
+            margin-top: 10px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Increased gap for better spacing */
+            font-size: 1rem; /* Increased font size */
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .rarity-label {
+            width: 100%;
+        }
+
+        .rarity input[type="number"] {
+            width: 60px; /* Adjusted width */
+            padding: 6px; /* Increased padding */
+            border: 1px solid #333;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+            transition: border-color 0.3s;
+            font-size: 1rem; /* Increased font size */
+        }
+
+        .rarity input[type="number"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .rarity input[type="range"] {
+            width: 100%;
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 8px;
+            border-radius: 5px;
+            background: #555;
+            outline: none;
+            transition: background 0.3s;
+        }
+
+        .rarity input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3498db;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .rarity input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3498db;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .rarity input[type="range"]:hover {
+            background: #666;
+        }
+
+        .name {
+            margin-top: 10px;
+            font-size: .7rem; /* Slightly smaller font */
+            font-weight: 500;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .edited-badge {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 4px 8px; /* Increased padding */
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+        .buttons {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px; /* Increased gap from 3px */
+            justify-content: center;
+            width: 100%;
+        }
+
+        .buttons button {
+            background-color: #f1c40f;
+            color: #fff;
+            border: none;
+            padding: 10px 14px; /* Increased padding */
+            border-radius: 5px;
+            font-size: 1rem; /* Increased font size */
+            cursor: pointer;
+            transition: background-color 0.3s;
+            flex: 1 1 auto;
+        }
+
+        .buttons button:hover {
+            background-color: #d4ac0d;
+        }
+
+        .buttons button.copy-previous {
+            background-color: #e67e22;
+        }
+
+        .buttons button.copy-previous:hover {
+            background-color: #cf711f;
+        }
+
+        /* Highlighted Trait */
+        .highlight {
+            border-color: #f39c12;
+            box-shadow: 0 0 10px rgba(243, 156, 18, 0.8);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .search-filter,
+            .bulk-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .bulk-actions input {
+                width: 100%; /* Full width for better stacking */
+            }
+
+            .rarity {
+                align-items: center;
+            }
+        }
+
+        /* Trait Image Container */
+        .trait-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .trait-image-container::before {
+            content: '';
+            display: block;
+            padding-top: 100%; /* 1:1 Aspect Ratio */
+        }
+
+        .trait-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Zoom Overlay */
+        .zoom-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .zoom-overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        /* Sticky Header */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background-color: #1e1e1e;
+            padding: 20px;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Adjust main content to account for sticky header */
+        .main-content {
+            padding-top: 20px;
+        }
+
+        /* Save Changes Button Container */
+        .save-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .save-container button {
+            padding: 10px 20px; /* Increased padding from 8px 16px */
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem; /* Increased font size */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .save-container button:hover {
+            background-color: #27ae60;
+        }
+
+        /* Add these new styles */
+        .select-item {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transform: scale(1.5);
+            z-index: 10;
+            cursor: pointer;
+        }
+    
+        .trait {
+            position: relative; /* Ensure this is set for absolute positioning of the checkmark */
+        }
+    
+        .edited-checkmark {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            color: #2ecc71; /* Green color */
+            font-size: 1.2rem;
+            display: none; /* Hidden by default */
+        }
+        .rarity-container {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+    
+        /* You can remove the .edited-badge styles if they're no longer needed */
+
+        /* New Styles for Copy Icon */
+        .copy-icon {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            fill: #db7f34;
+            transition: fill 0.3s;
+            margin-left: 10px; /* Space between input and icon */
+        }
+
+        .copy-icon:hover {
+            fill: #2980b9;
+        }
+
+        /* Adjust rarity-container to align items */
+        .rarity-container {
+            display: flex;
+            align-items: center;
+            gap: 0px;
+            position: relative;
+        }
+
+        /* Optional: Adjust .buttons if removing the copy button */
+        .buttons {
+            /* If the copy button is removed, adjust spacing as needed */
+        }
+
+        /* Sticky Header Styles for Category */
+        .category-header {
+            position: sticky;
+            top: 0;
+            background-color: #1e1e1e;
+            padding: 10px;
+            z-index: 99999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .category-header h2 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+
+        .category-stats {
+            color: #e0e0e0;
+            font-size: 1rem;
+        }
+
+        /* Optional: Ensure the main-content has some padding-top to prevent overlap */
+        .main-content {
+            padding-top: 20px;
+        }
+
+        .search-accessory-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .search-accessory-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    
+    <!-- Additional HTML Head Elements if any -->
+</head>
+<body>
+    <div class="sticky-header">
+        <h1>Rarity Editor</h1>
+        <div class="search-filter">
+            <input type="text" id="search-input" placeholder="Search..." />
+            <select id="category-filter">
+                <option value="All">All</option>
+                <% for(let category in layers) { %>
+                    <option value="<%= category %>"><%= category %></option>
+                <% } %>
+            </select>
+            <input type="number" id="rarity-min" placeholder="Min" min="1" max="100" />
+            <input type="number" id="rarity-max" placeholder="Max" min="1" max="100" />
+            <button id="filter-button">Filter</button>
+            <button id="reset-filter-button">Reset</button>
+        </div>
+
+        <!-- Select All Container -->
+        <div id="select-all-container">
+            <input type="checkbox" id="select-all-checkbox" />
+            <label for="select-all-checkbox">Select All</label>
+        </div>
+
+        <!-- Bulk Actions -->
+        <div class="bulk-actions">
+            <button id="bulk-set-10">Set 10</button>
+            <button id="bulk-set-20">Set 20</button>
+            <button id="bulk-set-50">Set 50</button>
+            <button id="bulk-set-100">Set 100</button>
+            <button id="bulk-copy-prev">Copy Prev</button>
+            <input type="number" id="bulk-custom-value" placeholder="Custom" min="1" max="100" />
+            <button id="bulk-set-custom">Apply</button>
+        </div>
+
+        <!-- Save Changes Button -->
+        <div class="save-container">
+            <button id="save-changes-button">Save</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- Categories and Traits -->
+        <% for(let category in layers) { 
+            const numItems = layers[category].length;
+            const totalRarity = layers[category].reduce((sum, trait) => sum + (trait.rarity || 100), 0);
+        %>
+            <div class="category" data-category="<%= category %>">
+                <div class="category-header">
+                    <h2><%= category %></h2>
+                    <div class="category-stats">
+                        <span><%= numItems %> items</span> | 
+                        <span>Total Rarity: <span class="total-rarity"><%= totalRarity %></span></span>
+                    </div>
+                </div>
+                <div class="traits" id="traits-<%= category %>">
+                    <% layers[category].forEach((trait, index) => { %>
+                        <div class="trait" data-name="<%= trait.name %>" data-rarity="<%= trait.rarity || 100 %>" data-category="<%= category %>">
+                            <input type="checkbox" class="select-item" />
+                            <div class="trait-image-container">
+                                <img src="/comp_layers/<%= category %>/<%= trait.fileName %>" alt="<%= trait.name %>" class="trait-image">
+                            </div>
+                            <div class="rarity">
+                                <div class="rarity-container">
+                                    <label class="rarity-label">Rarity:</label>
+                                    <input 
+                                        type="number" 
+                                        min="1" 
+                                        max="100" 
+                                        value="<%= trait.rarity || 100 %>" 
+                                        class="rarity-input" 
+                                        data-category="<%= category %>" 
+                                        data-index="<%= index %>"
+                                        data-original-rarity="<%= trait.rarity || 100 %>"
+                                    >
+                                    <!-- Copy Icon -->
+                                    <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Copy Previous Rarity" role="button" tabindex="0">
+                                        <title>Copy Previous Rarity</title>
+                                        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
+                                    </svg>
+                                    <% if (category === 'Accessories') { %>
+                                        <!-- Search Button (only for Accessory category) -->
+                                        <button class="search-accessory-button" title="Search Accessory">🔍</button>
+                                    <% } %>
+                                </div>
+                                <input 
+                                    type="range" 
+                                    min="1" 
+                                    max="100" 
+                                    value="<%= trait.rarity || 100 %>" 
+                                    class="rarity-slider" 
+                                    data-category="<%= category %>" 
+                                    data-index="<%= index %>"
+                                >
+                            </div>
+                            <div class="name"><%= trait.name %></div>
+                            <div class="buttons">
+                                <!-- Removed the copy-previous button -->
+                            </div>
+                            <span class="edited-checkmark" style="display: <%= trait.edited ? 'block' : 'none' %>;">✓</span>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <!-- Zoom Overlay -->
+    <div class="zoom-overlay">
+        <img src="" alt="Zoomed Image">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const setValueButtons = document.querySelectorAll('.set-value');
+            const filterButton = document.getElementById('filter-button');
+            const resetFilterButton = document.getElementById('reset-filter-button');
+            const searchInput = document.getElementById('search-input');
+            const categoryFilter = document.getElementById('category-filter');
+            const rarityMin = document.getElementById('rarity-min');
+            const rarityMax = document.getElementById('rarity-max');
+            const bulkSetButtons = {
+                '10': document.getElementById('bulk-set-10'),
+                '20': document.getElementById('bulk-set-20'),
+                '50': document.getElementById('bulk-set-50'),
+                '100': document.getElementById('bulk-set-100')
+            };
+            const bulkCopyPrevButton = document.getElementById('bulk-copy-prev');
+            const selectAllContainer = document.getElementById('select-all-container');
+            const selectAllCheckbox = document.getElementById('select-all-checkbox');
+            const bulkCustomValue = document.getElementById('bulk-custom-value');
+            const bulkSetCustom = document.getElementById('bulk-set-custom');
+            const saveChangesButton = document.getElementById('save-changes-button');
+
+            // Function to map rarity to color (1-100) with continuous variance
+            function getColorByRarity(rarity) {
+                // Map rarity (1-100) to hue (0-240)
+                // 1 => Red (0), 100 => Blue (240)
+                const hue = (rarity - 1) * (240 / 99); // Ensure hue spans 0 to 240
+                return `hsla(${hue}, 100%, 50%, 0.6)`;
+            }
+
+            // Apply color glow based on rarity
+            const traits = document.querySelectorAll('.trait');
+            traits.forEach(trait => {
+                const rarity = parseInt(trait.getAttribute('data-rarity'), 10);
+                const color = getColorByRarity(rarity);
+                trait.style.boxShadow = `0 0 4px ${color}`;
+            });
+            
+            // Function to update glow based on rarity
+            function updateGlow(traitDiv, rarity) {
+                const color = getColorByRarity(rarity);
+                traitDiv.style.boxShadow = `0 0 4px ${color}`;
+            }
+
+            const editedTraits = new Set();
+
+            function markTraitAsEdited(traitDiv) {
+                const category = traitDiv.getAttribute('data-category');
+                const name = traitDiv.getAttribute('data-name');
+                editedTraits.add(`${category}-${name}`);
+                
+                const checkmark = traitDiv.querySelector('.edited-checkmark');
+                if (checkmark) {
+                    checkmark.style.display = 'block';
+                }
+            }
+
+            function unmarkTraitIfUnchanged(category, name, originalRarity, currentRarity) {
+                if (originalRarity === currentRarity) {
+                    editedTraits.delete(`${category}-${name}`);
+                    const traitDiv = document.querySelector(`.trait[data-category="${category}"][data-name="${name}"]`);
+                    if (traitDiv) {
+                        const checkmark = traitDiv.querySelector('.edited-checkmark');
+                        if (checkmark) {
+                            checkmark.style.display = 'none';
+                        }
+                    }
+                }
+            }
+
+            function updateTraitRarity(traitDiv, newRarity) {
+                console.log('updateTraitRarity called for', traitDiv.getAttribute('data-name'), 'with value', newRarity);
+                const input = traitDiv.querySelector('.rarity-input');
+                const originalRarity = parseInt(input.getAttribute('data-original-rarity'), 10);
+
+                input.value = newRarity;
+                const slider = traitDiv.querySelector('.rarity-slider');
+                slider.value = newRarity;
+                traitDiv.setAttribute('data-rarity', newRarity);
+                updateGlow(traitDiv, newRarity);
+
+                if (newRarity !== originalRarity) {
+                    markTraitAsEdited(traitDiv);
+                } else {
+                    const category = traitDiv.getAttribute('data-category');
+                    const name = traitDiv.getAttribute('data-name');
+                    unmarkTraitIfUnchanged(category, name, originalRarity, newRarity);
+                }
+
+                // Update total rarity
+                const category = traitDiv.getAttribute('data-category');
+                updateCategoryTotalRarity(category);
+            }
+
+            // Function to update the total rarity displayed for a category
+            function updateCategoryTotalRarity(category) {
+                const categoryDiv = document.querySelector(`.category[data-category="${category}"]`);
+                const totalRaritySpan = categoryDiv.querySelector('.total-rarity');
+                const traits = categoryDiv.querySelectorAll('.trait');
+                let totalRarity = 0;
+                traits.forEach(trait => {
+                    const rarity = parseInt(trait.getAttribute('data-rarity'), 10);
+                    totalRarity += rarity;
+                });
+                totalRaritySpan.textContent = totalRarity;
+            }
+
+            // Synchronize slider and number input
+            document.querySelectorAll('.rarity-slider').forEach(slider => {
+                slider.addEventListener('input', function() {
+                    const traitDiv = this.closest('.trait');
+                    const numberInput = traitDiv.querySelector('.rarity-input');
+                    numberInput.value = this.value;
+                    const newRarity = parseInt(this.value, 10);
+                    traitDiv.setAttribute('data-rarity', newRarity);
+                    updateGlow(traitDiv, newRarity);
+
+                    const category = traitDiv.getAttribute('data-category');
+                    const name = traitDiv.getAttribute('data-name');
+                    const originalRarity = parseInt(numberInput.getAttribute('data-original-rarity'), 10);
+
+                    if (newRarity !== originalRarity) {
+                        markTraitAsEdited(traitDiv);
+                    } else {
+                        unmarkTraitIfUnchanged(category, name, originalRarity, newRarity);
+                    }
+
+                    // Update total rarity
+                    updateCategoryTotalRarity(category);
+                });
+            });
+
+            // Update event listeners for rarity inputs
+            document.querySelectorAll('.rarity-input').forEach(input => {
+                input.addEventListener('change', function() {
+                    const traitDiv = this.closest('.trait');
+                    const newRarity = parseInt(this.value, 10);
+                    const slider = traitDiv.querySelector('.rarity-slider');
+                    slider.value = newRarity;
+                    traitDiv.setAttribute('data-rarity', newRarity);
+                    updateGlow(traitDiv, newRarity);
+
+                    const category = this.getAttribute('data-category');
+                    const name = traitDiv.getAttribute('data-name');
+                    const originalRarity = parseInt(this.getAttribute('data-original-rarity'), 10);
+
+                    if (newRarity !== originalRarity) {
+                        markTraitAsEdited(traitDiv);
+                    } else {
+                        unmarkTraitIfUnchanged(category, name, originalRarity, newRarity);
+                    }
+
+                    // Update total rarity
+                    updateCategoryTotalRarity(category);
+                });
+            });
+
+            // Update set value buttons
+            document.querySelectorAll('.set-value').forEach(button => {
+                button.addEventListener('click', function() {
+                    const traitDiv = this.closest('.trait');
+                    const value = parseInt(this.getAttribute('data-value'), 10);
+                    updateTraitRarity(traitDiv, value);
+                });
+            });
+
+            // Update copy previous buttons
+            // (Now replaced by copy icons)
+            // Remove any existing event listeners or retain the existing code
+
+            // Update bulk actions
+            function updateBulkTraits(value) {
+                const selectedTraits = document.querySelectorAll('.select-item:checked');
+                console.log('Selected traits:', selectedTraits.length);
+                
+                if (selectedTraits.length === 0) {
+                    alert('No items selected for bulk action.');
+                    return;
+                }
+                
+                selectedTraits.forEach(checkbox => {
+                    const traitDiv = checkbox.closest('.trait');
+                    console.log('Updating trait:', traitDiv.getAttribute('data-name'));
+                    updateTraitRarity(traitDiv, value);
+                });
+            }
+
+            // Bulk Set Functionality
+            Object.keys(bulkSetButtons).forEach(value => {
+                bulkSetButtons[value].addEventListener('click', () => {
+                    console.log('Bulk set button clicked:', value);
+                    const bulkValue = parseInt(value, 10);
+                    updateBulkTraits(bulkValue);
+                });
+            });
+
+            // Bulk Copy Previous
+            bulkCopyPrevButton.addEventListener('click', () => {
+                const selectedTraits = Array.from(document.querySelectorAll('.select-item:checked'));
+                if (selectedTraits.length === 0) {
+                    alert('No items selected for bulk action.');
+                    return;
+                }
+                selectedTraits.forEach((checkbox, index) => {
+                    const traitDiv = checkbox.closest('.trait');
+                    if (index > 0) {
+                        const previousTraitDiv = selectedTraits[index - 1].closest('.trait');
+                        const previousValue = parseInt(previousTraitDiv.querySelector('.rarity-input').value, 10);
+                        updateTraitRarity(traitDiv, previousValue);
+                    }
+                });
+            });
+
+            // Custom Bulk Set
+            bulkSetCustom.addEventListener('click', () => {
+                console.log('Custom bulk set button clicked');
+                const customValue = parseInt(bulkCustomValue.value);
+                if (isNaN(customValue) || customValue < 1 || customValue > 100) {
+                    alert('Please enter a valid number between 1 and 100.');
+                    return;
+                }
+                updateBulkTraits(customValue);
+            });
+
+            // Save Changes Functionality
+            saveChangesButton.addEventListener('click', () => {
+                if (editedTraits.size === 0) {
+                    alert('No changes to save.');
+                    return;
+                }
+
+                const traitsToUpdate = Array.from(editedTraits).map(key => {
+                    const [category, name] = key.split('-');
+                    const traitDiv = document.querySelector(`.trait[data-category="${category}"][data-name="${name}"]`);
+                    return {
+                        category,
+                        name,
+                        rarity: parseInt(traitDiv.querySelector('.rarity-input').value, 10)
+                    };
+                });
+
+                fetch('/update-rarities', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ traits: traitsToUpdate }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message) {
+                        alert(data.message);
+                        
+                        // Update original rarity values and total rarity
+                        traitsToUpdate.forEach(trait => {
+                            const traitDiv = document.querySelector(`.trait[data-category="${trait.category}"][data-name="${trait.name}"]`);
+                            if (traitDiv) {
+                                const input = traitDiv.querySelector('.rarity-input');
+                                input.setAttribute('data-original-rarity', trait.rarity);
+                                
+                                // Ensure the edited badge is visible
+                                const badge = traitDiv.querySelector('.edited-badge');
+                                if (badge) {
+                                    badge.style.display = 'inline-block';
+                                }
+
+                                // Update total rarity
+                                updateCategoryTotalRarity(trait.category);
+                            }
+                        });
+
+                        // Don't clear editedTraits here, keep the tracking
+                    }
+                })
+                .catch(error => {
+                    console.error('Error updating rarities:', error);
+                    alert('An error occurred while saving changes.');
+                });
+            });
+
+            // Search and Filter Functionality
+            filterButton.addEventListener('click', () => {
+                const query = searchInput.value.toLowerCase();
+                const selectedCategory = categoryFilter.value;
+                const minRarity = parseInt(rarityMin.value) || 1;
+                const maxRarity = parseInt(rarityMax.value) || 100;
+
+                const traits = document.querySelectorAll('.trait');
+                let visibleCount = 0;
+                let isFiltered = false;
+
+                traits.forEach(trait => {
+                    const name = trait.getAttribute('data-name').toLowerCase();
+                    const category = trait.closest('.category').getAttribute('data-category');
+                    const rarity = parseInt(trait.getAttribute('data-rarity'), 10);
+
+                    let matches = true;
+
+                    // Filter by name
+                    if (query && !name.includes(query)) {
+                        matches = false;
+                    }
+
+                    // Filter by category
+                    if (selectedCategory !== 'All' && category !== selectedCategory) {
+                        matches = false;
+                    }
+
+                    // Filter by rarity range
+                    if (rarity < minRarity || rarity > maxRarity) {
+                        matches = false;
+                    }
+
+                    if (matches) {
+                        trait.style.display = 'flex';
+                        trait.classList.add('highlight');
+                        visibleCount++;
+                    } else {
+                        trait.style.display = 'none';
+                        trait.classList.remove('highlight');
+                        isFiltered = true;
+                    }
+                });
+
+                // Show/hide select all checkbox based on filter status
+                if (isFiltered && visibleCount > 0) {
+                    selectAllContainer.style.display = 'block';
+                    selectAllCheckbox.checked = false;
+                } else {
+                    selectAllContainer.style.display = 'none';
+                }
+            });
+
+            // Reset Filters
+            resetFilterButton.addEventListener('click', () => {
+                searchInput.value = '';
+                categoryFilter.value = 'All';
+                rarityMin.value = '';
+                rarityMax.value = '';
+
+                const traits = document.querySelectorAll('.trait');
+                traits.forEach(trait => {
+                    trait.style.display = 'flex';
+                    trait.classList.remove('highlight');
+                });
+                // unselect all items
+                document.querySelectorAll('.select-item').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+
+                // Hide select all container
+                selectAllContainer.style.display = 'none';
+            });
+            
+            // Add event listener for custom bulk set
+            bulkSetCustom.addEventListener('click', () => {
+                const customValue = parseInt(bulkCustomValue.value);
+                if (isNaN(customValue) || customValue < 1 || customValue > 100) {
+                    alert('Please enter a valid number between 1 and 100.');
+                    return;
+                }
+                
+                const selectedTraits = document.querySelectorAll('.select-item:checked');
+                if (selectedTraits.length === 0) {
+                    alert('No items selected for bulk action.');
+                    return;
+                }
+                
+                selectedTraits.forEach(checkbox => {
+                    const traitDiv = checkbox.closest('.trait');
+                    const input = traitDiv.querySelector('.rarity-input');
+                    const category = input.getAttribute('data-category');
+                    const name = traitDiv.getAttribute('data-name');
+                    const originalRarity = parseInt(input.getAttribute('data-original-rarity') || input.value, 10);
+
+                    updateTraitRarity(traitDiv, customValue);
+
+                    // Unmark if unchanged
+                    unmarkTraitIfUnchanged(category, name, originalRarity, customValue);
+                });
+            });
+
+            // Bulk Set Functionality
+            Object.keys(bulkSetButtons).forEach(value => {
+                bulkSetButtons[value].addEventListener('click', () => {
+                    const bulkValue = parseInt(value, 10);
+                    updateBulkTraits(bulkValue);
+                });
+            });
+
+            // Bulk Copy Previous
+            bulkCopyPrevButton.addEventListener('click', () => {
+                const selectedTraits = document.querySelectorAll('.select-item:checked');
+                if (selectedTraits.length === 0) {
+                    alert('No items selected for bulk action.');
+                    return;
+                }
+                selectedTraits.forEach((checkbox, index) => {
+                    const traitDiv = checkbox.closest('.trait');
+                    if (index > 0) {
+                        const previousCheckbox = selectedTraits[index - 1];
+                        const previousTraitDiv = previousCheckbox.closest('.trait');
+                        const previousValue = parseInt(previousTraitDiv.querySelector('.rarity-input').value, 10);
+                        updateTraitRarity(traitDiv, previousValue);
+                    }
+                });
+            });
+
+            // Add Select All functionality
+            selectAllCheckbox.addEventListener('change', () => {
+                const visibleTraits = document.querySelectorAll('.trait:not([style*="display: none"]) .select-item');
+                visibleTraits.forEach(checkbox => {
+                    checkbox.checked = selectAllCheckbox.checked;
+                });
+            });
+            
+            // Image Zoom Functionality
+            const traitImages = document.querySelectorAll('.trait-image');
+            const zoomOverlay = document.querySelector('.zoom-overlay');
+            const zoomOverlayImg = zoomOverlay.querySelector('img');
+
+            traitImages.forEach(img => {
+                const container = img.closest('.trait-image-container');
+
+                container.addEventListener('click', () => {
+                    zoomOverlayImg.src = img.src;
+                    zoomOverlay.style.display = 'flex';
+                });
+
+                container.addEventListener('mousemove', (e) => {
+                    const { left, top, width, height } = container.getBoundingClientRect();
+                    const x = (e.clientX - left) / width;
+                    const y = (e.clientY - top) / height;
+
+                    const zoomLevel = 2.5;
+                    const xOffset = (0.5 - x) * 100;
+                    const yOffset = (0.5 - y) * 100;
+
+                    img.style.transformOrigin = `${x * 100}% ${y * 100}%`;
+                    img.style.transform = `scale(${zoomLevel}) translate(${xOffset}px, ${yOffset}px)`;
+                });
+
+                container.addEventListener('mouseleave', () => {
+                    img.style.transform = 'scale(1) translate(0, 0)';
+                });
+            });
+
+            zoomOverlay.addEventListener('click', () => {
+                zoomOverlay.style.display = 'none';
+            });
+
+            // Add event listeners for the new copy icons
+            const copyIcons = document.querySelectorAll('.copy-icon');
+            copyIcons.forEach(icon => {
+                icon.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Prevent triggering other click events
+                    const traitDiv = this.closest('.trait');
+                    const category = traitDiv.getAttribute('data-category');
+                    const index = parseInt(traitDiv.querySelector('.rarity-input').getAttribute('data-index'), 10);
+                    
+                    if (index > 0) {
+                        const previousTraitDiv = traitDiv.parentElement.children[index - 1];
+                        const previousValue = parseInt(previousTraitDiv.querySelector('.rarity-input').value, 10);
+                        updateTraitRarity(traitDiv, previousValue);
+                    } else {
+                        alert(`No previous trait to copy from for "${traitDiv.getAttribute('data-name')}".`);
+                    }
+                });
+            });
+
+            // Add event listeners for the new search accessory buttons
+            const searchAccessoryButtons = document.querySelectorAll('.search-accessory-button');
+            searchAccessoryButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Prevent triggering other click events
+                    const traitDiv = this.closest('.trait');
+                    const traitName = traitDiv.getAttribute('data-name');
+                    const searchTerm = traitName.split('_')[0]; // Get the first part of the name
+
+                    // Set the category filter to "Accessory"
+                    const categoryFilter = document.getElementById('category-filter');
+                    categoryFilter.value = 'Accessories';
+
+                    // Set the search input to the search term
+                    const searchInput = document.getElementById('search-input');
+                    searchInput.value = searchTerm;
+
+                    // Trigger the filter
+                    const filterButton = document.getElementById('filter-button');
+                    filterButton.click();
+
+                    // Scroll to the top of the page
+                    window.scrollTo(0, 0);
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>

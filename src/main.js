@@ -37,10 +37,23 @@ let hashlipsGiffer = null;
 
 // Apply Exclusion Rules Function
 const applyExclusionRules = (selectedTraits, rules, results) => {
+ // console.log(`selected traits: ${JSON.stringify(selectedTraits)}`);
+ // console.log(`exclude rules: ${JSON.stringify(rules.excludeRules)}`);
   for (const [layerName, traitRules] of Object.entries(rules.excludeRules)) {
-    const selectedTrait = selectedTraits[layerName];
+    console.log(`layerName: ${layerName}`);
+    let selectedTrait = selectedTraits[layerName];
+    // if und
+    if (selectedTrait.indexOf('_') > -1) {
+      selectedTrait = selectedTrait.split('_')[0].toLowerCase().trim();
+    }
+      // make every other word start with a capital letter
+      selectedTrait = selectedTrait.replace(/\b\w/g, char => char.toUpperCase());
+    
+    console.log(`selectedTrait: ${selectedTrait}`);
     if (selectedTrait && traitRules[selectedTrait]) {
       const exclusions = traitRules[selectedTrait].exclude;
+      console.log(`exclusions: ${JSON.stringify(exclusions)}`);
+      if (exclusions) {
       for (const [excludeLayer, excludeTraits] of Object.entries(exclusions)) {
         if (excludeTraits.includes('All')) {
           // Exclude all traits in the target layer by setting them to null
@@ -53,11 +66,15 @@ const applyExclusionRules = (selectedTraits, rules, results) => {
           // Exclude specific traits
           const layer = results.find(r => r.name.toLowerCase() === excludeLayer.toLowerCase());
           if (layer && layer.selectedElement && excludeTraits.includes(layer.selectedElement.name)) {
+            console.log(`Excluding ${layer.selectedElement.name} from ${excludeLayer} due to selecting "${selectedTrait}" in ${layerName}`);
             layer.selectedElement = null; // Assuming 'None' is handled in metadata
-            console.log(`Excluded trait "${layer.selectedElement.name}" from ${excludeLayer} due to selecting "${selectedTrait}" in ${layerName}`);
           }
         }
       }
+    }
+    } else {
+      console.log(`No exclusions found for ${layerName}`);
+      console.log(traitRules);
     }
   }
 };
@@ -538,7 +555,7 @@ const startCreating = async () => {
       editionCount <= layerConfigurations[layerConfigIndex].growEditionSizeTo
     ) {
       let newDna = createDna(layers);
-
+    
       if (isDnaUnique(dnaList, newDna)) {
         let results = constructLayerToDna(newDna, layers);
         let loadedElements = [];
@@ -554,7 +571,7 @@ const startCreating = async () => {
         const selectedAccessory = results.find(r => r.name.toLowerCase() === 'accessories')?.selectedElement?.name.toLowerCase();
         const selectedBeard = results.find(r => r.name.toLowerCase() === 'beard')?.selectedElement?.name.toLowerCase();
         const selectedPowerUp = results.find(r => r.name.toLowerCase() === 'power up')?.selectedElement?.name.toLowerCase();
-        console.log(`Edition ${abstractedIndexes[0]}: Skin = ${selectedSkin}, Shirt = ${selectedShirt}, Hair = ${selectedHair}`);
+        console.log(`Edition ${abstractedIndexes[0]}: Skin = ${selectedSkin}, Shirt = ${selectedShirt}, Hair = ${selectedHair}, Nose = ${selectedNose}, Mouth = ${selectedMouth}, Glasses = ${selectedGlasses}, Hat = ${selectedHat}, Accessory = ${selectedAccessory}, Beard = ${selectedBeard}, PowerUp = ${selectedPowerUp}`);
 
         if (!selectedSkin || !selectedShirt) {
           console.error(`Missing Skin or Shirt trait for edition ${abstractedIndexes[0]}`);
@@ -571,9 +588,8 @@ const startCreating = async () => {
         // Extract Eyes trait
 // Extract Eyes trait without converting to lowercase
 const selectedEyes = results.find(r => r.name.toLowerCase() === 'eyes')?.selectedElement?.name;
-
-// Gather currently selected traits relevant to exclusion rules
-const selectedTraits = {
+// for each layer in layers, add the
+let selectedTraits = {
   Eyes: selectedEyes,
   Skin: selectedSkin,
   Shirt: selectedShirt,
@@ -586,6 +602,16 @@ const selectedTraits = {
   Beard: selectedBeard,
 
 };
+
+// go through each selectedTrait, if it is undefined, set it to none
+for (const trait in selectedTraits) {
+  if (selectedTraits[trait] === undefined) {
+    selectedTraits[trait] = 'none';
+  }
+}
+console.log(selectedTraits);
+// make sure selectedTraits objects are all names in layers
+
 
 // Apply Exclusion Rules
 
@@ -631,6 +657,7 @@ const selectedTraits = {
           const beardElements = layers.find(l => l.name.toLowerCase() === 'beard').elements;
         //  console.log(beardElements);
          // console.log("selectedHair", selectedHair);
+         console.log("selectedHair", selectedHair);
           if (selectedHair && selectedHair !== 'none') {
             // Get color of hair
             const hairColor = selectedHair.split('_')[1];
@@ -653,10 +680,11 @@ const selectedTraits = {
               console.log(`No matching beard found for Edition ${abstractedIndexes[0]}. Set to 'None'`);
             }
           } else {
-            // If no Hair, Beard should be 'None'
-            const noBeard = beardElements.find(b => b.color === 'none');
-            beardLayer.selectedElement = noBeard || null;
-            console.log(`No Hair selected. Set Beard to 'None' for Edition ${abstractedIndexes[0]}`);
+            // If no Hair, we can use any beard
+            const noHairBeards = beardElements.filter(b => b.color !== 'none');
+            const randomNoHairBeard = noHairBeards[Math.floor(Math.random() * noHairBeards.length)];
+            beardLayer.selectedElement = randomNoHairBeard;
+            console.log(`No Hair selected. Random Beard: ${randomNoHairBeard.name}`);
           }
         }
 

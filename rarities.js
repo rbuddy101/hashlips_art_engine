@@ -19,10 +19,10 @@ function getLayerData(dir) {
         if (file.endsWith('.png')) {
           const name = file.replace('.png', '');
           const [trait, weight] = name.split(rarityDelimiter);
-          const rarity = parseInt(weight) || 10; // Default to 30 if no weight is specified
+          const rarity = parseInt(weight) || 30; // Default to 30 if no weight is specified
           
           // Create new file name with rarity
-          const newFileName = `${trait}${rarityDelimiter}${rarity}.png`;
+          const newFileName = `${trait}.png`;
           
           // Rename the file
           fs.renameSync(path.join(layerPath, file), path.join(layerPath, newFileName));
