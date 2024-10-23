@@ -35,49 +35,7 @@ const HashlipsGiffer = require(`${basePath}/modules/HashlipsGiffer.js`);
 
 let hashlipsGiffer = null;
 
-// Apply Exclusion Rules Function
-const applyExclusionRules = (selectedTraits, rules, results) => {
- // console.log(`selected traits: ${JSON.stringify(selectedTraits)}`);
- // console.log(`exclude rules: ${JSON.stringify(rules.excludeRules)}`);
-  for (const [layerName, traitRules] of Object.entries(rules.excludeRules)) {
-    console.log(`layerName: ${layerName}`);
-    let selectedTrait = selectedTraits[layerName];
-    // if und
-    if (selectedTrait.indexOf('_') > -1) {
-      selectedTrait = selectedTrait.split('_')[0].toLowerCase().trim();
-    }
-      // make every other word start with a capital letter
-      selectedTrait = selectedTrait.replace(/\b\w/g, char => char.toUpperCase());
-    
-    console.log(`selectedTrait: ${selectedTrait}`);
-    if (selectedTrait && traitRules[selectedTrait]) {
-      const exclusions = traitRules[selectedTrait].exclude;
-      console.log(`exclusions: ${JSON.stringify(exclusions)}`);
-      if (exclusions) {
-      for (const [excludeLayer, excludeTraits] of Object.entries(exclusions)) {
-        if (excludeTraits.includes('All')) {
-          // Exclude all traits in the target layer by setting them to null
-          const layer = results.find(r => r.name.toLowerCase() === excludeLayer.toLowerCase());
-          if (layer) {
-            layer.selectedElement = null; // Assuming 'None' is handled in metadata
-            console.log(`Excluded all traits from ${excludeLayer} due to selecting "${selectedTrait}" in ${layerName}`);
-          }
-        } else {
-          // Exclude specific traits
-          const layer = results.find(r => r.name.toLowerCase() === excludeLayer.toLowerCase());
-          if (layer && layer.selectedElement && excludeTraits.includes(layer.selectedElement.name)) {
-            console.log(`Excluding ${layer.selectedElement.name} from ${excludeLayer} due to selecting "${selectedTrait}" in ${layerName}`);
-            layer.selectedElement = null; // Assuming 'None' is handled in metadata
-          }
-        }
-      }
-    }
-    } else {
-      console.log(`No exclusions found for ${layerName}`);
-      console.log(traitRules);
-    }
-  }
-};
+
 
 // Setup build directories
 const buildSetup = () => {
@@ -106,9 +64,13 @@ const getRarityWeight = (_str) => {
 
 // Clean DNA string
 const cleanDna = (_str) => {
+  if (!_str) {
+    console.error("Input string is undefined in cleanDna");
+    return null;
+  }
   const withoutOptions = removeQueryStrings(_str);
   var dna = Number(withoutOptions.split(":").shift());
-  return dna;
+  return isNaN(dna) ? null : dna;
 };
 
 // Clean name by removing rarity weight
@@ -168,14 +130,10 @@ const getElements = (path, layerName, shirtTraits = []) => {
         }
         // If parts.length === 1, no Shirt or Skin
       } else if (layerName.toLowerCase() === 'nose') {
-        // Nose can have 2 or 3 parts: Nose, Skin, Size (optional)
-        if (parts.length === 3) {
-          skin = parts[0].toLowerCase();
-          size = parts[1].toLowerCase();
-        } else if (parts.length === 2) {
-          skin = parts[0].toLowerCase();
-          // Size remains null
-        }
+        // // nose is 2 parts. Second part is the skin, first is the size
+        size = parts[0].toLowerCase();
+        skin = parts[1].toLowerCase();
+
       } else if (layerName.toLowerCase() === 'hair' || layerName.toLowerCase() === 'beard') {
         // Hair and Beard have 1 or 2 parts: Hair_Color or Beard_Color
         if (parts.length === 2) {
@@ -186,16 +144,17 @@ const getElements = (path, layerName, shirtTraits = []) => {
       }
 
       // Add console logs for debugging
-      if (['accessories', 'nose', 'hair', 'beard'].includes(layerName.toLowerCase())) {
+      if (['beard'].includes(layerName.toLowerCase())) {
         console.log(`Parsed ${layerName}:`, {
           accessoryName,
           shirt,
           skin,
           size,
-          color
+          color,
+          rarity: getRarityWeight(i)
         });
       }
-
+    
       return {
         id: index,
         name: cleanName(i),
@@ -302,8 +261,13 @@ const addMetadata = (_dna, _edition) => {
 
 // Add attributes to the list
 const addAttributes = (_element) => {
-  if (_element.layer.name.toLowerCase() === 'accessories' && !_element.layer.selectedElement) {
-    // Add an attribute for "No Accessories"
+  const layerName = _element.layer.name.toLowerCase();
+  const selectedElement = _element.layer.selectedElement;
+
+  // Define layers that should have a "None" attribute when no trait is selected
+  const layersWithNone = ['accessories', 'beard', 'hair', 'glasses', 'necklace'];
+
+  if (layersWithNone.includes(layerName) && !selectedElement) {
     attributesList.push({
       trait_type: _element.layer.name,
       value: "None",
@@ -311,8 +275,8 @@ const addAttributes = (_element) => {
     return;
   }
 
-  if (_element.layer.name.toLowerCase() === 'beard' && !_element.layer.selectedElement) {
-    // Add an attribute for "No Beard"
+  // Handle other layers if needed (e.g., Glasses as provided)
+  if (layerName === 'glasses' && !selectedElement) {
     attributesList.push({
       trait_type: _element.layer.name,
       value: "None",
@@ -320,31 +284,13 @@ const addAttributes = (_element) => {
     return;
   }
 
-  if (_element.layer.name.toLowerCase() === 'hair' && !_element.layer.selectedElement) {
-    // Add an attribute for "No Hair"
+  // If a trait is selected, add it to the attributes list
+  if (selectedElement) {
     attributesList.push({
       trait_type: _element.layer.name,
-      value: "None",
+      value: selectedElement.name,
     });
-    return;
   }
-
-  // Handle other layers if needed
-  // Example for Glasses:
-  if (_element.layer.name.toLowerCase() === 'glasses' && !_element.layer.selectedElement) {
-    // Add an attribute for "No Glasses"
-    attributesList.push({
-      trait_type: _element.layer.name,
-      value: "None",
-    });
-    return;
-  }
-
-  let selectedElement = _element.layer.selectedElement;
-  attributesList.push({
-    trait_type: _element.layer.name,
-    value: selectedElement.name,
-  });
 };
 
 // Load layer image
@@ -400,9 +346,25 @@ const drawElement = (_renderObject, _index, _layersLen) => {
 
 // Map DNA to layers
 const constructLayerToDna = (_dna = "", _layers = []) => {
+  if (!_dna) {
+    console.error("DNA is undefined or null in constructLayerToDna");
+    return [];
+  }
   let mappedDnaToLayers = _layers.map((layer, index) => {
+    console.log("Layer:", layer.name);
+    let dnaSegment = _dna.split(DNA_DELIMITER)[index];
+    console.log("DNA Segment:", dnaSegment);
+    if (!dnaSegment) {
+      console.error(`DNA segment is missing for layer ${layer.name}`);
+      return {
+        name: layer.name,
+        blend: layer.blend,
+        opacity: layer.opacity,
+        selectedElement: null,
+      };
+    }
     let selectedElement = layer.elements.find(
-      (e) => e.id == cleanDna(_dna.split(DNA_DELIMITER)[index])
+      (e) => e.id == cleanDna(dnaSegment)
     );
     return {
       name: layer.name,
@@ -450,7 +412,12 @@ const filterDNAOptions = (_dna) => {
  * @returns Cleaned DNA string without querystring parameters.
  */
 const removeQueryStrings = (_dna) => {
+  if (!_dna) {
+    console.error("DNA is undefined in removeQueryStrings");
+    return "";
+  }
   const query = /(\?.*$)/;
+  //console.log("Removing query strings from DNA:", _dna);
   return _dna.replace(query, "");
 };
 
@@ -460,28 +427,194 @@ const isDnaUnique = (_DnaList = new Set(), _dna = "") => {
   return !_DnaList.has(_filteredDNA);
 };
 
+/**
+ * Removes blocked traits from the current layer based on already selected traits from other layers.
+ * Implements looser syntax checking by normalizing trait names and allowing partial matches.
+ * Additionally handles the 'All' exclusion option to exclude all traits from a specific layer.
+ *
+ * @param {Object} currentLayer - The current layer object containing its elements.
+ * @param {Object} selectedTraits - An object mapping layer names to their selected trait names.
+ * @returns {Object} - The updated layer with excluded traits removed.
+ */
+const removeBlockedTraits = (currentLayer, selectedTraits) => {
+  const rules = require(`${basePath}/src/rules.js`);
+  const exclusions = [];
+
+  const normalizeTrait = (trait) => {
+    if (!trait) return '';
+    return trait.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+  };
+
+  for (const [layerName, traitName] of Object.entries(selectedTraits)) {
+    if (layerName.toLowerCase() === currentLayer.name.toLowerCase()) {
+      continue;
+    }
+
+    const layerRules = rules.excludeRules[layerName];
+    if (!layerRules) {
+      console.warn(`No exclusion rules found for layer "${layerName}"`);
+      continue;
+    }
+
+    if (layerRules[traitName]) {
+      const exclude = layerRules[traitName].exclude;
+      if (exclude && exclude[currentLayer.name]) {
+        exclusions.push(...exclude[currentLayer.name]);
+        console.log(`Excluding traits from layer "${currentLayer.name}" based on trait "${traitName}" in layer "${layerName}":`, exclude[currentLayer.name]);
+      }
+    }
+
+    if (traitName.includes('_')) {
+      const traitPrefix = traitName.split('_')[0];
+      const excludePrefix = layerRules[traitPrefix]?.exclude;
+      if (excludePrefix && excludePrefix[currentLayer.name]) {
+        exclusions.push(...excludePrefix[currentLayer.name]);
+        console.log(`Excluding traits from layer "${currentLayer.name}" based on prefix "${traitPrefix}" in layer "${layerName}":`, excludePrefix[currentLayer.name]);
+      }
+    }
+  }
+
+  if (exclusions.length === 0) {
+    return currentLayer;
+  }
+
+  const exclusionsNormalized = exclusions.map(trait => normalizeTrait(trait));
+  console.log("Normalized exclusions for current layer:", exclusionsNormalized);
+
+  if (exclusionsNormalized.includes('all')) {
+    console.log(`Excluding all traits from layer "${currentLayer.name}" due to 'All' exclusion.`);
+    // remove all elements except for the one name "None"
+    currentLayer.elements = currentLayer.elements.filter(element => element.name === "None");
+    return currentLayer;
+  }
+
+  currentLayer.elements = currentLayer.elements.filter(element => {
+    const elementNormalized = normalizeTrait(element.name);
+    const isExcluded = exclusionsNormalized.some(exclusion => elementNormalized.includes(exclusion));
+    if (isExcluded) {
+      console.log(`Excluding trait "${element.name}" from layer "${currentLayer.name}"`);
+      return false;
+    }
+    return true;
+  });
+
+  if (currentLayer.elements.length === 0) {
+    console.warn(`All traits have been excluded from layer "${currentLayer.name}".`);
+  } else {
+    console.log(`Layer "${currentLayer.name}" elements after exclusion:`, currentLayer.elements);
+  }
+
+  console.log("Current layer elements after filtering:", currentLayer.elements);
+  return currentLayer;
+};
+
 // Create DNA string
 const createDna = (_layers) => {
+  let selectedTraits = {}; // Store selected traits for exclusion checks    
   let randNum = [];
-  _layers.forEach((layer) => {
+  let skin = null;
+  let shirt = null;
+  let color = null;
+  
+  // Create a deep copy of the layers
+  const layersCopy = JSON.parse(JSON.stringify(_layers));
+
+  for (let layerIndex = 0; layerIndex < layersCopy.length; layerIndex++) {
+    let layer = layersCopy[layerIndex];
     var totalWeight = 0;
-    layer.elements.forEach((element) => {
+
+    if (layer.name.toLowerCase() === 'beard') {
+      console.log("Beard layer");
+      layer.elements = layer.elements.filter(element => {
+        if (element.name.includes('_')) {
+          const colorFound = element.name.split('_')[1];
+          return colorFound === color;
+        }
+        return true;
+      });
+    } else if (layer.name.toLowerCase() === 'accessories') {
+      console.log("Accessories layer");
+      console.log("Shirt:", shirt, "Skin:", skin);
+      let usedNaked = false;
+      let foundMatch = false;
+      layer.elements = layer.elements.filter(element => {
+        if (element.name.includes('_')) {
+          const shirtFound = element.name.split('_')[1];
+          const skinFound = element.name.split('_')[2];
+          console.log("Shirt Found:", shirtFound, "Skin Found:", skinFound);
+          if ((shirtFound === shirt) && skinFound === skin) {
+            console.log("Accessory Match:", element.name);
+            foundMatch = true;
+            return true;
+          } else if(skinFound === undefined && shirtFound === shirt) {
+            console.log("Accessory Match No Skin:", element.name);
+            foundMatch = true;
+            return true;
+          } else if (shirtFound === 'Naked' && skinFound === skin) {
+            console.log("Accessory Match Naked:", element.name);
+            usedNaked = true;
+            return true;
+          }
+          return false;
+        }
+        return true;
+      });
+      if (!foundMatch && !usedNaked) {
+        console.error("No matching accessory found for Edition");
+      }
+      if (foundMatch) {
+        layer.elements = layer.elements.filter(element => element.name !== 'Naked');
+      }
+    } else if (layer.name.toLowerCase() === 'nose') {
+      console.log("Nose layer");
+      console.log("Nose Color:", skin);
+      layer.elements = layer.elements.filter(element => element.name.split('_')[1] === skin);
+    } else if (layer.name.toLowerCase() === 'glasses') {
+      console.log("Glasses layer");
+    }
+    //console.log("Selected traits:", selectedTraits);
+    layer = removeBlockedTraits(layer, selectedTraits);
+    console.log("Layer elements after filtering:", layer.elements);
+    layer.elements.forEach(element => {
       totalWeight += element.weight;
     });
-    // Number between 0 - totalWeight
+
     let random = Math.floor(Math.random() * totalWeight);
-    for (var i = 0; i < layer.elements.length; i++) {
-      // Subtract the current weight from the random weight until we reach a sub zero value.
+    console.log("Going through layer:", layer.name);
+   // console.log("Layer elements:", layer.elements);
+
+    for (let i = 0; i < layer.elements.length; i++) {
       random -= layer.elements[i].weight;
       if (random < 0) {
-        return randNum.push(
+        if (layer.name.toLowerCase() === 'skin') {
+          skin = layer.elements[i].name;
+          console.log("Skin:", skin);
+        }
+        if (layer.name.toLowerCase() === 'shirt') {
+          shirt = layer.elements[i].name;
+          console.log("Shirt:", shirt);
+        }
+        if (layer.name.toLowerCase() === 'hair') {
+          if (layer.elements[i].name.includes('_')) {
+            color = layer.elements[i].name.split('_')[1];
+          }
+          console.log("Hair Color:", color);
+        }
+        if (layer.name.toLowerCase() === 'necklace') {
+          console.log("Necklace in elements:", layer.elements[i].name);
+        }
+        console.log("Random:", random, "Layer:", layer.name, "Element:", layer.elements[i].name);
+        selectedTraits[layer.name] = layer.elements[i].name;
+      //  console.log("Selected traits:", selectedTraits);
+        randNum.push(
           `${layer.elements[i].id}:${layer.elements[i].filename}${
             layer.bypassDNA ? "?bypassDNA=true" : ""
           }`
         );
+        break;
       }
     }
-  });
+  }
   return randNum.join(DNA_DELIMITER);
 };
 
@@ -544,193 +677,38 @@ const startCreating = async () => {
 
   while (layerConfigIndex < layerConfigurations.length) {
     // Extract Shirt traits once before setting up layers
-    const shirtTraits = getShirtTraits();
 
     const layers = layersSetup(
-      layerConfigurations[layerConfigIndex].layersOrder,
-      shirtTraits
+      layerConfigurations[layerConfigIndex].layersOrder
     );
 
     while (
       editionCount <= layerConfigurations[layerConfigIndex].growEditionSizeTo
     ) {
       let newDna = createDna(layers);
-    
+      console.log("New DNA:", newDna);
+      if (!newDna) {
+        console.log(`Failed to create DNA for edition ${abstractedIndexes[0]}`);
+        failedCount++;
+        if (failedCount >= uniqueDnaTorrance) {
+          console.log(
+            `You need more layers or elements to grow your edition to ${layerConfigurations[layerConfigIndex].growEditionSizeTo} artworks!`
+          );
+          process.exit();
+        }
+        continue;
+      }
+
       if (isDnaUnique(dnaList, newDna)) {
         let results = constructLayerToDna(newDna, layers);
+        //console.log("Results:", results);
         let loadedElements = [];
 
-        // Extract Skin, Shirt, Hair traits
-        const selectedSkin = results.find(r => r.name.toLowerCase() === 'skin')?.selectedElement?.name.toLowerCase();
-        const selectedShirt = results.find(r => r.name.toLowerCase() === 'shirt')?.selectedElement?.name.toLowerCase();
-        const selectedHair = results.find(r => r.name.toLowerCase() === 'hair')?.selectedElement?.name.toLowerCase();
-        const selectedNose = results.find(r => r.name.toLowerCase() === 'nose')?.selectedElement?.name.toLowerCase();
-        const selectedMouth = results.find(r => r.name.toLowerCase() === 'mouth')?.selectedElement?.name.toLowerCase();
-        const selectedGlasses = results.find(r => r.name.toLowerCase() === 'glasses')?.selectedElement?.name.toLowerCase();
-        const selectedHat = results.find(r => r.name.toLowerCase() === 'hat')?.selectedElement?.name.toLowerCase();
-        const selectedAccessory = results.find(r => r.name.toLowerCase() === 'accessories')?.selectedElement?.name.toLowerCase();
-        const selectedBeard = results.find(r => r.name.toLowerCase() === 'beard')?.selectedElement?.name.toLowerCase();
-        const selectedPowerUp = results.find(r => r.name.toLowerCase() === 'power up')?.selectedElement?.name.toLowerCase();
-        console.log(`Edition ${abstractedIndexes[0]}: Skin = ${selectedSkin}, Shirt = ${selectedShirt}, Hair = ${selectedHair}, Nose = ${selectedNose}, Mouth = ${selectedMouth}, Glasses = ${selectedGlasses}, Hat = ${selectedHat}, Accessory = ${selectedAccessory}, Beard = ${selectedBeard}, PowerUp = ${selectedPowerUp}`);
-
-        if (!selectedSkin || !selectedShirt) {
-          console.error(`Missing Skin or Shirt trait for edition ${abstractedIndexes[0]}`);
-          failedCount++;
-          if (failedCount >= uniqueDnaTorrance) {
-            console.log(
-              `You need more layers or elements to grow your edition to ${layerConfigurations[layerConfigIndex].growEditionSizeTo} artworks!`
-            );
-            process.exit();
-          }
-          continue;
-        }
-
-        // Extract Eyes trait
-// Extract Eyes trait without converting to lowercase
-const selectedEyes = results.find(r => r.name.toLowerCase() === 'eyes')?.selectedElement?.name;
-// for each layer in layers, add the
-let selectedTraits = {
-  Eyes: selectedEyes,
-  Skin: selectedSkin,
-  Shirt: selectedShirt,
-  Hair: selectedHair,
-  Nose: selectedNose,
-  Mouth: selectedMouth,
-  Glasses: selectedGlasses,
-  Hat: selectedHat,
-  Accessory: selectedAccessory,
-  Beard: selectedBeard,
-
-};
-
-// go through each selectedTrait, if it is undefined, set it to none
-for (const trait in selectedTraits) {
-  if (selectedTraits[trait] === undefined) {
-    selectedTraits[trait] = 'none';
-  }
-}
-console.log(selectedTraits);
-// make sure selectedTraits objects are all names in layers
-
-
-// Apply Exclusion Rules
-
-        // Apply Exclusion Rules
-        applyExclusionRules(selectedTraits, rules, results);
-
-        // After applying exclusion rules, re-extract any affected traits if necessary
-        // For example, Glasses may have been set to null
-        // If needed, handle additional logic here
-
-        // Filter Accessories based on Skin and Shirt
-        const accessoriesLayer = results.find(r => r.name.toLowerCase() === 'accessories');
-        if (accessoriesLayer) {
-          const accessoriesElements = layers.find(l => l.name.toLowerCase() === 'accessories').elements;
-
-          // Filter accessories that match the selected Skin and Shirt or are universally compatible
-          const matchingAccessories = accessoriesElements.filter(
-            accessory =>
-              (accessory.skin === selectedSkin && accessory.shirt === selectedShirt) || // Match both
-              (accessory.skin === selectedSkin && accessory.shirt === "base")  || 
-              (accessory.skin === null && accessory.shirt === selectedShirt) ||
-              (accessory.skin === null && accessory.shirt === null)
-
-          );
-
-          console.log("Matching Accessories:", matchingAccessories.map(a => a.name));
-
-          if (matchingAccessories.length > 0) {
-            // Select a random accessory from the filtered list
-            const randomAccessory = matchingAccessories[Math.floor(Math.random() * matchingAccessories.length)];
-            accessoriesLayer.selectedElement = randomAccessory;
-            console.log(`Selected Accessory: ${randomAccessory.name}`);
-          } else {
-            // Optionally, handle cases where no accessory matches the traits
-            accessoriesLayer.selectedElement = null; // No accessory
-            console.log(`No matching accessory found for Edition ${abstractedIndexes[0]}`);
-          }
-        }
-
-        // Filter Beard based on Hair
-        const beardLayer = results.find(r => r.name.toLowerCase() === 'beard');
-        if (beardLayer) {
-          const beardElements = layers.find(l => l.name.toLowerCase() === 'beard').elements;
-        //  console.log(beardElements);
-         // console.log("selectedHair", selectedHair);
-         console.log("selectedHair", selectedHair);
-          if (selectedHair && selectedHair !== 'none') {
-            // Get color of hair
-            const hairColor = selectedHair.split('_')[1];
-            // Beard color must match Hair color or be 'None'
-            const matchingBeards = beardElements.filter(
-              beard => beard.color === hairColor || beard.color === 'none'
-            );
-          //  console.log("matchingBeards for color ", hairColor, matchingBeards);
-
-            //console.log("Matching Beards:", matchingBeards.map(b => b.name));
-
-            if (matchingBeards.length > 0) {
-              // Select a random beard from the filtered list
-              const randomBeard = matchingBeards[Math.floor(Math.random() * matchingBeards.length)];
-              beardLayer.selectedElement = randomBeard;
-              console.log(`Selected Beard: ${randomBeard.name}`);
-            } else {
-              // No matching beard found; set to 'None'
-              beardLayer.selectedElement = beardElements.find(b => b.color === 'none') || null;
-              console.log(`No matching beard found for Edition ${abstractedIndexes[0]}. Set to 'None'`);
-            }
-          } else {
-            // If no Hair, we can use any beard
-            const noHairBeards = beardElements.filter(b => b.color !== 'none');
-            const randomNoHairBeard = noHairBeards[Math.floor(Math.random() * noHairBeards.length)];
-            beardLayer.selectedElement = randomNoHairBeard;
-            console.log(`No Hair selected. Random Beard: ${randomNoHairBeard.name}`);
-          }
-        }
-
-        // Filter Nose based on Skin
-        const noseLayer = results.find(r => r.name.toLowerCase() === 'nose');
-        if (noseLayer) {
-          const noseElements = layers.find(l => l.name.toLowerCase() === 'nose').elements;
-
-          // Filter noses that match the selected Skin or have no Skin dependency
-          const matchingNoses = noseElements.filter(
-            nose => nose.skin === selectedSkin || nose.skin === null
-          );
-
-         // console.log("Matching Noses:", matchingNoses.map(n => n.name));
-
-          if (matchingNoses.length > 0) {
-            // Select a random nose from the filtered list
-            const randomNose = matchingNoses[Math.floor(Math.random() * matchingNoses.length)];
-            noseLayer.selectedElement = randomNose;
-            console.log(`Selected Nose: ${randomNose.name}`);
-          } else {
-            // Optionally, handle cases where no nose matches the traits
-            noseLayer.selectedElement = null; // No nose
-            console.log(`No matching nose found for Edition ${abstractedIndexes[0]}`);
-          }
-        }
-
-        // Load all elements including the filtered accessory, beard, and potentially excluded traits
         results.forEach((layer) => {
-          if (
-            (layer.name.toLowerCase() === 'accessories' ||
-              layer.name.toLowerCase() === 'beard' ||
-              layer.name.toLowerCase() === 'nose' ||
-              layer.name.toLowerCase() === 'glasses') && // Include Glasses for exclusion handling
-            layer.selectedElement
-          ) {
-            loadedElements.push(loadLayerImg(layer));
-          } else if (
-            layer.name.toLowerCase() !== 'accessories' &&
-            layer.name.toLowerCase() !== 'beard' &&
-            layer.name.toLowerCase() !== 'nose' &&
-            layer.name.toLowerCase() !== 'glasses' // Exclude Glasses unless selected
-          ) {
-            loadedElements.push(loadLayerImg(layer));
-          }
+          loadedElements.push(loadLayerImg(layer));
         });
+        //console.log("Results:", results);
+
 
         await Promise.all(loadedElements).then((renderObjectArray) => {
           debugLogs ? console.log("Clearing canvas") : null;
@@ -795,3 +773,4 @@ console.log(selectedTraits);
   writeMetaData(JSON.stringify(metadataList, null, 2));
 };
 module.exports = { startCreating, buildSetup, getElements };
+

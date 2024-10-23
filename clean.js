@@ -12,8 +12,12 @@ function renameFiles(dir) {
 
     if (stat.isDirectory()) {
       renameFiles(fullPath);
-    } else if (stat.isFile() && item.includes('-')) {
-      const newName = item.replace(/-/g, ' ');
+    } else if (stat.isFile() && (item.includes('-') || /[a-z]/.test(item))) {
+      const newName = item
+        .replace(/-/g, ' ')
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
       const newPath = path.join(dir, newName);
       fs.renameSync(fullPath, newPath);
       console.log(`Renamed: ${fullPath} -> ${newPath}`);

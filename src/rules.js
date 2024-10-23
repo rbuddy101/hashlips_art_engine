@@ -3,16 +3,17 @@ module.exports = {
     Eyes: {
       'Blue Lazer': {
         exclude: {
-          Glasses: ['Bionic Eyewear', 'Boomer Shades', 'Bright Color Pit Vipers', 'Ozzy Osbourne', 'Snowboard Goggles', 'Sport Shades', 'Thin Club Shades', 'Thug Life Glasses']
+          Glasses: ['All'],
+          Hat: ['Beer Helmet', 'Sedge Hat', 'Sombrero', 'Viking Helmet', 'Captains Hat', 'Space Suit']
         },
       },
       'Red Lazer': {
         exclude: {
-          Glasses: ['Bionic Eyewear', 'Boomer Shades', 'Bright Color Pit Vipers', 'Ozzy Osbourne', 'Snowboard Goggles', 'Sport Shades', 'Thin Club Shades', 'Thug Life Glasses']
+          Glasses: ['All'],
+          Hat: ['Beer Helmet', 'Sedge Hat', 'Sombrero', 'Viking Helmet', 'Captains Hat', 'Space Suit']
         },
       },
-
-      'Crypto Maxi (red Glow)': {
+      'Crypto Maxi (Red Glow)': {
         exclude: {
           Glasses: ['Bionic Eyewear', 'Boomer Shades', 'Bright Color Pit Vipers', 'Ozzy Osbourne', 'Snowboard Goggles', 'Sport Shades', 'Thin Club Shades', 'Thug Life Glasses']
         },
@@ -54,7 +55,6 @@ module.exports = {
       'None': {
         exclude: {},
       }
-
     },
     Glasses: {
       'Bionic Eyewear': {
@@ -62,7 +62,7 @@ module.exports = {
       },
       'Boomer Shades': { exclude: {} },
       'Bright Color Pit Vipers': { exclude: {} },
-      'Eye patch': { exclude: {} },
+      'Eye Patch': { exclude: {} },
       'Monical': { exclude: {} },
       'Ozzy Osbourne': { exclude: {} },
       'Snowboard Goggles': { exclude: {} },
@@ -82,98 +82,98 @@ module.exports = {
     Hair: {
       'Thick Dreads': {
         exclude: {
-          Hat: ['All'],
-
+          Hat: ['BBQ Chef Hat', 'Baseball Cap', 'Beanie', 'Beer Helmet', 'Captains Hat', 'Cartoon Style Bump On Head', 'Cowboy Hat', 'Helmet', 'Poker Visor', 'Propeller Hat', 'Sedge Hat', 'Sombrero', 'Tin Foil', 'Top Hat', 'Viking Helmet', 'WW2 Helmet', 'Crown ']
         }
       },
       'Mullet': {
         exclude: {
-          Hat: ['All'],
+          Hat: ['BBQ Chef Hat', 'Baseball Cap', 'Beanie', 'Beer Helmet', 'Captains Hat', 'Cartoon Style Bump On Head', 'Cowboy Hat', 'Helmet', 'Poker Visor', 'Propeller Hat', 'Sedge Hat', 'Sombrero', 'Tin Foil', 'Top Hat', 'Viking Helmet', 'WW2 Helmet', 'Crown ']
         }
       },
       'Long': {
         exclude: {
-          Hat: ['All'],
+          Hat: ['BBQ Chef Hat', 'Baseball Cap', 'Beanie', 'Beer Helmet', 'Captains Hat', 'Cartoon Style Bump On Head', 'Cowboy Hat', 'Helmet', 'Poker Visor', 'Propeller Hat', 'Sedge Hat', 'Sombrero', 'Tin Foil', 'Top Hat', 'Viking Helmet', 'WW2 Helmet', 'Crown ']
         }
       },
       'Greaser': {
         exclude: {
-          Hat: ['All'],
+          Hat: ['BBQ Chef Hat', 'Baseball Cap', 'Beanie', 'Beer Helmet', 'Captains Hat', 'Cartoon Style Bump On Head', 'Cowboy Hat', 'Helmet', 'Poker Visor', 'Propeller Hat', 'Sedge Hat', 'Sombrero', 'Tin Foil', 'Top Hat', 'Viking Helmet', 'WW2 Helmet', 'Crown ']
         }
       },
       'Afro': {
         exclude: {
-          Hat: ['All'],
+          Hat: ['BBQ Chef Hat', 'Baseball Cap', 'Beanie', 'Beer Helmet', 'Captains Hat', 'Cartoon Style Bump On Head', 'Cowboy Hat', 'Helmet', 'Poker Visor', 'Propeller Hat', 'Sedge Hat', 'Sombrero', 'Tin Foil', 'Top Hat', 'Viking Helmet', 'WW2 Helmet', 'Crown ']
         }
       },
       'Bowl Cut': {
         exclude: {
-          Hat: ['All'],
-
+          Hat: ['BBQ Chef Hat', 'Baseball Cap', 'Beanie', 'Beer Helmet', 'Captains Hat', 'Cartoon Style Bump On Head', 'Cowboy Hat', 'Helmet', 'Poker Visor', 'Propeller Hat', 'Sedge Hat', 'Sombrero', 'Tin Foil', 'Top Hat', 'Viking Helmet', 'WW2 Helmet', 'Crown ']
         }
       },
       'Cheetah': {
         exclude: {
-          Hat: ['All'],
-
+          Hat: ['BBQ Chef Hat', 'Baseball Cap', 'Beanie', 'Beer Helmet', 'Captains Hat', 'Cartoon Style Bump On Head', 'Cowboy Hat', 'Helmet', 'Poker Visor', 'Propeller Hat', 'Sedge Hat', 'Sombrero', 'Tin Foil', 'Top Hat', 'Viking Helmet', 'WW2 Helmet']
         }
       },
       'Classic Boomer Balding': {
         exclude: {
-          Hat: ['All'],
-
+          Hat: [],
         }
       },
       'Bald': {
         exclude: {
-          Hat: ['All'],
-
+          Hat: [],
         }
       },
       'Curly': {
         exclude: {
-          Hat: ['All'],
-
+          Hat: ['BBQ Chef Hat', 'Baseball Cap', 'Beanie', 'Beer Helmet', 'Captains Hat', 'Cartoon Style Bump On Head', 'Cowboy Hat', 'Helmet', 'Poker Visor', 'Propeller Hat', 'Sedge Hat', 'Sombrero', 'Tin Foil', 'Top Hat', 'Viking Helmet', 'WW2 Helmet']
         }
       },
       'Greaser': {
         exclude: {
-          Hat: ['All'],
-
+          Hat: [],
         }
       },
       'Grey': {
         exclude: {
-          Hat: ['All'],
-
+          Hat: [],
         }
       },
       'Mohawk': {
         exclude: {
-          Hat: ['All'],
-
+          Hat: ['BBQ Chef Hat', 'Baseball Cap', 'Beanie', 'Beer Helmet', 'Captains Hat', 'Cartoon Style Bump On Head', 'Cowboy Hat', 'Helmet', 'Poker Visor', 'Propeller Hat', 'Sedge Hat', 'Sombrero', 'Tin Foil', 'Top Hat', 'Viking Helmet', 'WW2 Helmet']
         }
       },
       'Shaved Sides + Pony Tail': {
         exclude: {
-          Hat: ['All'],
-
+          Hat: [],
         }
       },
       'Short': {
         exclude: {
-          Hat: ['All'],
-
+          Hat: [],
         }
       },
       'Slicked Back': {
         exclude: {
-          Hat: ['All'],
+          Hat: [],
         }
       },
       'Zoomer Fade': {
         exclude: {
-          Hat: ['All'],
+          Hat: ['BBQ Chef Hat', 'Baseball Cap', 'Beanie', 'Beer Helmet', 'Captains Hat', 'Cartoon Style Bump On Head', 'Cowboy Hat', 'Helmet', 'Poker Visor', 'Propeller Hat', 'Sedge Hat', 'Sombrero', 'Tin Foil', 'Top Hat', 'Viking Helmet', 'WW2 Helmet']
+        }
+      },
+      'None': {
+        exclude: {},
+      }
+    },
+    Beard: {
+      'Gandolf Beard': {
+        exclude: {
+          Necklace: ['All'],
+          Hat: ['Space Suit'],
         }
       },
       'None': {
@@ -183,7 +183,4 @@ module.exports = {
   },
 
   // Add more layer rules as needed
-
 };
-
-
