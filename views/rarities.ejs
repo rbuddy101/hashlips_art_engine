@@ -503,6 +503,15 @@
         .search-accessory-button:hover {
             background-color: #2980b9;
         }
+
+        .previous-rarity,
+        .trait-count {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #b0b0b0;
+            text-align: center;
+            width: 100%;
+        }
     </style>
     
     <!-- Additional HTML Head Elements if any -->
@@ -515,6 +524,7 @@
             <select id="category-filter">
                 <option value="All">All</option>
                 <% for(let category in layers) { %>
+                    <!-- ignore Type and powerup lae -->
                     <option value="<%= category %>"><%= category %></option>
                 <% } %>
             </select>
@@ -534,8 +544,6 @@
         <div class="bulk-actions">
             <button id="bulk-set-10">Set 10</button>
             <button id="bulk-set-20">Set 20</button>
-            <button id="bulk-set-50">Set 50</button>
-            <button id="bulk-set-100">Set 100</button>
             <button id="bulk-copy-prev">Copy Prev</button>
             <input type="number" id="bulk-custom-value" placeholder="Custom" min="1" max="100" />
             <button id="bulk-set-custom">Apply</button>
@@ -551,7 +559,7 @@
         <!-- Categories and Traits -->
         <% for(let category in layers) { 
             const numItems = layers[category].length;
-            const totalRarity = layers[category].reduce((sum, trait) => sum + (trait.rarity || 100), 0);
+            const totalRarity = layers[category].reduce((sum, trait) => sum + (trait.rarity || 1), 0);
         %>
             <div class="category" data-category="<%= category %>">
                 <div class="category-header">
@@ -563,10 +571,10 @@
                 </div>
                 <div class="traits" id="traits-<%= category %>">
                     <% layers[category].forEach((trait, index) => { %>
-                        <div class="trait" data-name="<%= trait.name %>" data-rarity="<%= trait.rarity || 100 %>" data-category="<%= category %>">
+                        <div class="trait" data-name="<%= trait.name %>" data-rarity="<%= trait.rarity || 1 %>" data-category="<%= category %>">
                             <input type="checkbox" class="select-item" />
                             <div class="trait-image-container">
-                                <img src="/comp_layers/<%= category %>/<%= trait.fileName %>" alt="<%= trait.name %>" class="trait-image">
+                                <img src="/comp_layers/<%= category %>/<%= trait.fileName.split('#')[0] + '.png' %>" alt="<%= trait.name %>" loading="lazy" width="200" height="200" class="trait-image">>
                             </div>
                             <div class="rarity">
                                 <div class="rarity-container">
@@ -574,12 +582,12 @@
                                     <input 
                                         type="number" 
                                         min="1" 
-                                        max="100" 
-                                        value="<%= trait.rarity || 100 %>" 
+                                        max="100"
+                                        value="<%= trait.rarity || 1 %>"
                                         class="rarity-input" 
                                         data-category="<%= category %>" 
                                         data-index="<%= index %>"
-                                        data-original-rarity="<%= trait.rarity || 100 %>"
+                                        data-original-rarity="<%= trait.rarity || 1 %>"
                                     >
                                     <!-- Copy Icon -->
                                     <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Copy Previous Rarity" role="button" tabindex="0">
@@ -594,14 +602,20 @@
                                 <input 
                                     type="range" 
                                     min="1" 
-                                    max="100" 
-                                    value="<%= trait.rarity || 100 %>" 
+                                    max="100"
+                                    value="<%= trait.rarity || 1 %>"
                                     class="rarity-slider" 
                                     data-category="<%= category %>" 
                                     data-index="<%= index %>"
                                 >
                             </div>
                             <div class="name"><%= trait.name %></div>
+                            <div class="previous-rarity">
+                                Previous Rarity: <%= rarityJson[category][trait.name].rarity %>
+                            </div>
+                            <div class="trait-count">
+                                Count: <%= rarityJson[category][trait.name].count %> (<%= rarityJson[category][trait.name].percentage %>)
+                            </div>
                             <div class="buttons">
                                 <!-- Removed the copy-previous button -->
                             </div>
@@ -629,9 +643,7 @@
             const rarityMax = document.getElementById('rarity-max');
             const bulkSetButtons = {
                 '10': document.getElementById('bulk-set-10'),
-                '20': document.getElementById('bulk-set-20'),
-                '50': document.getElementById('bulk-set-50'),
-                '100': document.getElementById('bulk-set-100')
+                '20': document.getElementById('bulk-set-20')
             };
             const bulkCopyPrevButton = document.getElementById('bulk-copy-prev');
             const selectAllContainer = document.getElementById('select-all-container');
@@ -640,11 +652,11 @@
             const bulkSetCustom = document.getElementById('bulk-set-custom');
             const saveChangesButton = document.getElementById('save-changes-button');
 
-            // Function to map rarity to color (1-100) with continuous variance
+            // Function to map rarity to color (1-20) with continuous variance
             function getColorByRarity(rarity) {
-                // Map rarity (1-100) to hue (0-240)
-                // 1 => Red (0), 100 => Blue (240)
-                const hue = (rarity - 1) * (240 / 99); // Ensure hue spans 0 to 240
+                // Map rarity (1-20) to hue (0-240)
+                // 1 => Red (0), 20 => Blue (240)
+                const hue = (rarity - 1) * (240 / 19); // Ensure hue spans 0 to 240
                 return `hsla(${hue}, 100%, 50%, 0.6)`;
             }
 
@@ -816,7 +828,7 @@
 
             // Bulk Copy Previous
             bulkCopyPrevButton.addEventListener('click', () => {
-                const selectedTraits = Array.from(document.querySelectorAll('.select-item:checked'));
+                const selectedTraits = document.querySelectorAll('.select-item:checked');
                 if (selectedTraits.length === 0) {
                     alert('No items selected for bulk action.');
                     return;
@@ -831,71 +843,74 @@
                 });
             });
 
-            // Custom Bulk Set
-            bulkSetCustom.addEventListener('click', () => {
-                console.log('Custom bulk set button clicked');
-                const customValue = parseInt(bulkCustomValue.value);
-                if (isNaN(customValue) || customValue < 1 || customValue > 100) {
-                    alert('Please enter a valid number between 1 and 100.');
-                    return;
-                }
-                updateBulkTraits(customValue);
+            // Save Changes Functionality
+            // Inside <script> tag in rarities.ejs
+
+saveChangesButton.addEventListener('click', async () => {
+    if (editedTraits.size === 0) {
+        alert('No changes to save.');
+        return;
+    }
+
+    const traitsToUpdate = Array.from(editedTraits).map(key => {
+        const [category, name] = key.split('-');
+        const traitDiv = document.querySelector(`.trait[data-category="${category}"][data-name="${name}"]`);
+        return {
+            category,
+            name,
+            rarity: parseInt(traitDiv.querySelector('.rarity-input').value, 10)
+        };
+    });
+
+    // Define batch size
+    const BATCH_SIZE = 50; // Adjust based on server capabilities
+    const batches = [];
+
+    for (let i = 0; i < traitsToUpdate.length; i += BATCH_SIZE) {
+        batches.push(traitsToUpdate.slice(i, i + BATCH_SIZE));
+    }
+
+    try {
+        for (const [index, batch] of batches.entries()) {
+            console.log(`Sending batch ${index + 1} of ${batches.length}`);
+            const response = await fetch('/update-rarities', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ traits: batch }),
             });
 
-            // Save Changes Functionality
-            saveChangesButton.addEventListener('click', () => {
-                if (editedTraits.size === 0) {
-                    alert('No changes to save.');
-                    return;
-                }
+            const data = await response.json();
 
-                const traitsToUpdate = Array.from(editedTraits).map(key => {
-                    const [category, name] = key.split('-');
-                    const traitDiv = document.querySelector(`.trait[data-category="${category}"][data-name="${name}"]`);
-                    return {
-                        category,
-                        name,
-                        rarity: parseInt(traitDiv.querySelector('.rarity-input').value, 10)
-                    };
-                });
-
-                fetch('/update-rarities', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ traits: traitsToUpdate }),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.message) {
-                        alert(data.message);
+            if (data.message) {
+                alert(`Batch ${index + 1}: ${data.message}`);
+                
+                // Update original rarity values and total rarity
+                batch.forEach(trait => {
+                    const traitDiv = document.querySelector(`.trait[data-category="${trait.category}"][data-name="${trait.name}"]`);
+                    if (traitDiv) {
+                        const input = traitDiv.querySelector('.rarity-input');
+                        input.setAttribute('data-original-rarity', trait.rarity);
                         
-                        // Update original rarity values and total rarity
-                        traitsToUpdate.forEach(trait => {
-                            const traitDiv = document.querySelector(`.trait[data-category="${trait.category}"][data-name="${trait.name}"]`);
-                            if (traitDiv) {
-                                const input = traitDiv.querySelector('.rarity-input');
-                                input.setAttribute('data-original-rarity', trait.rarity);
-                                
-                                // Ensure the edited badge is visible
-                                const badge = traitDiv.querySelector('.edited-badge');
-                                if (badge) {
-                                    badge.style.display = 'inline-block';
-                                }
+                        // Ensure the edited badge is visible
+                        const badge = traitDiv.querySelector('.edited-badge');
+                        if (badge) {
+                            badge.style.display = 'inline-block';
+                        }
 
-                                // Update total rarity
-                                updateCategoryTotalRarity(trait.category);
-                            }
-                        });
-
-                        // Don't clear editedTraits here, keep the tracking
+                        // Update total rarity
+                        updateCategoryTotalRarity(trait.category);
                     }
-                })
-                .catch(error => {
-                    console.error('Error updating rarities:', error);
-                    alert('An error occurred while saving changes.');
                 });
+            }
+        }
+
+        alert('All changes have been successfully saved.');
+    } catch (error) {
+        console.error('Error updating rarities:', error);
+        alert('An error occurred while saving changes.');
+                }
             });
 
             // Search and Filter Functionality
@@ -1000,7 +1015,7 @@
                 });
             });
 
-            // Bulk Set Functionality
+            // Bulk Set Functionality (Ensuring buttons beyond 20 are not present)
             Object.keys(bulkSetButtons).forEach(value => {
                 bulkSetButtons[value].addEventListener('click', () => {
                     const bulkValue = parseInt(value, 10);

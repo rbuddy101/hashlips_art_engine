@@ -5,7 +5,7 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
+const namePrefix = "OK Boomer";
 const description = "Remember to replace this description";
 const baseUri = "ipfs://NewUriToReplace";
 
@@ -24,29 +24,40 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 10,
+    growEditionSizeTo: 2000,
     layersOrder: [
-      { name: "Background" },
+      { name: "Background", options: { "bypassDNA": true } },
    
       { name: "Skin" },
       { name: "Eyebrow" },
       { name: "Shirt" },
-
-
-      { name: "Hair" },
-
-      { name: "Nose" },
+      { name: "Mouth"},
+      { name: "Beard", options: { "bypassDNA": true } },
+      { name: "Hair", options: { "bypassDNA": true } },
       { name: "Eyes" },
       { name: "Necklace" },
-      { name: "Beard" },
-      { name: "Mouth" },
-      { name: "Mouth Items" },
- 
-      { name: "Glasses" },
+      { name: "Mouth_Items" },
       { name: "Hat" },
       { name: "Accessories" },
     ],
+
   },
+  // {
+  //   growEditionSizeTo: 2,
+  //   layersOrder: [
+  //     { name: "Background", options: { "bypassDNA": true } },
+   
+  //     { name: "Ghost Skin", options: { "displayName": "Skin" } },
+  //     { name: "Shirt" },
+  //     { name: "Ghost Mouth", options: { "displayName": "Mouth" } },
+  //     { name: "Ghost Beard", options: { "displayName": "Beard" } },
+  //     { name: "Ghost Hair", options: { "displayName": "Hair" } },
+  //     { name: "Necklace" },
+  //     { name: "Ghost Mouth Items", options: { "displayName": "Mouth Items" } },
+  //     { name: "Hat"},
+  //     { name: "Ghost Accessories", options: { "displayName": "Accessories" } },
+  //   ],
+  // }
 
 ];
 
@@ -86,7 +97,7 @@ const pixelFormat = {
 };
 
 const background = {
-  generate: true,
+  generate: false,
   brightness: "80%",
   static: false,
   default: "#000000",
@@ -96,7 +107,7 @@ const extraMetadata = {};
 
 const rarityDelimiter = "#";
 
-const uniqueDnaTorrance = 10000;
+const uniqueDnaTorrance = 5000;
 
 const preview = {
   thumbPerRow: 5,

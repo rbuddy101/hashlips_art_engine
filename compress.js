@@ -28,26 +28,30 @@ function copyDirectories(src, dest) {
 // Function to compress images to 200x200px
 async function compressImages(directory) {
     const files = fs.readdirSync(directory);
+    const rarityDelimiter = '#';
 
     for (const file of files) {
         const filePath = path.join(directory, file);
         const stats = fs.statSync(filePath);
 
         if (stats.isDirectory()) {
-            await compressImages(filePath); // Recursively compress in subdirectories
+            await compressImages(filePath);
         } else {
             const ext = path.extname(file).toLowerCase();
             if (['.jpg', '.jpeg', '.png', '.webp', '.tiff', '.gif', '.svg'].includes(ext)) {
                 try {
+                    const baseName = path.basename(file, ext);
+                    const cleanName = baseName.split(rarityDelimiter)[0];
+                    const newFilePath = path.join(directory, cleanName + ext);
+
                     await sharp(filePath)
                         .resize(200, 200)
                         .toFile(filePath + '.tmp');
 
-                    // Replace the original file with the compressed version
                     fs.unlinkSync(filePath);
-                    fs.renameSync(filePath + '.tmp', filePath);
+                    fs.renameSync(filePath + '.tmp', newFilePath);
 
-                    console.log(`Compressed: ${filePath}`);
+                    console.log(`Compressed: ${newFilePath}`);
                 } catch (error) {
                     console.error(`Error compressing ${filePath}:`, error);
                 }

@@ -18,11 +18,15 @@ function getLayerData(dir) {
       fs.readdirSync(layerPath).forEach(file => {
         if (file.endsWith('.png')) {
           const name = file.replace('.png', '');
-          const [trait, weight] = name.split(rarityDelimiter);
-          const rarity = parseInt(weight) || 30; // Default to 30 if no weight is specified
+          let [trait, weight] = name.split(rarityDelimiter);
+          const rarity = parseInt(weight) || 1; // Default to 1 if no weight is specified
+          // if trait contains the word "Miltary" then change the word "Miltary" to "Military"
+          if (trait.includes('Miltary')) {
+            trait = trait.replace('Miltary', 'Military');
+          }
           
-          // Create new file name with rarity
-          const newFileName = `${trait}.png`;
+          // Create new file name with rarity - preserve existing rarity if present
+          const newFileName = weight ? `${trait}${rarityDelimiter}${weight}.png` : `${trait}.png`;
           
           // Rename the file
           fs.renameSync(path.join(layerPath, file), path.join(layerPath, newFileName));

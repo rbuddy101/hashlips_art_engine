@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
-const port = 3002;
+const port = 3003;
 
-const bodyParser = require('body-parser');
 const path = require('path');
 const fs = require('fs');
 
@@ -11,38 +10,53 @@ app.use('/comp_layers', express.static(path.join(__dirname, 'comp_layers')));
 
 app.set('trust proxy', true);
 
-app.use(bodyParser.urlencoded({
-    extended: true
+// Use built-in express middleware for parsing
+app.use(express.urlencoded({
+    limit: '5000mb',
+    extended: true,
+    parameterLimit: 1000000000000
 }));
 
-app.use(express.json());
-app.use(bodyParser.json({
-    limit: '50mb'
-}));
-app.use(bodyParser.urlencoded({
-    limit: '50mb',
-    extended: true,
-    parameterLimit: 10000000
+app.use(express.json({
+    limit: '5000mb'
 }));
 
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
     const layersDataPath = path.join(__dirname, 'layers_data.json');
-    fs.readFile(layersDataPath, 'utf8', (err, data) => {
+    const rarityPath = path.join(__dirname, 'rarity.json');
+    fs.readFile(layersDataPath, 'utf8', (err, layersData) => {
         if (err) {
             console.error('Error reading layers_data.json:', err);
             return res.status(500).send('Internal Server Error');
         }
-        const layersData = JSON.parse(data);
-        res.render('rarities', { layers: layersData });
+
+        fs.readFile(rarityPath, 'utf8', (err, rarityData) => {
+            if (err) {
+                console.error('Error reading rarity.json:', err);
+                return res.status(500).send('Internal Server Error');
+            }
+
+            const layers = JSON.parse(layersData);
+            const rarities = JSON.parse(rarityData);
+
+            // remove Type and Power up layers
+            delete layers.Type;
+            delete layers['Power up'];
+
+            res.render('rarities', { 
+                layers: layers,
+                rarityJson: rarities
+            });
+        });
     });
 });
 
 // New POST endpoint to handle rarity updates
 app.post('/update-rarities', (req, res) => {
     const updatedTraits = req.body.traits; // Expecting an array of updated traits
-
+    console.log(updatedTraits);
     if (!Array.isArray(updatedTraits)) {
         return res.status(400).json({ message: 'Invalid data format. Expected an array of traits.' });
     }
@@ -97,6 +111,6 @@ app.post('/update-rarities', (req, res) => {
 });
 
 // Run Express
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server running on port ${port}`);
 });

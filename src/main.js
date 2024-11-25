@@ -1,11 +1,12 @@
 const basePath = process.cwd();
 const { NETWORK } = require(`${basePath}/constants/network.js`);
 const rules = require(`${basePath}/src/rules.js`); // Import the rules
-
 const fs = require("fs");
 const sha1 = require(`${basePath}/node_modules/sha1`);
 const { createCanvas, loadImage } = require(`${basePath}/node_modules/canvas`);
-const buildDir = `${basePath}/build`;
+//const buildDir = `${basePath}/build`;
+// build directory should be opensuse path /mnt/dev/nft/build
+const buildDir = `/mnt/dev/nft/build`;
 const layersDir = `${basePath}/layers`;
 const {
   format,
@@ -32,10 +33,15 @@ var attributesList = [];
 var dnaList = new Set();
 const DNA_DELIMITER = "-";
 const HashlipsGiffer = require(`${basePath}/modules/HashlipsGiffer.js`);
+const _ = require('lodash');
+const cliProgress = require('cli-progress');
+const imageCache = new Map();
+
 
 let hashlipsGiffer = null;
 
-
+// Add a cache object at the top
+const layerElementsCache = {};
 
 // Setup build directories
 const buildSetup = () => {
@@ -80,21 +86,14 @@ const cleanName = (_str) => {
   return nameWithoutWeight;
 };
 
-// Function to extract Shirt traits
-const getShirtTraits = () => {
-  const shirtLayerPath = `${layersDir}/Shirt/`;
-  if (!fs.existsSync(shirtLayerPath)) {
-    throw new Error(`Shirt layer folder not found at path: ${shirtLayerPath}`);
-  }
-  return fs
-    .readdirSync(shirtLayerPath)
-    .filter((item) => !/(^|\/)\.[^\/\.]/g.test(item))
-    .map((i) => cleanName(i).toLowerCase());
-};
 
 // Updated getElements function to handle multiple layers with different trait dependencies
 const getElements = (path, layerName, shirtTraits = []) => {
-  return fs
+  if (layerElementsCache[layerName]) {
+    return layerElementsCache[layerName];
+  }
+
+  const elements = fs
     .readdirSync(path)
     .filter((item) => !/(^|\/)\.[^\/\.]/g.test(item))
     .map((i, index) => {
@@ -102,7 +101,7 @@ const getElements = (path, layerName, shirtTraits = []) => {
         // Replace dashes with underscores or throw an error
         throw new Error(`Layer name cannot contain dashes. Please fix: ${i}`);
       }
-// clean name
+      // clean name
 
       let nameWithoutExtension = i.slice(0, -4); // Remove .png
       // remove delimeter 
@@ -140,21 +139,11 @@ const getElements = (path, layerName, shirtTraits = []) => {
           color = parts[1].toLowerCase();
         }
         // If parts.length === 1, it might be 'None' or a default trait
-        
+
       }
 
-      // Add console logs for debugging
-      if (['beard'].includes(layerName.toLowerCase())) {
-        console.log(`Parsed ${layerName}:`, {
-          accessoryName,
-          shirt,
-          skin,
-          size,
-          color,
-          rarity: getRarityWeight(i)
-        });
-      }
-    
+
+
       return {
         id: index,
         name: cleanName(i),
@@ -167,6 +156,9 @@ const getElements = (path, layerName, shirtTraits = []) => {
         color: color || null,   // For Hair and Beard
       };
     });
+
+  layerElementsCache[layerName] = elements;
+  return elements;
 };
 
 // Setup layers
@@ -194,12 +186,18 @@ const layersSetup = (layersOrder, shirtTraits) => {
   return layers;
 };
 
-// Save generated image
-const saveImage = (_editionCount) => {
-  fs.writeFileSync(
-    `${buildDir}/images/${_editionCount}.png`,
-    canvas.toBuffer("image/png")
-  );
+// Asynchronous saveImage function
+const saveImage = async (_editionCount) => {
+  try {
+    await fs.promises.writeFile(
+      `${buildDir}/images/${_editionCount}.png`,
+      canvas.toBuffer("image/png")
+    );
+    //console.log(`Image saved for edition ${_editionCount}`);
+  } catch (error) {
+    console.error(`Failed to save image for edition ${_editionCount}:`, error);
+    throw error; // Re-throw if you want to handle it upstream
+  }
 };
 
 // Generate random background color
@@ -262,10 +260,13 @@ const addMetadata = (_dna, _edition) => {
 // Add attributes to the list
 const addAttributes = (_element) => {
   const layerName = _element.layer.name.toLowerCase();
+  if (layerName === 'background2') {
+    return;
+  }
   const selectedElement = _element.layer.selectedElement;
 
   // Define layers that should have a "None" attribute when no trait is selected
-  const layersWithNone = ['accessories', 'beard', 'hair', 'glasses', 'necklace'];
+  const layersWithNone = ['accessories', 'beard', 'hair', 'glasses', 'necklace', 'hat', 'eyes', 'mouth_items'];
 
   if (layersWithNone.includes(layerName) && !selectedElement) {
     attributesList.push({
@@ -275,14 +276,6 @@ const addAttributes = (_element) => {
     return;
   }
 
-  // Handle other layers if needed (e.g., Glasses as provided)
-  if (layerName === 'glasses' && !selectedElement) {
-    attributesList.push({
-      trait_type: _element.layer.name,
-      value: "None",
-    });
-    return;
-  }
 
   // If a trait is selected, add it to the attributes list
   if (selectedElement) {
@@ -293,16 +286,30 @@ const addAttributes = (_element) => {
   }
 };
 
-// Load layer image
 const loadLayerImg = async (_layer) => {
   try {
     if (_layer.selectedElement) {
-      console.log(`Loading image for ${_layer.name}: ${_layer.selectedElement.filename}`);
-      const image = await loadImage(`${_layer.selectedElement.path}`);
+      const imagePath = `${_layer.selectedElement.path}`;
+      
+      if (imageCache.has(imagePath)) {
+        return { layer: _layer, loadedImage: imageCache.get(imagePath) };
+      }
+      
+      const image = await loadImage(imagePath);
+      // Limit cache size to prevent memory issues
+      // dont cache the accessories layer images  
+      if (_layer.name !== 'Accessories') {
+        if (imageCache.size < 270) {
+          imageCache.set(imagePath, image);
+        } else {
+         // console.log("Image cache is full while loading layer:", _layer.name);
+        } 
+      }
+      
       return { layer: _layer, loadedImage: image };
     } else {
       console.log(`No image to load for ${_layer.name}`);
-      return null; // No image to load
+      return null;
     }
   } catch (error) {
     console.error("Error loading image:", error);
@@ -321,25 +328,28 @@ const addText = (_sig, x, y, size) => {
 
 // Draw each element onto the canvas
 const drawElement = (_renderObject, _index, _layersLen) => {
-  if (_renderObject === null) return; // Skip if no image to draw
+  if (_renderObject === null) return;
 
-  ctx.globalAlpha = _renderObject.layer.opacity;
-  ctx.globalCompositeOperation = _renderObject.layer.blend;
+  const { layer, loadedImage } = _renderObject;
 
-  text.only
-    ? addText(
-        `${_renderObject.layer.name}${text.spacer}${_renderObject.layer.selectedElement.name}`,
-        text.xGap,
-        text.yGap * (_index + 1),
-        text.size
-      )
-    : ctx.drawImage(
-        _renderObject.loadedImage,
-        0,
-        0,
-        format.width,
-        format.height
-      );
+  // Only change canvas state if different from current
+  if (ctx.globalAlpha !== layer.opacity) {
+    ctx.globalAlpha = layer.opacity;
+  }
+  if (ctx.globalCompositeOperation !== layer.blend) {
+    ctx.globalCompositeOperation = layer.blend;
+  }
+
+  if (text.only) {
+    addText(
+      `${layer.name}${text.spacer}${layer.selectedElement.name}`,
+      text.xGap,
+      text.yGap * (_index + 1),
+      text.size
+    );
+  } else {
+    ctx.drawImage(loadedImage, 0, 0, format.width, format.height);
+  }
 
   addAttributes(_renderObject);
 };
@@ -348,32 +358,33 @@ const drawElement = (_renderObject, _index, _layersLen) => {
 const constructLayerToDna = (_dna = "", _layers = []) => {
   if (!_dna) {
     console.error("DNA is undefined or null in constructLayerToDna");
-    return [];
+    return { mappedLayers: [], error: true };
   }
   let mappedDnaToLayers = _layers.map((layer, index) => {
-    console.log("Layer:", layer.name);
     let dnaSegment = _dna.split(DNA_DELIMITER)[index];
-    console.log("DNA Segment:", dnaSegment);
-    if (!dnaSegment) {
-      console.error(`DNA segment is missing for layer ${layer.name}`);
-      return {
-        name: layer.name,
-        blend: layer.blend,
-        opacity: layer.opacity,
-        selectedElement: null,
-      };
+    if (!dnaSegment || dnaSegment === undefined) {
+      console.warn(`DNA segment is missing for layer ${layer.name}. Using 'None' trait.`);
+      return { error: true };
     }
     let selectedElement = layer.elements.find(
-      (e) => e.id == cleanDna(dnaSegment)
+      (e) => e.id === cleanDna(dnaSegment)
     );
     return {
       name: layer.name,
       blend: layer.blend,
       opacity: layer.opacity,
       selectedElement: selectedElement,
+      error: false
     };
   });
-  return mappedDnaToLayers;
+
+  // Check if any layer has an error
+  const hasError = mappedDnaToLayers.some(layer => layer.error);
+
+  return {
+    mappedLayers: mappedDnaToLayers,
+    error: hasError
+  };
 };
 
 /**
@@ -395,11 +406,9 @@ const filterDNAOptions = (_dna) => {
     const options = querystring[1].split("&").reduce((r, setting) => {
       const keyPairs = setting.split("=");
       return { ...r, [keyPairs[0]]: keyPairs[1] };
-    }, []);
-
+    }, {});
     return options.bypassDNA;
   });
-
   return filteredDNA.join(DNA_DELIMITER);
 };
 
@@ -446,22 +455,35 @@ const removeBlockedTraits = (currentLayer, selectedTraits) => {
   };
 
   for (const [layerName, traitName] of Object.entries(selectedTraits)) {
-    if (layerName.toLowerCase() === currentLayer.name.toLowerCase()) {
+    if (traitName == 'None' || traitName == 'none') {
       continue;
     }
 
     const layerRules = rules.excludeRules[layerName];
     if (!layerRules) {
-      console.warn(`No exclusion rules found for layer "${layerName}"`);
+      //console.warn(`No exclusion rules found for layer "${layerName}"`);
       continue;
+    } else {
+      // console.log("Layer rules found for layer:", layerName);
+    }
+
+    if (layerRules['All']) {
+      // console.log("All exclusion found");
+      const exclude = layerRules['All'].exclude;
+      if (exclude && exclude[currentLayer.name]) {
+        exclusions.push(...exclude[currentLayer.name]);
+        // console.log(`Excluding ALL traits from layer "${currentLayer.name}"`);
+      }
     }
 
     if (layerRules[traitName]) {
       const exclude = layerRules[traitName].exclude;
       if (exclude && exclude[currentLayer.name]) {
         exclusions.push(...exclude[currentLayer.name]);
-        console.log(`Excluding traits from layer "${currentLayer.name}" based on trait "${traitName}" in layer "${layerName}":`, exclude[currentLayer.name]);
+        // console.log(`Excluding traits from layer "${currentLayer.name}" based on trait "${traitName}" in layer "${layerName}":`, exclude[currentLayer.name]);
       }
+    } else {
+      // console.log(`No exclusion rules found for trait "${traitName}" in layer "${layerName}"`);
     }
 
     if (traitName.includes('_')) {
@@ -469,7 +491,7 @@ const removeBlockedTraits = (currentLayer, selectedTraits) => {
       const excludePrefix = layerRules[traitPrefix]?.exclude;
       if (excludePrefix && excludePrefix[currentLayer.name]) {
         exclusions.push(...excludePrefix[currentLayer.name]);
-        console.log(`Excluding traits from layer "${currentLayer.name}" based on prefix "${traitPrefix}" in layer "${layerName}":`, excludePrefix[currentLayer.name]);
+        // console.log(`Excluding traits from layer "${currentLayer.name}" based on prefix "${traitPrefix}" in layer "${layerName}":`, excludePrefix[currentLayer.name]);
       }
     }
   }
@@ -479,10 +501,10 @@ const removeBlockedTraits = (currentLayer, selectedTraits) => {
   }
 
   const exclusionsNormalized = exclusions.map(trait => normalizeTrait(trait));
-  console.log("Normalized exclusions for current layer:", exclusionsNormalized);
+  // console.log("Normalized exclusions for current layer:", exclusionsNormalized);
 
   if (exclusionsNormalized.includes('all')) {
-    console.log(`Excluding all traits from layer "${currentLayer.name}" due to 'All' exclusion.`);
+    // console.log(`Excluding all traits from layer "${currentLayer.name}" due to 'All' exclusion.`);
     // remove all elements except for the one name "None"
     currentLayer.elements = currentLayer.elements.filter(element => element.name === "None");
     return currentLayer;
@@ -492,7 +514,7 @@ const removeBlockedTraits = (currentLayer, selectedTraits) => {
     const elementNormalized = normalizeTrait(element.name);
     const isExcluded = exclusionsNormalized.some(exclusion => elementNormalized.includes(exclusion));
     if (isExcluded) {
-      console.log(`Excluding trait "${element.name}" from layer "${currentLayer.name}"`);
+      // console.log(`Excluding trait "${element.name}" from layer "${currentLayer.name}"`);
       return false;
     }
     return true;
@@ -501,10 +523,10 @@ const removeBlockedTraits = (currentLayer, selectedTraits) => {
   if (currentLayer.elements.length === 0) {
     console.warn(`All traits have been excluded from layer "${currentLayer.name}".`);
   } else {
-    console.log(`Layer "${currentLayer.name}" elements after exclusion:`, currentLayer.elements);
+    // // console.log(`Layer "${currentLayer.name}" elements after exclusion:`, currentLayer.elements);
   }
 
-  console.log("Current layer elements after filtering:", currentLayer.elements);
+  //// console.log("Current layer elements after filtering:", currentLayer.elements);
   return currentLayer;
 };
 
@@ -515,16 +537,18 @@ const createDna = (_layers) => {
   let skin = null;
   let shirt = null;
   let color = null;
-  
-  // Create a deep copy of the layers
-  const layersCopy = JSON.parse(JSON.stringify(_layers));
+  let mouth = null
+
+  // Create a deep copy of the layers using lodash's cloneDeep
+  const layersCopy = _.cloneDeep(_layers);
 
   for (let layerIndex = 0; layerIndex < layersCopy.length; layerIndex++) {
     let layer = layersCopy[layerIndex];
     var totalWeight = 0;
 
-    if (layer.name.toLowerCase() === 'beard') {
-      console.log("Beard layer");
+    if (layer.name.toLowerCase() === 'hair') {
+      // console.log("Beard layer");
+      if (color !== 'any') {
       layer.elements = layer.elements.filter(element => {
         if (element.name.includes('_')) {
           const colorFound = element.name.split('_')[1];
@@ -532,109 +556,220 @@ const createDna = (_layers) => {
         }
         return true;
       });
-    } else if (layer.name.toLowerCase() === 'accessories') {
-      console.log("Accessories layer");
-      console.log("Shirt:", shirt, "Skin:", skin);
-      let usedNaked = false;
+      }
+    } else if (layer.name.toLowerCase() === 'accessories' && skin !== 'ghost') {
+      // console.log("Accessories layer");
+      // console.log("Shirt:", shirt, "Skin:", skin);
       let foundMatch = false;
-      layer.elements = layer.elements.filter(element => {
-        if (element.name.includes('_')) {
-          const shirtFound = element.name.split('_')[1];
-          const skinFound = element.name.split('_')[2];
-          console.log("Shirt Found:", shirtFound, "Skin Found:", skinFound);
-          if ((shirtFound === shirt) && skinFound === skin) {
-            console.log("Accessory Match:", element.name);
-            foundMatch = true;
-            return true;
-          } else if(skinFound === undefined && shirtFound === shirt) {
-            console.log("Accessory Match No Skin:", element.name);
-            foundMatch = true;
-            return true;
-          } else if (shirtFound === 'Naked' && skinFound === skin) {
-            console.log("Accessory Match Naked:", element.name);
-            usedNaked = true;
-            return true;
+      if (shirt == "Knights Armor") {
+        // console.log("Knights Armor");
+        // use accessries that have the word knights in the name
+        layer.elements = layer.elements.filter(element => element.name.includes('Knights Armor'));
+        // console.log("Accessories layer elements:", layer.elements);
+      } else if (shirt == "Space Suit") {
+
+        // console.log("Space Suit");
+        layer.elements = layer.elements.filter(element => element.name.includes('Space Suit'));
+        // console.log("Accessories layer elements:", layer.elements);
+      } else {
+        layer.elements = layer.elements.filter(element => {
+          if (element.name.includes('_')) {
+            const shirtFound = element.name.split('_')[1];
+            const skinFound = element.name.split('_')[2];
+            // // console.log("Shirt Found:", shirtFound, "Skin Found:", skinFound);
+            if ((shirtFound === shirt) && skinFound === skin) {
+              // console.log("Accessory Match:", element.name);
+              foundMatch = true;
+              return true;
+            } else if (skinFound === undefined && shirtFound === shirt) {
+              // console.log("Accessory Match No Skin:", element.name);
+              foundMatch = true;
+              return true;
+          } else if (shirtFound === 'Naked' && skinFound === skin ) {
+              // console.log("Accessory Match Naked:", element.name);
+              return true;
+            }
+            return false;
           }
-          return false;
-        }
-        return true;
-      });
-      if (!foundMatch && !usedNaked) {
-        console.error("No matching accessory found for Edition");
+          return true;
+        });
       }
+
       if (foundMatch) {
-        layer.elements = layer.elements.filter(element => element.name !== 'Naked');
+       // loop through and remove all elements with the word naked in it regardless of case
+       layer.elements = layer.elements.filter(element => element.name.toLowerCase().indexOf('naked') == -1);  
+      } else {
+        // Using naked, we want to increase the weight of none
+        layer.elements.forEach(element => {
+          if (element.name.toLowerCase() === 'none') {
+            // multiply the weight by 2x
+            element.weight *= 2;
+          }
+        });
       }
+      if (layer.elements.length === 0) {
+        console.error("No matching accessory found for Edition");
+        // exit process
+        process.exit(1);
+      }
+      // if length of elements is 0 then set to none
     } else if (layer.name.toLowerCase() === 'nose') {
-      console.log("Nose layer");
-      console.log("Nose Color:", skin);
+      // console.log("Nose layer");
+      // console.log("Nose Color:", skin);
       layer.elements = layer.elements.filter(element => element.name.split('_')[1] === skin);
     } else if (layer.name.toLowerCase() === 'glasses') {
-      console.log("Glasses layer");
-    }
-    //console.log("Selected traits:", selectedTraits);
-    layer = removeBlockedTraits(layer, selectedTraits);
-    console.log("Layer elements after filtering:", layer.elements);
-    layer.elements.forEach(element => {
-      totalWeight += element.weight;
-    });
-
-    let random = Math.floor(Math.random() * totalWeight);
-    console.log("Going through layer:", layer.name);
-   // console.log("Layer elements:", layer.elements);
-
-    for (let i = 0; i < layer.elements.length; i++) {
-      random -= layer.elements[i].weight;
-      if (random < 0) {
-        if (layer.name.toLowerCase() === 'skin') {
-          skin = layer.elements[i].name;
-          console.log("Skin:", skin);
+      // console.log("Glasses layer");
+    } else if (layer.name.toLowerCase() === 'mouth') {
+      // console.log("Mouth layer");
+      // if skin is black then exclude all mouth_items with the word white in the name
+      if (skin) {
+      if (skin.toLowerCase() === 'black') {
+        layer.elements = layer.elements.filter(element => !element.name.includes('White'));
+      } else if (skin.toLowerCase() !== 'black') {
+        // remove all mouth_items with the word black in the name
+        layer.elements = layer.elements.filter(element => !element.name.includes('Black'));
         }
-        if (layer.name.toLowerCase() === 'shirt') {
-          shirt = layer.elements[i].name;
-          console.log("Shirt:", shirt);
-        }
-        if (layer.name.toLowerCase() === 'hair') {
-          if (layer.elements[i].name.includes('_')) {
-            color = layer.elements[i].name.split('_')[1];
-          }
-          console.log("Hair Color:", color);
-        }
-        if (layer.name.toLowerCase() === 'necklace') {
-          console.log("Necklace in elements:", layer.elements[i].name);
-        }
-        console.log("Random:", random, "Layer:", layer.name, "Element:", layer.elements[i].name);
-        selectedTraits[layer.name] = layer.elements[i].name;
-      //  console.log("Selected traits:", selectedTraits);
-        randNum.push(
-          `${layer.elements[i].id}:${layer.elements[i].filename}${
-            layer.bypassDNA ? "?bypassDNA=true" : ""
-          }`
-        );
+      }
+    } else if (layer.name.toLowerCase() === 'mouth_items') {
+      let matchFound = false;
+     // loop through all elements and log the current mouth and the current element name
+     if (skin.toLowerCase() !== 'ghost') {
+     for (let i = 0; i < layer.elements.length; i++) {
+      // console.log("Mouth:", mouth, "Element:", layer.elements[i].name);
+      if (mouth.split('_')[0] === layer.elements[i].name) {
+        // console.log("Mouth item match:", layer.elements[i].name, "Mouth:", mouth);
+        // remove all elements except for the matching index 
+        layer.elements = [layer.elements[i]];
+        matchFound = true;
         break;
       }
+     }
     }
-  }
-  return randNum.join(DNA_DELIMITER);
-};
+     if (matchFound === false) {
+      // console.log("No mouth item match found, excluding all mouth_items");
+      // remove all elements except for the one name "None"
+        layer.elements = layer.elements.filter(element => element.name === 'None');
+        // console.log("Remaining elements:", layer.elements);
+      }
+    }
+      //// console.log("Selected traits:", selectedTraits);
+      layer = removeBlockedTraits(layer, selectedTraits);
+      // if length of elements is 0 then set to none
+      if (layer.elements.length === 0 && layer.name == 'accessories') {
+        // console.log("No elements found for layer using NONE:", layer.name);
+        //exit process
+        process.exit();
+      }
+      // // console.log("Layer elements after filtering:", layer.elements);
+      layer.elements.forEach(element => {
+        totalWeight += element.weight;
+      });
+
+      let random = Math.floor(Math.random() * totalWeight);
+      // console.log("Going through layer:", layer.name);
+      // // console.log("Layer elements:", layer.elements);
+
+      for (let i = 0; i < layer.elements.length; i++) {
+        random -= layer.elements[i].weight;
+        if (random < 0) {
+          if (layer.name.toLowerCase() === 'skin') {
+            skin = layer.elements[i].name;
+            // console.log("Skin:", skin);
+          }
+          if (layer.name.toLowerCase() === 'shirt') {
+            shirt = layer.elements[i].name;
+            // console.log("Shirt:", shirt);
+          }
+          // if (layer.name.toLowerCase() === 'hair') {
+          //   if (layer.elements[i].name.includes('_')) {
+          //     color = layer.elements[i].name.split('_')[1];
+          //   }
+          //   // console.log("Hair Color:", color);
+          // }
+          if (layer.name.toLowerCase() === 'beard') {
+            if (layer.elements[i].name.includes('_')) {
+              color = layer.elements[i].name.split('_')[1];
+            } else {
+              color = 'any';
+            }
+            // console.log("Hair Color:", color);
+          }
+          if (layer.name.toLowerCase() === 'necklace') {
+            // console.log("Necklace in elements:", layer.elements[i].name);
+          }
+          if (layer.name.toLowerCase() === 'mouth') {
+            mouth = layer.elements[i].name;
+            // console.log("Mouth:", mouth);
+          }
+          // console.log("Random:", random, "Layer:", layer.name, "Element:", layer.elements[i].name);
+          selectedTraits[layer.name] = layer.elements[i].name;
+          //  console.log("Selected traits:", selectedTraits);
+          randNum.push(
+            `${layer.elements[i].id}:${layer.elements[i].filename}${layer.bypassDNA ? "?bypassDNA=false" : ""
+            }`
+          );
+          // console.log("Selected traits:", selectedTraits);
+          break;
+        }
+      }
+    }
+    return randNum.join(DNA_DELIMITER);
+  };
 
 // Write all metadata to a single file
 const writeMetaData = (_data) => {
   fs.writeFileSync(`${buildDir}/json/_metadata.json`, _data);
 };
 
-// Save individual metadata files
-const saveMetaDataSingleFile = (_editionCount) => {
-  let metadata = metadataList.find((meta) => meta.edition == _editionCount);
-  debugLogs
-    ? console.log(
+// Asynchronous saveMetaDataSingleFile function
+const saveMetaDataSingleFile = async (_editionCount) => {
+  try {
+    const metadata = metadataList.find((meta) => meta.edition == _editionCount);
+    
+    // this is where we need to save the changed names
+    // loop througg the metadata.attributes and change the name to the displayName if it exists
+    metadata.attributes.forEach(attribute => {
+      if (attribute.trait_type === 'Accessories') {
+        // if it contains a _ then split by that and use the first part
+        if (attribute.value.includes('_')) {
+          attribute.value = attribute.value.split('_')[0];
+        }
+      } else if (attribute.trait_type === 'Beard') {
+        if (attribute.value.includes('_')) {
+          attribute.value = attribute.value.split('_')[1];
+        }
+      } else if (attribute.trait_type === 'Hair') {
+        if (attribute.value.includes('_')) {
+          attribute.value = attribute.value.split('_')[1];
+        }
+      } else if (attribute.trait_type === 'Mouth') {
+        if (attribute.value.includes('_')) {
+          attribute.value = attribute.value.split('_')[1];
+        }
+      } else if (attribute.trait_type === 'Mouth_Items') {
+        // remove _ and change to space in the trait_type
+        attribute.trait_type = attribute.trait_type.replace(/_/g, ' ');
+      }
+      // entired remove Eyeb
+    });
+    // remove the Eyebrow attribute 
+    metadata.attributes = metadata.attributes.filter(attribute => attribute.trait_type !== 'Eyebrow');
+
+    //console.log("Metadata:", metadata);
+    if (debugLogs) {
+      console.log(
         `Writing metadata for ${_editionCount}: ${JSON.stringify(metadata)}`
-      )
-    : null;
-  fs.writeFileSync(
-    `${buildDir}/json/${_editionCount}.json`,
-    JSON.stringify(metadata, null, 2)
-  );
+      );
+    }
+    await fs.promises.writeFile(
+      `${buildDir}/json/${_editionCount}.json`,
+      JSON.stringify(metadata, null, 2)
+    );
+    //console.log(`Metadata saved for edition ${_editionCount}`);
+  } catch (error) {
+    console.error(`Failed to save metadata for edition ${_editionCount}:`, error);
+    throw error; // Re-throw to handle upstream if necessary
+  }
 };
 
 // Shuffle array (optional)
@@ -652,125 +787,188 @@ function shuffle(array) {
   return array;
 }
 
-// Main function to start creating NFTs
-const startCreating = async () => {
-  let layerConfigIndex = 0;
-  let editionCount = 1;
-  let failedCount = 0;
-  let abstractedIndexes = [];
+  // Main function to start creating NFTs
+  const startCreating = async () => {
+    let layerConfigIndex = 0;
+    let editionCount = 1;
+    let failedCount = 0;
+    let abstractedIndexes = [];
 
-  for (
-    let i = network == NETWORK.sol ? 0 : 1;
-    i <= layerConfigurations[layerConfigurations.length - 1].growEditionSizeTo;
-    i++
-  ) {
-    abstractedIndexes.push(i);
-  }
-
-  if (shuffleLayerConfigurations) {
-    abstractedIndexes = shuffle(abstractedIndexes);
-  }
-
-  debugLogs
-    ? console.log("Editions left to create: ", abstractedIndexes)
-    : null;
-
-  while (layerConfigIndex < layerConfigurations.length) {
-    // Extract Shirt traits once before setting up layers
-
-    const layers = layersSetup(
-      layerConfigurations[layerConfigIndex].layersOrder
-    );
-
-    while (
-      editionCount <= layerConfigurations[layerConfigIndex].growEditionSizeTo
+    for (
+      let i = network == NETWORK.sol ? 0 : 1;
+      i <= layerConfigurations[layerConfigurations.length - 1].growEditionSizeTo;
+      i++
     ) {
-      let newDna = createDna(layers);
-      console.log("New DNA:", newDna);
-      if (!newDna) {
-        console.log(`Failed to create DNA for edition ${abstractedIndexes[0]}`);
-        failedCount++;
-        if (failedCount >= uniqueDnaTorrance) {
-          console.log(
-            `You need more layers or elements to grow your edition to ${layerConfigurations[layerConfigIndex].growEditionSizeTo} artworks!`
-          );
-          process.exit();
-        }
-        continue;
-      }
+      abstractedIndexes.push(i);
+    }
 
-      if (isDnaUnique(dnaList, newDna)) {
-        let results = constructLayerToDna(newDna, layers);
-        //console.log("Results:", results);
-        let loadedElements = [];
+    if (shuffleLayerConfigurations) {
+      abstractedIndexes = shuffle(abstractedIndexes);
+    }
 
-        results.forEach((layer) => {
-          loadedElements.push(loadLayerImg(layer));
-        });
-        //console.log("Results:", results);
+    const totalEditions = abstractedIndexes.length;
+    const progressBar = new cliProgress.SingleBar({
+      format: 'Progress: [{bar}] {percentage}% | ETA: {eta} | {value}/{total} | Speed: {speed} | Avg Load: {avgLoad} | Avg NFT: {avgNFT}',
+      barCompleteChar: '\u2588',
+      barIncompleteChar: '\u2591',
+      hideCursor: true
+    }, cliProgress.Presets.shades_classic);
+    progressBar.start(totalEditions, 0);
 
+    const startTime = Date.now();
+    let lastUpdateTime = startTime;
+    let totalLoadTime = 0;
+    let nftCount = 0;
 
-        await Promise.all(loadedElements).then((renderObjectArray) => {
-          debugLogs ? console.log("Clearing canvas") : null;
-          ctx.clearRect(0, 0, format.width, format.height);
-          if (gif.export) {
-            hashlipsGiffer = new HashlipsGiffer(
-              canvas,
-              ctx,
-              `${buildDir}/gifs/${abstractedIndexes[0]}.gif`,
-              gif.repeat,
-              gif.quality,
-              gif.delay
-            );
-            hashlipsGiffer.start();
+    while (layerConfigIndex < layerConfigurations.length) {
+        const layers = layersSetup(
+        layerConfigurations[layerConfigIndex].layersOrder
+        );
+
+        while (
+        editionCount <= layerConfigurations[layerConfigIndex].growEditionSizeTo
+        ) {
+        const loopStartTime = Date.now();
+
+          const newDna = createDna(layers);
+
+        if (isDnaUnique(dnaList, newDna)) {
+          const results = constructLayerToDna(newDna, layers);
+          if (results.error) {
+            console.error("Error in constructLayerToDna: Skipping this generation.");
+            failedCount++;
+            
+            if (failedCount >= uniqueDnaTorrance) {
+                console.error(
+                    `You need more layers or elements to grow your edition to ${layerConfigurations[layerConfigIndex].growEditionSizeTo} artworks!`
+                );
+                process.exit(1);
+            }
+            
+            continue; // Skip to the next iteration
           }
-          if (background.generate) {
-            drawBackground();
-          }
-          renderObjectArray.forEach((renderObject, index) => {
-            if (renderObject) { // Ensure the renderObject is not null
-              drawElement(
-                renderObject,
-                index,
-                layerConfigurations[layerConfigIndex].layersOrder.length
+
+          const mappedLayers = results.mappedLayers;
+
+          // Reset failedCount on successful generation
+          failedCount = 0;
+
+            let loadedElements = [];
+
+            // Check for spacesuit hat
+            let spacesuitHat = mappedLayers.some(layer => layer.name === 'Hat' && layer.selectedElement.name === 'Space Suit');
+
+            const loadStartTime = Date.now();
+            const loadPromises = mappedLayers.map(layer => loadLayerImg(layer));
+          const loadedElementsArray = await Promise.all(loadPromises);
+            const loadEndTime = Date.now();
+          totalLoadTime += loadEndTime - loadStartTime;
+
+            loadedElements = loadedElementsArray;
+
+            if (spacesuitHat) {
+              const spacesuitAccessory = {
+                name: 'Background2',
+                blend: 'source-over',
+                opacity: 1,
+                selectedElement: {
+                  id: 999999999,
+                  name: 'Space Suit Back',
+                  filename: 'Space Suit_Back.png',
+                path: '/home/will/Documents/GitHub/hashlips_art_engine/layers/Space Suit_Back.png',
+                  weight: 1,
+                  shirt: 'space suit',
+                  skin: 'black',
+                  size: null,
+                  color: null
+                }
+              };
+              const spacesuitElement = await loadLayerImg(spacesuitAccessory);
+              loadedElements.splice(1, 0, spacesuitElement);
+            }
+
+
+          const nftStartTime = Date.now();
+          await Promise.all(loadedElements).then(async (renderObjectArray) => {
+            ctx.clearRect(0, 0, format.width, format.height);
+            if (gif.export) {
+              hashlipsGiffer = new HashlipsGiffer(
+                canvas,
+                ctx,
+                `${buildDir}/gifs/${abstractedIndexes[0]}.gif`,
+                gif.repeat,
+                gif.quality,
+                gif.delay
               );
-              if (gif.export) {
-                hashlipsGiffer.add();
+              hashlipsGiffer.start();
+            }
+            if (background.generate) {
+              drawBackground();
+            }
+            for (const renderObject of renderObjectArray) {
+              if (renderObject) {
+                drawElement(
+                  renderObject,
+                  renderObjectArray.indexOf(renderObject),
+                  layerConfigurations[layerConfigIndex].layersOrder.length
+                );
+                if (gif.export) {
+                  hashlipsGiffer.add();
+                }
               }
             }
+            if (gif.export) {
+              hashlipsGiffer.stop();
+            }
+
+            await Promise.all([
+              saveImage(abstractedIndexes[0]),
+              addMetadata(newDna, abstractedIndexes[0]),
+              saveMetaDataSingleFile(abstractedIndexes[0])
+            ]);
+
+            dnaList.add(filterDNAOptions(newDna));
+            editionCount++;
+            abstractedIndexes.shift();
+
+            const loopEndTime = Date.now();
+            const loopTime = loopEndTime - loopStartTime;
+            nftCount++;
+
+            const currentTime = Date.now();
+            const elapsedTime = currentTime - startTime;
+            const timePerEdition = elapsedTime / nftCount;
+            const remainingTime = timePerEdition * (totalEditions - nftCount);
+
+            if (currentTime - lastUpdateTime > 1000) {
+              const avgLoadTime = totalLoadTime / nftCount;
+              const avgNFTTime = elapsedTime / nftCount;
+
+              progressBar.update(nftCount, {
+                speed: `${(timePerEdition / 1000).toFixed(2)}s/edition`,
+                eta: `${(remainingTime / 60000).toFixed(0)}m`,
+                avgLoad: `${avgLoadTime.toFixed(2)}ms/load`,
+                avgNFT: `${(avgNFTTime / 1000).toFixed(2)}s/NFT`
+              });
+              lastUpdateTime = currentTime;
+            }
           });
-          if (gif.export) {
-            hashlipsGiffer.stop();
+        } else {
+          console.log("DNA exists!");
+          failedCount++;
+          
+          if (failedCount >= uniqueDnaTorrance) {
+              console.log(
+                  `You need more layers or elements to grow your edition to ${layerConfigurations[layerConfigIndex].growEditionSizeTo} artworks!`
+              );
+              process.exit();
           }
-          debugLogs
-            ? console.log("Editions left to create: ", abstractedIndexes)
-            : null;
-          saveImage(abstractedIndexes[0]);
-          addMetadata(newDna, abstractedIndexes[0]);
-          saveMetaDataSingleFile(abstractedIndexes[0]);
-          console.log(
-            `Created edition: ${abstractedIndexes[0]}, with DNA: ${sha1(
-              newDna
-            )}`
-          );
-        });
-        dnaList.add(filterDNAOptions(newDna));
-        editionCount++;
-        abstractedIndexes.shift();
-      } else {
-        console.log("DNA exists!");
-        failedCount++;
-        if (failedCount >= uniqueDnaTorrance) {
-          console.log(
-            `You need more layers or elements to grow your edition to ${layerConfigurations[layerConfigIndex].growEditionSizeTo} artworks!`
-          );
-          process.exit();
         }
       }
+      layerConfigIndex++;
     }
-    layerConfigIndex++;
-  }
-  writeMetaData(JSON.stringify(metadataList, null, 2));
-};
-module.exports = { startCreating, buildSetup, getElements };
 
+    progressBar.stop();
+            writeMetaData(JSON.stringify(metadataList, null, 2));
+  };
+  module.exports = { startCreating, buildSetup, getElements };

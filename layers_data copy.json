@@ -3,7 +3,8 @@
     {
       "name": "Baseball Bat_Black Hoodie_Alien",
       "fileName": "Baseball Bat_Black Hoodie_Alien#5.png",
-      "rarity": 5
+      "rarity": 5,
+      "edited": true
     },
     {
       "name": "Baseball Bat_Black Hoodie_Black",
@@ -6970,92 +6971,151 @@
     {
       "name": "BBQ Pit",
       "fileName": "BBQ Pit#2.png",
-      "rarity": 2
+      "rarity": 9,
+      "edited": true
     },
     {
       "name": "Blue",
       "fileName": "Blue#15.png",
-      "rarity": 15
+      "rarity": 50,
+      "edited": true
     },
     {
       "name": "Bowling Alley",
       "fileName": "Bowling Alley#2.png",
-      "rarity": 2
+      "rarity": 10,
+      "edited": true
     },
     {
       "name": "Bright Red",
       "fileName": "Bright Red#10.png",
-      "rarity": 10
+      "rarity": 40,
+      "edited": true
     },
     {
       "name": "Bright Yellow",
       "fileName": "Bright Yellow#10.png",
-      "rarity": 10
+      "rarity": 22,
+      "edited": true
     },
     {
       "name": "Casino Slots",
       "fileName": "Casino Slots#2.png",
-      "rarity": 2
+      "rarity": 11,
+      "edited": true
     },
     {
       "name": "Classic Car Show",
       "fileName": "Classic Car Show#2.png",
-      "rarity": 2
+      "rarity": 12,
+      "edited": true
+    },
+    {
+      "name": "Cyan",
+      "fileName": "Cyan#10.png",
+      "rarity": 0,
+      "edited": true
     },
     {
       "name": "Disco Night",
       "fileName": "Disco Night#2.png",
-      "rarity": 2
+      "rarity": 4,
+      "edited": true
     },
     {
       "name": "Fire",
       "fileName": "Fire#1.png",
-      "rarity": 1
+      "rarity": 5,
+      "edited": true
     },
     {
       "name": "Fishing",
       "fileName": "Fishing#2.png",
-      "rarity": 2
+      "rarity": 6,
+      "edited": true
     },
     {
       "name": "Golf Course",
       "fileName": "Golf Course#2.png",
-      "rarity": 2
+      "rarity": 7,
+      "edited": true
     },
     {
       "name": "Green Hills",
       "fileName": "Green Hills#2.png",
-      "rarity": 2
+      "rarity": 8,
+      "edited": true
     },
     {
       "name": "Green Stock Candles",
       "fileName": "Green Stock Candles#2.png",
-      "rarity": 2
+      "rarity": 1,
+      "edited": true
     },
     {
       "name": "Ice Storm",
       "fileName": "Ice Storm#2.png",
-      "rarity": 2
+      "rarity": 14,
+      "edited": true
     },
     {
       "name": "Lawn",
       "fileName": "Lawn#2.png",
-      "rarity": 2
+      "rarity": 13,
+      "edited": true
+    },
+    {
+      "name": "Light Blue",
+      "fileName": "Light Blue#20.png",
+      "rarity": 0,
+      "edited": true
+    },
+    {
+      "name": "Light Brown",
+      "fileName": "Light Brown#20.png",
+      "rarity": 0,
+      "edited": true
+    },
+    {
+      "name": "Light Green",
+      "fileName": "Light Green#20.png",
+      "rarity": 0,
+      "edited": true
     },
     {
       "name": "Light Grey",
       "fileName": "Light Grey#20.png",
-      "rarity": 20
+      "rarity": 45,
+      "edited": true
+    },
+    {
+      "name": "Light Orange",
+      "fileName": "Light Orange#1.png",
+      "rarity": 0,
+      "edited": true
+    },
+    {
+      "name": "Light Pink",
+      "fileName": "Light Pink#20.png",
+      "rarity": 0,
+      "edited": true
     },
     {
       "name": "Light Purple",
-      "fileName": "Light Purple#15.png",
-      "rarity": 15
+      "fileName": "Light Purple#20.png",
+      "rarity": 1
+    },
+    {
+      "name": "Light Red",
+      "fileName": "Light Red#20.png",
+      "rarity": 0,
+      "edited": true
     },
     {
       "name": "Light Violet",
       "fileName": "Light Violet#20.png",
-      "rarity": 20
+      "rarity": 30,
+      "edited": true
     },
     {
       "name": "Moon",
@@ -7065,59 +7125,94 @@
     {
       "name": "Orange",
       "fileName": "Orange#20.png",
-      "rarity": 20
+      "rarity": 25,
+      "edited": true
     },
     {
       "name": "Pink",
       "fileName": "Pink#10.png",
-      "rarity": 10
+      "rarity": 18,
+      "edited": true
     },
     {
       "name": "RV Park",
       "fileName": "RV Park#2.png",
-      "rarity": 2
+      "rarity": 6,
+      "edited": true
+    },
+    {
+      "name": "Recliner",
+      "fileName": "Recliner#2.png",
+      "rarity": 0,
+      "edited": true
+    },
+    {
+      "name": "Red",
+      "fileName": "Red#20.png",
+      "rarity": 0,
+      "edited": true
+    },
+    {
+      "name": "Rock Concert",
+      "fileName": "Rock Concert#2.png",
+      "rarity": 0,
+      "edited": true
     },
     {
       "name": "Slime",
       "fileName": "Slime#10.png",
-      "rarity": 10
+      "rarity": 35,
+      "edited": true
     },
     {
       "name": "Top Of Mountain",
       "fileName": "Top Of Mountain#2.png",
-      "rarity": 2
+      "rarity": 15,
+      "edited": true
     },
     {
       "name": "Trippy",
       "fileName": "Trippy#2.png",
-      "rarity": 2
+      "rarity": 16,
+      "edited": true
     },
     {
       "name": "Yacht",
       "fileName": "Yacht#2.png",
-      "rarity": 2
+      "rarity": 3,
+      "edited": true
+    },
+    {
+      "name": "Yellow",
+      "fileName": "Yellow#20.png",
+      "rarity": 0,
+      "edited": true
     }
   ],
   "Beard": [
     {
       "name": "5'oclock",
       "fileName": "5'oclock#20.png",
-      "rarity": 20
+      "rarity": 20,
+      "edited": true
     },
     {
       "name": "Classic Boomer Beard",
       "fileName": "Classic Boomer Beard#25.png",
-      "rarity": 25
+      "rarity": 25,
+      "edited": true
     },
     {
       "name": "French Tickler",
       "fileName": "French Tickler#20.png",
-      "rarity": 20
+      "rarity": 20,
+      "edited": true
     },
     {
       "name": "Full Beard",
       "fileName": "Full Beard#20.png",
-      "rarity": 20
+      "rarity": 20,
+      "edited": true
     },
     {
       "name": "Gandolf Beard_Black",
@@ -7162,22 +7257,26 @@
     {
       "name": "Goetee",
       "fileName": "Goetee#25.png",
-      "rarity": 25
+      "rarity": 25,
+      "edited": true
     },
     {
       "name": "Mustache",
       "fileName": "Mustache#25.png",
-      "rarity": 25
+      "rarity": 25,
+      "edited": true
     },
     {
       "name": "Mutton Chops",
       "fileName": "Mutton Chops#15.png",
-      "rarity": 15
+      "rarity": 15,
+      "edited": true
     },
     {
       "name": "None",
       "fileName": "None#60.png",
-      "rarity": 60
+      "rarity": 60,
+      "edited": true
     },
     {
       "name": "Sensei_Black",
@@ -7202,12 +7301,14 @@
     {
       "name": "Side Burns",
       "fileName": "Side Burns#20.png",
-      "rarity": 20
+      "rarity": 20,
+      "edited": true
     },
     {
       "name": "Soul Patch",
       "fileName": "Soul Patch#20.png",
-      "rarity": 20
+      "rarity": 20,
+      "edited": true
     },
     {
       "name": "Squared Off Full Beard_Black",
@@ -7232,7 +7333,8 @@
     {
       "name": "Van Dyke",
       "fileName": "Van Dyke#20.png",
-      "rarity": 20
+      "rarity": 20,
+      "edited": true
     }
   ],
   "Eyebrow": [
@@ -7246,87 +7348,50 @@
     {
       "name": "Base",
       "fileName": "Base#70.png",
-      "rarity": 70
-    },
-    {
-      "name": "Bionic",
-      "fileName": "Bionic#1.png",
-      "rarity": 1
+      "rarity": 60,
+      "edited": true
     },
     {
       "name": "Blue Lazer",
       "fileName": "Blue Lazer#3.png",
-      "rarity": 3
-    },
-    {
-      "name": "Boomer Shades",
-      "fileName": "Boomer Shades#20.png",
-      "rarity": 20
-    },
-    {
-      "name": "Bright Color Pit Vipers",
-      "fileName": "Bright Color Pit Vipers#3.png",
-      "rarity": 3
+      "rarity": 3,
+      "edited": true
     },
     {
       "name": "Closed (Asleep)",
       "fileName": "Closed (Asleep)#12.png",
-      "rarity": 12
-    },
-    {
-      "name": "Club Shades",
-      "fileName": "Club Shades#1.png",
-      "rarity": 1
+      "rarity": 8,
+      "edited": true
     },
     {
       "name": "Crypto Maxi (Red Glow)",
       "fileName": "Crypto Maxi (Red Glow)#3.png",
-      "rarity": 3
-    },
-    {
-      "name": "Eye Patch",
-      "fileName": "Eye Patch#1.png",
-      "rarity": 1
+      "rarity": 5,
+      "edited": true
     },
     {
       "name": "Glowing Green",
       "fileName": "Glowing Green#6.png",
-      "rarity": 6
+      "rarity": 6,
+      "edited": true
     },
     {
       "name": "Gold Glow",
       "fileName": "Gold Glow#6.png",
-      "rarity": 6
-    },
-    {
-      "name": "Monocle",
-      "fileName": "Monocle#1.png",
-      "rarity": 1
-    },
-    {
-      "name": "Ozzy Osborne",
-      "fileName": "Ozzy Osborne#1.png",
-      "rarity": 1
+      "rarity": 7,
+      "edited": true
     },
     {
       "name": "Red Lazer",
       "fileName": "Red Lazer#3.png",
-      "rarity": 3
+      "rarity": 4,
+      "edited": true
     },
     {
       "name": "Reptilian",
       "fileName": "Reptilian#3.png",
-      "rarity": 3
-    },
-    {
-      "name": "Snowboard Goggles",
-      "fileName": "Snowboard Goggles#3.png",
-      "rarity": 3
-    },
-    {
-      "name": "Sport Shades",
-      "fileName": "Sport Shades#6.png",
-      "rarity": 6
+      "rarity": 3,
+      "edited": true
     },
     {
       "name": "Stoned",
@@ -7334,61 +7399,80 @@
       "rarity": 2
     },
     {
-      "name": "Thug Life",
-      "fileName": "Thug Life#1.png",
-      "rarity": 1
-    },
-    {
       "name": "White",
       "fileName": "White#9.png",
-      "rarity": 9
+      "rarity": 12,
+      "edited": true
     },
     {
       "name": "Wink",
       "fileName": "Wink#15.png",
-      "rarity": 15
+      "rarity": 40,
+      "edited": true
     }
   ],
-  "Ghost Accessories": [
+  "Glasses": [
+    {
+      "name": "Bionic Eyewear",
+      "fileName": "Bionic Eyewear#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Boomer Shades",
+      "fileName": "Boomer Shades#20.png",
+      "rarity": 20,
+      "edited": true
+    },
+    {
+      "name": "Bright Color Pit Vipers",
+      "fileName": "Bright Color Pit Vipers#3.png",
+      "rarity": 3,
+      "edited": true
+    },
+    {
+      "name": "Eyepatch",
+      "fileName": "Eyepatch#3.png",
+      "rarity": 3
+    },
+    {
+      "name": "Monocle",
+      "fileName": "Monocle#3.png",
+      "rarity": 3,
+      "edited": true
+    },
     {
       "name": "None",
-      "fileName": "None#30.png",
-      "rarity": 30
-    }
-  ],
-  "Ghost Beard": [
+      "fileName": "None#50.png",
+      "rarity": 50,
+      "edited": true
+    },
     {
-      "name": "Classic Boomer Beard",
-      "fileName": "Classic Boomer Beard#1.png",
-      "rarity": 1
-    }
-  ],
-  "Ghost Hair": [
+      "name": "Ozzy Osbourne",
+      "fileName": "Ozzy Osbourne#2.png",
+      "rarity": 2
+    },
     {
-      "name": "Classic Boomer Balding",
-      "fileName": "Classic Boomer Balding#1.png",
-      "rarity": 1
-    }
-  ],
-  "Ghost Mouth": [
+      "name": "Snowboard Goggles",
+      "fileName": "Snowboard Goggles#3.png",
+      "rarity": 3,
+      "edited": true
+    },
     {
-      "name": "Smirk",
-      "fileName": "Smirk#1.png",
-      "rarity": 1
-    }
-  ],
-  "Ghost Mouth Items": [
+      "name": "Sport Shades",
+      "fileName": "Sport Shades#6.png",
+      "rarity": 6,
+      "edited": true
+    },
     {
-      "name": "None",
-      "fileName": "None#30.png",
-      "rarity": 30
-    }
-  ],
-  "Ghost Skin": [
+      "name": "Thin Club Shades",
+      "fileName": "Thin Club Shades#3.png",
+      "rarity": 3,
+      "edited": true
+    },
     {
-      "name": "Ghost",
-      "fileName": "Ghost#1.png",
-      "rarity": 1
+      "name": "Thug Life Glasses",
+      "fileName": "Thug Life Glasses#4.png",
+      "rarity": 4
     }
   ],
   "Hair": [
@@ -7459,8 +7543,9 @@
     },
     {
       "name": "Classic Boomer Balding",
-      "fileName": "Classic Boomer Balding#12.png",
-      "rarity": 12
+      "fileName": "Classic Boomer Balding#10.png",
+      "rarity": 30,
+      "edited": true
     },
     {
       "name": "Curly_Black",
@@ -7515,7 +7600,8 @@
     {
       "name": "Long Braid_Brown",
       "fileName": "Long Braid_Brown#3.png",
-      "rarity": 3
+      "rarity": 3,
+      "edited": true
     },
     {
       "name": "Long Braid_Grey",
@@ -7565,12 +7651,14 @@
     {
       "name": "Mohawk_Black",
       "fileName": "Mohawk_Black#4.png",
-      "rarity": 4
+      "rarity": 4,
+      "edited": true
     },
     {
       "name": "Mohawk_Blonde",
       "fileName": "Mohawk_Blonde#4.png",
-      "rarity": 4
+      "rarity": 4,
+      "edited": true
     },
     {
       "name": "Mohawk_Brown",
@@ -7585,12 +7673,14 @@
     {
       "name": "Mullet_Black",
       "fileName": "Mullet_Black#13.png",
-      "rarity": 13
+      "rarity": 13,
+      "edited": true
     },
     {
       "name": "Mullet_Blonde",
       "fileName": "Mullet_Blonde#13.png",
-      "rarity": 13
+      "rarity": 13,
+      "edited": true
     },
     {
       "name": "Mullet_Brown",
@@ -7605,7 +7695,8 @@
     {
       "name": "None",
       "fileName": "None#200.png",
-      "rarity": 200
+      "rarity": 200,
+      "edited": true
     },
     {
       "name": "On Fire",
@@ -7615,22 +7706,26 @@
     {
       "name": "Shaved Sides + Pony Tail_Black",
       "fileName": "Shaved Sides + Pony Tail_Black#4.png",
-      "rarity": 4
+      "rarity": 4,
+      "edited": true
     },
     {
       "name": "Shaved Sides + Pony Tail_Blonde",
       "fileName": "Shaved Sides + Pony Tail_Blonde#4.png",
-      "rarity": 4
+      "rarity": 4,
+      "edited": true
     },
     {
       "name": "Shaved Sides + Pony Tail_Brown",
       "fileName": "Shaved Sides + Pony Tail_Brown#4.png",
-      "rarity": 4
+      "rarity": 4,
+      "edited": true
     },
     {
       "name": "Shaved Sides + Pony Tail_Grey",
       "fileName": "Shaved Sides + Pony Tail_Grey#4.png",
-      "rarity": 4
+      "rarity": 4,
+      "edited": true
     },
     {
       "name": "Short_Black",
@@ -7717,27 +7812,32 @@
     {
       "name": "BBQ Chef Hat",
       "fileName": "BBQ Chef Hat#4.png",
-      "rarity": 4
+      "rarity": 3,
+      "edited": true
     },
     {
       "name": "Baseball Cap",
       "fileName": "Baseball Cap#2.png",
-      "rarity": 2
+      "rarity": 2,
+      "edited": true
     },
     {
       "name": "Batman Mask",
       "fileName": "Batman Mask#1.png",
-      "rarity": 1
+      "rarity": 5,
+      "edited": true
     },
     {
       "name": "Beanie",
       "fileName": "Beanie#2.png",
-      "rarity": 2
+      "rarity": 2,
+      "edited": true
     },
     {
       "name": "Beer Helmet",
       "fileName": "Beer Helmet#7.png",
-      "rarity": 7
+      "rarity": 7,
+      "edited": true
     },
     {
       "name": "Big Blue Turban",
@@ -7772,7 +7872,8 @@
     {
       "name": "Golf Visor",
       "fileName": "Golf Visor#2.png",
-      "rarity": 2
+      "rarity": 2,
+      "edited": true
     },
     {
       "name": "Halo",
@@ -7792,12 +7893,25 @@
     {
       "name": "Knights Helmet",
       "fileName": "Knights Helmet#2.png",
-      "rarity": 2
+      "rarity": 3,
+      "edited": true
     },
     {
       "name": "None",
       "fileName": "None#30.png",
       "rarity": 30
+    },
+    {
+      "name": "Original Boomer Face Mask",
+      "fileName": "Original Boomer Face Mask#1.png",
+      "rarity": 0,
+      "edited": true
+    },
+    {
+      "name": "Poker Visor",
+      "fileName": "Poker Visor#1.png",
+      "rarity": 1,
+      "edited": true
     },
     {
       "name": "Propeller Hat",
@@ -7822,7 +7936,8 @@
     {
       "name": "Space Suit",
       "fileName": "Space Suit#3.png",
-      "rarity": 3
+      "rarity": 3,
+      "edited": true
     },
     {
       "name": "Tin Foil",
@@ -7837,7 +7952,8 @@
     {
       "name": "Viking Helmet",
       "fileName": "Viking Helmet#1.png",
-      "rarity": 1
+      "rarity": 5,
+      "edited": true
     },
     {
       "name": "WW2 Helmet",
@@ -7853,6 +7969,12 @@
       "name": "Wizard Hat",
       "fileName": "Wizard Hat#3.png",
       "rarity": 3
+    },
+    {
+      "name": "Workout Headband",
+      "fileName": "Workout Headband#1.png",
+      "rarity": 1,
+      "edited": true
     }
   ],
   "Mouth": [
@@ -7867,14 +7989,14 @@
       "rarity": 13
     },
     {
-      "name": "Big Tobacco Lip in_Black",
-      "fileName": "Big Tobacco Lip in_Black#1.png",
-      "rarity": 1
+      "name": "Big Tobacco Lip In_Black",
+      "fileName": "Big Tobacco Lip In_Black#5.png",
+      "rarity": 5
     },
     {
-      "name": "Big Tobacco Lip in_White",
-      "fileName": "Big Tobacco Lip in_White#1.png",
-      "rarity": 1
+      "name": "Big Tobacco Lip In_White",
+      "fileName": "Big Tobacco Lip In_White#5.png",
+      "rarity": 5
     },
     {
       "name": "Cig_Black",
@@ -7928,13 +8050,13 @@
     },
     {
       "name": "Gritting Teeth_Black",
-      "fileName": "Gritting Teeth_Black#1.png",
-      "rarity": 1
+      "fileName": "Gritting Teeth_Black#10.png",
+      "rarity": 10
     },
     {
       "name": "Gritting Teeth_White",
-      "fileName": "Gritting Teeth_White#1.png",
-      "rarity": 1
+      "fileName": "Gritting Teeth_White#10.png",
+      "rarity": 10
     },
     {
       "name": "Mog_Black",
@@ -7998,13 +8120,13 @@
     },
     {
       "name": "Wooden Teeth_Black",
-      "fileName": "Wooden Teeth_Black#1.png",
-      "rarity": 1
+      "fileName": "Wooden Teeth_Black#3.png",
+      "rarity": 3
     },
     {
       "name": "Wooden Teeth_White",
-      "fileName": "Wooden Teeth_White#1.png",
-      "rarity": 1
+      "fileName": "Wooden Teeth_White#3.png",
+      "rarity": 3
     }
   ],
   "Mouth_Items": [
@@ -8053,12 +8175,14 @@
     {
       "name": "BASED Chain",
       "fileName": "BASED Chain#1.png",
-      "rarity": 1
+      "rarity": 2,
+      "edited": true
     },
     {
       "name": "Bear Claw",
       "fileName": "Bear Claw#4.png",
-      "rarity": 4
+      "rarity": 7,
+      "edited": true
     },
     {
       "name": "Cuban Link (Diamond)",
@@ -8088,17 +8212,199 @@
     {
       "name": "None",
       "fileName": "None#20.png",
-      "rarity": 20
+      "rarity": 35,
+      "edited": true
     },
     {
       "name": "Shark Tooth",
       "fileName": "Shark Tooth#3.png",
-      "rarity": 3
+      "rarity": 2,
+      "edited": true
     },
     {
       "name": "Two Smaller Gold Chains",
       "fileName": "Two Smaller Gold Chains#4.png",
-      "rarity": 4
+      "rarity": 6,
+      "edited": true
+    }
+  ],
+  "Nose": [
+    {
+      "name": "Small_Alien",
+      "fileName": "Small_Alien#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Small_Black",
+      "fileName": "Small_Black#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Small_Blue",
+      "fileName": "Small_Blue#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Small_Diamond",
+      "fileName": "Small_Diamond#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Small_Ghost",
+      "fileName": "Small_Ghost#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Small_Gold",
+      "fileName": "Small_Gold#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Small_Sun Kissed",
+      "fileName": "Small_Sun Kissed#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Small_Tan",
+      "fileName": "Small_Tan#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Small_Translucent",
+      "fileName": "Small_Translucent#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Small_White",
+      "fileName": "Small_White#1.png",
+      "rarity": 1
+    }
+  ],
+  "Power up": [
+    {
+      "name": "Classic Car Restoration_Badge",
+      "fileName": "Classic Car Restoration_Badge#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Classic Car Restoration_Border_Background",
+      "fileName": "Classic Car Restoration_Border_Background#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Classic Car Restoration_Border_Front",
+      "fileName": "Classic Car Restoration_Border_Front#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "DIY Fix It All_Badge",
+      "fileName": "DIY Fix It All_Badge#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "DIY Fix It All_Border_Background",
+      "fileName": "DIY Fix It All_Border_Background#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "DIY Fix It All_Border_Front",
+      "fileName": "DIY Fix It All_Border_Front#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Grill God_Badge",
+      "fileName": "Grill God_Badge#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Grill God_Border_Front",
+      "fileName": "Grill God_Border_Front#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Instant Sleeper_Badge",
+      "fileName": "Instant Sleeper_Badge#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Instant Sleeper_Border_Background",
+      "fileName": "Instant Sleeper_Border_Background#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Instant Sleeper_Border_Front",
+      "fileName": "Instant Sleeper_Border_Front#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Lawn Expert_Badge",
+      "fileName": "Lawn Expert_Badge#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Lawn Expert_Border_Background",
+      "fileName": "Lawn Expert_Border_Background#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Lawn Expert_Border_Front",
+      "fileName": "Lawn Expert_Border_Front#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "News Rant_Badge",
+      "fileName": "News Rant_Badge#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "News Rant_Border_Background",
+      "fileName": "News Rant_Border_Background#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "News Rant_Border_Front",
+      "fileName": "News Rant_Border_Front#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "None",
+      "fileName": "None#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "PGA Pro_Badge",
+      "fileName": "PGA Pro_Badge#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "PGA Pro_Border_Background",
+      "fileName": "PGA Pro_Border_Background#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "PGA Pro_Border_Front",
+      "fileName": "PGA Pro_Border_Front#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Real Estate Mogul_Badge",
+      "fileName": "Real Estate Mogul_Badge#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Real Estate Mogul_Border_Front",
+      "fileName": "Real Estate Mogul_Border_Front#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Silent But Deadly_Badge",
+      "fileName": "Silent But Deadly_Badge#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Silent But Deadly_Border_Front",
+      "fileName": "Silent But Deadly_Border_Front#1.png",
+      "rarity": 1
     }
   ],
   "Shirt": [
@@ -8138,11 +8444,6 @@
       "rarity": 7
     },
     {
-      "name": "Construction Vest_Orange",
-      "fileName": "Construction Vest_Orange#8.png",
-      "rarity": 8
-    },
-    {
       "name": "Doctor Coat",
       "fileName": "Doctor Coat#2.png",
       "rarity": 2
@@ -8171,6 +8472,11 @@
       "name": "Ladies Night Leopard",
       "fileName": "Ladies Night Leopard#5.png",
       "rarity": 5
+    },
+    {
+      "name": "Long Braid_Orange",
+      "fileName": "Long Braid_Orange#6.png",
+      "rarity": 6
     },
     {
       "name": "Mexican Poncho (no Shirt Underneath)",
@@ -8213,6 +8519,11 @@
       "rarity": 4
     },
     {
+      "name": "Tuxedo T Shirt",
+      "fileName": "Tuxedo T Shirt#4.png",
+      "rarity": 4
+    },
+    {
       "name": "Tuxedo",
       "fileName": "Tuxedo#4.png",
       "rarity": 4
@@ -8231,38 +8542,50 @@
   "Skin": [
     {
       "name": "Alien",
-      "fileName": "Alien#1.png",
-      "rarity": 1
+      "fileName": "Alien#2.png",
+      "rarity": 3,
+      "edited": true
     },
     {
       "name": "Black",
-      "fileName": "Black#1.png",
-      "rarity": 1
+      "fileName": "Black#18.png",
+      "rarity": 18,
+      "edited": true
     },
     {
       "name": "Blue",
-      "fileName": "Blue#1.png",
-      "rarity": 1
+      "fileName": "Blue#5.png",
+      "rarity": 4,
+      "edited": true
     },
     {
       "name": "Diamond",
       "fileName": "Diamond#1.png",
+      "rarity": 2,
+      "edited": true
+    },
+    {
+      "name": "Ghost",
+      "fileName": "Ghost#1.png",
       "rarity": 1
     },
     {
       "name": "Gold",
       "fileName": "Gold#1.png",
-      "rarity": 1
+      "rarity": 5,
+      "edited": true
     },
     {
       "name": "Sun Kissed",
-      "fileName": "Sun Kissed#1.png",
-      "rarity": 1
+      "fileName": "Sun Kissed#18.png",
+      "rarity": 9,
+      "edited": true
     },
     {
       "name": "Tan",
-      "fileName": "Tan#1.png",
-      "rarity": 1
+      "fileName": "Tan#18.png",
+      "rarity": 18,
+      "edited": true
     },
     {
       "name": "Translucent",
@@ -8271,7 +8594,30 @@
     },
     {
       "name": "White",
-      "fileName": "White#1.png",
+      "fileName": "White#24.png",
+      "rarity": 24,
+      "edited": true
+    }
+  ],
+  "Type": [
+    {
+      "name": "Ghost",
+      "fileName": "Ghost#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Human",
+      "fileName": "Human#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Space Suit",
+      "fileName": "Space Suit#1.png",
+      "rarity": 1
+    },
+    {
+      "name": "Superhero",
+      "fileName": "Superhero#1.png",
       "rarity": 1
     }
   ]
